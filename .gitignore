@@ -1,0 +1,13 @@
+# 二进制与中间产物不入库
+*.exe
+*.dll
+*.pdb
+*.zip
+*.gpr
+*.rep/
+.work/
+.agentlogs/
+work_ghidra/
+ghidra_projects/
+*.lock
+*.lock~
