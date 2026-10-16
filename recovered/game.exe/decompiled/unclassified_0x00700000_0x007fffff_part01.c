@@ -7250,9 +7250,9 @@ bool FUN_00709c20(short *param_1)
 }
 
 
-/* ==== 00709d5f  util_memmem_or_bytes_find  size=4929 ==== */
+/* ==== 00709d5f  util_memcmp_n  size=4929 ==== */
 
-int util_memmem_or_bytes_find(uint *param_1,uint *param_2,int param_3)
+int util_memcmp_n(uint *param_1,uint *param_2,int param_3)
 
 {
   uint uVar1;

@@ -8148,9 +8148,9 @@ void img_path_loader_16(int param_1)
 }
 
 
-/* ==== 00446b00  img_frame_dispatch_compress_5_6  size=620 ==== */
+/* ==== 00446b00  gameplay_tinkerbell_absorb_setup  size=620 ==== */
 
-void img_frame_dispatch_compress_5_6(void)
+void gameplay_tinkerbell_absorb_setup(void)
 
 {
   char cVar1;
@@ -8259,11 +8259,11 @@ void img_frame_dispatch_compress_5_6(void)
 }
 
 
-/* ==== 00446d70  img_frame_dispatch_compress_5_6_b  size=1059 ==== */
+/* ==== 00446d70  gameplay_effect_setup_46d70  size=1059 ==== */
 
 /* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
 
-void img_frame_dispatch_compress_5_6_b(int param_1)
+void gameplay_effect_setup_46d70(int param_1)
 
 {
   undefined4 *puVar1;
@@ -8705,7 +8705,7 @@ int img_path_loader_17(int *param_1)
             piStack_200 = (int *)0x3f4;
             piStack_204 = (int *)0x0;
             piStack_208 = (int *)0x4554a2;
-            FUN_006a47c0();
+            net_packet_send_helper_647c0();
           }
         }
       }
@@ -9899,7 +9899,7 @@ void img_path_loader_19(void)
     (**(code **)(*in_ECX + 0x10))();
     piVar1 = (int *)game_get_player_or_session_blob();
     if (in_ECX == piVar1) {
-      FUN_006a3b20();
+      net_packet_send_fixed_0x20();
       FUN_004054a0();
       local_8 = 0;
       FUN_004d1bb0();
@@ -9907,7 +9907,7 @@ void img_path_loader_19(void)
       local_8 = 0xffffffff;
       ui_find_widget_by_key();
       FUN_005397f0();
-      FUN_006a51c0();
+      net_packet_send_helper_651c0();
     }
     ExceptionList = local_10;
     return;
@@ -20442,14 +20442,14 @@ undefined4 npk_img_open_path_under_imagepacks2(LPCSTR param_1)
         if (local_158 <= local_140) {
           MessageBoxA((HWND)0x0,&DAT_0074e274,(LPCSTR)0x0,0);
         }
-        puVar3 = (undefined4 *)FUN_004bcf10(local_140);
+        puVar3 = (undefined4 *)npk_img_frame_ptr_at(local_140);
         ppiVar8 = &local_1b4;
         for (iVar5 = 10; iVar5 != 0; iVar5 = iVar5 + -1) {
           *ppiVar8 = (int *)*puVar3;
           puVar3 = puVar3 + 1;
           ppiVar8 = ppiVar8 + 1;
         }
-        puVar3 = (undefined4 *)FUN_004bcf10(local_140);
+        puVar3 = (undefined4 *)npk_img_frame_ptr_at(local_140);
         local_188 = (int *)*puVar3;
         (**(code **)(*local_188 + 0x4c))(local_188,0,local_1e8,0,0);
         local_1dc = D3DXCreateTexture(*(undefined4 *)(local_180 + 4),local_1a8,local_1a4,1,0,0,1,
@@ -20457,10 +20457,10 @@ undefined4 npk_img_open_path_under_imagepacks2(LPCSTR param_1)
         (**(code **)(*local_1b4 + 0x4c))(local_1b4,0,local_1f0,0,0);
         FUN_006e6bd0(local_1ec,local_1e4,local_1a8 * local_1a4 * 4);
         (**(code **)(*local_1b4 + 0x50))(local_1b4,0);
-        puVar3 = (undefined4 *)FUN_004bcf10(local_140);
+        puVar3 = (undefined4 *)npk_img_frame_ptr_at(local_140);
         local_17c = (int *)*puVar3;
         (**(code **)(*local_17c + 0x50))(local_17c,0);
-        FUN_00426e60(&local_1b4);
+        npk_img_texture_slot_store(&local_1b4);
         local_130 = local_130 + 2;
       }
       else {
@@ -20511,7 +20511,7 @@ undefined4 npk_img_open_path_under_imagepacks2(LPCSTR param_1)
           MessageBoxA((HWND)0x0,&DAT_0074e2f0,(LPCSTR)0x0,0);
         }
         local_1c8 = (**(code **)(*local_1b4 + 0x50))(local_1b4,0);
-        FUN_00426e60(&local_1b4);
+        npk_img_texture_slot_store(&local_1b4);
       }
     }
     CloseHandle(local_160);
@@ -20532,12 +20532,12 @@ undefined4 npk_img_open_path_under_imagepacks2(LPCSTR param_1)
 }
 
 
-/* ==== 004bd6c0  npk_buffer8_error  size=1491 ==== */
+/* ==== 004bd6c0  sound_npk_load_wav_to_dsound  size=1491 ==== */
 
 /* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
 /* WARNING: Removing unreachable block (ram,0x004bd86a) */
 
-int * npk_buffer8_error(int param_1)
+int * sound_npk_load_wav_to_dsound(int param_1)
 
 {
   ushort uVar1;
@@ -20595,7 +20595,7 @@ int * npk_buffer8_error(int param_1)
   uint local_8;
   
   local_8 = DAT_007c5940 ^ (uint)&stack0xfffffffc;
-  local_bc = FUN_004c4190(local_60,"SoundPacks\\",param_1);
+  local_bc = npk_sound_path_join_soundpacks(local_60,"SoundPacks\\",param_1);
   hTemplateFile = (HANDLE)0x0;
   dwFlagsAndAttributes = 0x80;
   dwCreationDisposition = 3;
@@ -20794,17 +20794,17 @@ void npk_scan_soundpacks(void)
     local_2f4 = (LPVOID)FUN_006f191d(local_300 * 0x108);
     ReadFile(local_2f8,local_2f4,local_300 * 0x108,&local_314,(LPOVERLAPPED)0x0);
     for (local_2ec = 0; local_2ec < local_300; local_2ec = local_2ec + 1) {
-      FUN_004be010();
+      npk_sound_entry_ctor();
       local_8 = 0;
       local_120 = local_2ec;
       FUN_004053a0(local_2e4.cFileName);
       FUN_004053a0((int)local_2f4 + local_2ec * 0x108 + 8);
       local_11c = *(undefined4 *)((int)local_2f4 + local_2ec * 0x108);
       local_118 = *(undefined4 *)((int)local_2f4 + local_2ec * 0x108 + 4);
-      local_31c = FUN_004c4220(local_1a4,local_138,local_150);
+      local_31c = npk_sound_map_insert(local_1a4,local_138,local_150);
       local_8._0_1_ = 1;
       local_318 = local_31c;
-      FUN_004c4250(local_328,local_31c);
+      npk_sound_map_insert_commit(local_328,local_31c);
       local_8 = (uint)local_8._1_3_ << 8;
       Concurrency::details::WorkQueue::~WorkQueue(local_1a4);
       local_8 = 0xffffffff;
@@ -20820,14 +20820,14 @@ void npk_scan_soundpacks(void)
 }
 
 
-/* ==== 00584450  npk_or_resource_subsystem_init  size=23 ==== */
+/* ==== 00584450  npk_img_subsystem_init  size=23 ==== */
 
-undefined4 npk_or_resource_subsystem_init(void)
+undefined4 npk_img_subsystem_init(void)
 
 {
   undefined4 in_ECX;
   
-  FUN_00585b10();
+  npk_img_map_init();
   return in_ECX;
 }
 
@@ -20998,7 +20998,7 @@ LAB_00584839:
           }
         }
         *(undefined1 *)((int)local_310 + local_30c * 0x108 + 0x107) = 0;
-        FUN_00584a50();
+        npk_img_entry_ctor();
         local_8 = 0;
         local_2e8 = *(undefined4 *)((int)local_310 + local_30c * 0x108);
         local_2e4 = *(undefined4 *)((int)local_310 + local_30c * 0x108 + 4);
@@ -21007,14 +21007,14 @@ LAB_00584839:
         FUN_004053a0((int)local_310 + local_30c * 0x108 + 8);
         local_2c4 = 0;
         local_2c8 = 0;
-        local_360 = FUN_00585c60(local_180,local_304,local_304);
+        local_360 = npk_img_map_insert(local_180,local_304,local_304);
         local_8._0_1_ = 1;
         local_35c = local_360;
-        FUN_00585c90(local_384,local_360);
+        npk_img_map_insert_commit(local_384,local_360);
         local_8 = (uint)local_8._1_3_ << 8;
         Concurrency::details::WorkQueue::~WorkQueue(local_180);
         local_8 = 0xffffffff;
-        FUN_00584a80();
+        npk_img_entry_dtor();
       }
       FUN_006f1902(local_310);
       CloseHandle(local_31c);
@@ -21025,7 +21025,7 @@ LAB_00584839:
       local_1c = 0;
       local_18 = 0;
       ReadFile(local_31c,&local_24,0x10,&local_34c,(LPOVERLAPPED)0x0);
-      local_374 = util_memmem_or_bytes_find(&local_24,"NeoplePack_Bill",0xf);
+      local_374 = util_memcmp_n(&local_24,"NeoplePack_Bill",0xf);
       if (local_374 == 0) goto LAB_0058471a;
       CloseHandle(local_31c);
     }
@@ -21248,7 +21248,7 @@ undefined4 npk_img_decode_frames_from_entry(int param_1)
       else if (*(int *)((int)local_10c + local_110 * 0x28) == 0x10) {
         local_184 = FUN_006e5209(*(undefined4 *)((int)local_10c + local_110 * 0x28 + 0x10));
         *(undefined4 *)((int)local_10c + local_110 * 0x28 + 0x24) = local_184;
-        FUN_005859e0(*(undefined4 *)((int)local_10c + local_110 * 0x28 + 0x24),local_14c,
+        img_copy_pixels_fmt_10(*(undefined4 *)((int)local_10c + local_110 * 0x28 + 0x24),local_14c,
                      *(undefined4 *)((int)local_10c + local_110 * 0x28 + 0x10));
         local_114 = (undefined4 *)
                     ((int)local_114 + *(int *)((int)local_10c + local_110 * 0x28 + 0x10) + 0x24);
@@ -21739,6 +21739,451 @@ void img_or_resource_compress_5_6_c(void)
     }
   }
   ExceptionList = local_10;
+  return;
+}
+
+
+
+/* ==== NPK/IMG helpers moved in recovery pass ==== */
+
+/* ==== 00584470  npk_img_map_clear  size=20 ==== */
+
+void npk_img_map_clear(void)
+
+{
+  npk_img_map_destroy_tree();
+  return;
+}
+
+
+/* ==== 00584a50  npk_img_entry_ctor  size=34 ==== */
+
+undefined4 npk_img_entry_ctor(void)
+
+{
+  undefined4 in_ECX;
+  
+  FUN_0040d8b0();
+  FUN_0040d8b0();
+  return in_ECX;
+}
+
+
+/* ==== 00584a80  npk_img_entry_dtor  size=31 ==== */
+
+void npk_img_entry_dtor(void)
+
+{
+  function<void___cdecl(void)> *in_ECX;
+  
+  std::function<void___cdecl(void)>::~function<void___cdecl(void)>(in_ECX + 0x24);
+  std::function<void___cdecl(void)>::~function<void___cdecl(void)>(in_ECX);
+  return;
+}
+
+
+/* ==== 005855f0  npk_img_lookup_and_decode  size=232 ==== */
+
+/* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
+
+int npk_img_lookup_and_decode(undefined4 param_1)
+
+{
+  char cVar1;
+  uint uVar2;
+  undefined4 *puVar3;
+  undefined4 uVar4;
+  int iVar5;
+  undefined1 local_44 [4];
+  undefined1 local_40 [4];
+  int local_3c;
+  undefined4 local_34;
+  int local_30;
+  function<void___cdecl(void)> local_2c [24];
+  uint local_14;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_0071d0dd;
+  local_10 = ExceptionList;
+  uVar2 = DAT_007c5940 ^ (uint)&stack0xfffffffc;
+  ExceptionList = &local_10;
+  local_30 = 0;
+  local_14 = uVar2;
+  FUN_004054a0(param_1);
+  local_8 = 0;
+  npk_path_normalize_helper(uVar2);
+  puVar3 = (undefined4 *)FUN_0048aa30(local_40,local_2c);
+  local_34 = *puVar3;
+  uVar4 = FUN_00489e00(local_44);
+  cVar1 = FUN_0040d970(uVar4);
+  if (cVar1 != '\0') {
+    MessageBoxA((HWND)0x0,&DAT_0075a5b0,(LPCSTR)0x0,0);
+  }
+  iVar5 = FUN_00489a10();
+  local_30 = iVar5 + 0x18;
+  if (*(int *)(iVar5 + 0x58) == 0) {
+    npk_img_decode_frames_from_entry(local_30);
+  }
+  local_3c = local_30;
+  local_8 = 0xffffffff;
+  std::function<void___cdecl(void)>::~function<void___cdecl(void)>(local_2c);
+  ExceptionList = local_10;
+  return local_3c;
+}
+
+
+/* ==== 005856e0  npk_img_free_decoded_frames  size=152 ==== */
+
+void npk_img_free_decoded_frames(int param_1)
+
+{
+  int local_8;
+  
+  for (local_8 = 0; local_8 < *(int *)(param_1 + 0x3c); local_8 = local_8 + 1) {
+    if (*(int *)(*(int *)(param_1 + 0x40) + 0x24 + local_8 * 0x28) != 0) {
+      FUN_006e4b8e(*(undefined4 *)(*(int *)(param_1 + 0x40) + 0x24 + local_8 * 0x28),1);
+      *(undefined4 *)(*(int *)(param_1 + 0x40) + 0x24 + local_8 * 0x28) = 0;
+    }
+  }
+  thunk_FUN_006f1902(*(undefined4 *)(param_1 + 0x40));
+  *(undefined4 *)(param_1 + 0x40) = 0;
+  return;
+}
+
+
+/* ==== 005859e0  img_copy_pixels_fmt_10  size=106 ==== */
+
+void img_copy_pixels_fmt_10(int param_1,int param_2,int param_3)
+
+{
+  undefined4 local_8;
+  
+  for (local_8 = 0; local_8 < param_3; local_8 = local_8 + 4) {
+    *(undefined1 *)(param_1 + local_8) = *(undefined1 *)(param_2 + local_8);
+    *(undefined1 *)(param_1 + local_8 + 1) = *(undefined1 *)(param_2 + local_8 + 1);
+    *(undefined1 *)(param_1 + local_8 + 2) = *(undefined1 *)(param_2 + local_8 + 2);
+    *(undefined1 *)(param_1 + local_8 + 3) = *(undefined1 *)(param_2 + local_8 + 3);
+  }
+  return;
+}
+
+
+/* ==== 00585a50  npk_img_manager_release_all  size=173 ==== */
+
+void npk_img_manager_release_all(void)
+
+{
+  char cVar1;
+  uint uVar2;
+  int iVar3;
+  undefined1 local_1c [11];
+  undefined1 local_11;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 uStack_8;
+  
+  uStack_8 = 0xffffffff;
+  puStack_c = &LAB_0070c8f0;
+  local_10 = ExceptionList;
+  uVar2 = DAT_007c5940 ^ (uint)&stack0xfffffffc;
+  ExceptionList = &local_10;
+  FUN_0044dff0(local_1c);
+  FUN_0044dfd0(&local_11);
+  while( true ) {
+    cVar1 = FUN_0044dd70(local_11);
+    if (cVar1 == '\0') break;
+    iVar3 = FUN_0044dd50();
+    if (*(int *)(iVar3 + 0x58) != 0) {
+      npk_img_free_decoded_frames(iVar3 + 0x18);
+    }
+    FUN_0044dd30();
+  }
+  npk_img_map_clear_nodes(uVar2);
+  npk_img_map_clear();
+  ExceptionList = local_10;
+  return;
+}
+
+
+/* ==== 00585b10  npk_img_map_init  size=29 ==== */
+
+undefined4 npk_img_map_init(void)
+
+{
+  undefined4 in_ECX;
+  undefined1 local_5;
+  
+  npk_img_map_construct(&local_5);
+  return in_ECX;
+}
+
+
+/* ==== 00585b30  npk_img_map_clear_nodes  size=102 ==== */
+
+void npk_img_map_clear_nodes(void)
+
+{
+  int iVar1;
+  int *piVar2;
+  undefined4 uVar3;
+  undefined4 uVar4;
+  
+  piVar2 = (int *)FUN_004057d0();
+  FUN_00401720(0);
+  iVar1 = *piVar2;
+  uVar4 = *(undefined4 *)(iVar1 + 4);
+  uVar3 = FUN_00401c60(uVar4);
+  FUN_00585cb0(uVar3,uVar4);
+  *(int *)(iVar1 + 4) = iVar1;
+  *(int *)iVar1 = iVar1;
+  *(int *)(iVar1 + 8) = iVar1;
+  piVar2[1] = 0;
+  return;
+}
+
+
+/* ==== 00585ba0  npk_img_map_destroy_tree  size=42 ==== */
+
+void npk_img_map_destroy_tree(void)
+
+{
+  undefined4 uVar1;
+  
+  uVar1 = FUN_004057d0();
+  uVar1 = FUN_00401c60(uVar1);
+  FUN_00585d00(uVar1);
+  return;
+}
+
+
+/* ==== 00585bd0  npk_img_map_construct  size=49 ==== */
+
+undefined4 npk_img_map_construct(undefined4 param_1)
+
+{
+  undefined4 in_ECX;
+  undefined1 local_6;
+  undefined1 local_5;
+  
+  FUN_0040ebd0(local_6,param_1,&local_5);
+  npk_img_map_allocate_sentinel();
+  return in_ECX;
+}
+
+
+/* ==== 00585c10  npk_img_map_allocate_sentinel  size=78 ==== */
+
+void npk_img_map_allocate_sentinel(void)
+
+{
+  undefined4 *puVar1;
+  undefined4 uVar2;
+  
+  puVar1 = (undefined4 *)FUN_004057d0();
+  FUN_00401740(&DAT_0073ff46,puVar1);
+  uVar2 = FUN_00401c60();
+  uVar2 = FUN_00585d40(uVar2);
+  *puVar1 = uVar2;
+  FUN_00401710();
+  return;
+}
+
+
+/* ==== 00585c60  npk_img_map_insert  size=43 ==== */
+
+undefined4 npk_img_map_insert(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+
+{
+  npk_img_entry_assign_for_insert(param_2,param_3);
+  return param_1;
+}
+
+
+/* ==== 00585c90  npk_img_map_insert_commit  size=32 ==== */
+
+undefined4 npk_img_map_insert_commit(undefined4 param_1,undefined4 param_2)
+
+{
+  FUN_00585f60(param_1,param_2);
+  return param_1;
+}
+
+
+/* ==== 00585e40  npk_img_entry_assign_for_insert  size=100 ==== */
+
+undefined4 npk_img_entry_assign_for_insert(undefined4 param_1,undefined4 param_2)
+
+{
+  undefined4 in_ECX;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_0070ce0d;
+  local_10 = ExceptionList;
+  ExceptionList = &local_10;
+  FUN_00405520(param_1);
+  local_8 = 0;
+  npk_img_entry_copy(param_2);
+  ExceptionList = local_10;
+  return in_ECX;
+}
+
+
+/* ==== 00585eb0  npk_img_entry_copy  size=162 ==== */
+
+int npk_img_entry_copy(int param_1)
+
+{
+  int in_ECX;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_0070ce0d;
+  local_10 = ExceptionList;
+  ExceptionList = &local_10;
+  FUN_00405520(param_1);
+  local_8 = 0;
+  *(undefined4 *)(in_ECX + 0x18) = *(undefined4 *)(param_1 + 0x18);
+  *(undefined4 *)(in_ECX + 0x1c) = *(undefined4 *)(param_1 + 0x1c);
+  *(undefined4 *)(in_ECX + 0x20) = *(undefined4 *)(param_1 + 0x20);
+  FUN_00405520(param_1 + 0x24);
+  *(undefined4 *)(in_ECX + 0x3c) = *(undefined4 *)(param_1 + 0x3c);
+  *(undefined4 *)(in_ECX + 0x40) = *(undefined4 *)(param_1 + 0x40);
+  ExceptionList = local_10;
+  return in_ECX;
+}
+
+
+/* ==== 004be010  npk_sound_entry_ctor  size=34 ==== */
+
+undefined4 npk_sound_entry_ctor(void)
+
+{
+  undefined4 in_ECX;
+  
+  FUN_0040d8b0();
+  FUN_0040d8b0();
+  return in_ECX;
+}
+
+
+/* ==== 004c4190  npk_sound_path_join_soundpacks  size=136 ==== */
+
+undefined4
+npk_sound_path_join_soundpacks(undefined4 param_1,undefined4 param_2,
+            basic_string<char,std::char_traits<char>,std::allocator<char>_> *param_3)
+
+{
+  undefined4 uVar1;
+  uint uVar2;
+  int iVar3;
+  uint uVar4;
+  undefined1 local_6;
+  
+  uVar1 = FUN_00405b00(param_2);
+  uVar2 = _Unfancy<>(uVar1);
+  iVar3 = FUN_00410b30();
+  uVar4 = std::basic_string<char,std::char_traits<char>,std::allocator<char>_>::max_size(param_3);
+  if (uVar4 - iVar3 < uVar2) {
+    FUN_00403960();
+  }
+  uVar1 = npk_get_relative_res_path();
+  FUN_00429bf0(local_6,param_3,param_2,uVar2,uVar1,iVar3);
+  return param_1;
+}
+
+
+/* ==== 004c4220  npk_sound_map_insert  size=43 ==== */
+
+undefined4 npk_sound_map_insert(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+
+{
+  npk_sound_entry_assign_for_insert(param_2,param_3);
+  return param_1;
+}
+
+
+/* ==== 004c4250  npk_sound_map_insert_commit  size=32 ==== */
+
+undefined4 npk_sound_map_insert_commit(undefined4 param_1,undefined4 param_2)
+
+{
+  FUN_004c4dd0(param_1,param_2);
+  return param_1;
+}
+
+
+/* ==== 004c4cd0  npk_sound_entry_assign_for_insert  size=100 ==== */
+
+undefined4 npk_sound_entry_assign_for_insert(undefined4 param_1,undefined4 param_2)
+
+{
+  undefined4 in_ECX;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_0070ce0d;
+  local_10 = ExceptionList;
+  ExceptionList = &local_10;
+  FUN_00405520(param_1);
+  local_8 = 0;
+  npk_sound_entry_copy(param_2);
+  ExceptionList = local_10;
+  return in_ECX;
+}
+
+
+/* ==== 004c4d40  npk_sound_entry_copy  size=138 ==== */
+
+int npk_sound_entry_copy(int param_1)
+
+{
+  int in_ECX;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_0070ce0d;
+  local_10 = ExceptionList;
+  ExceptionList = &local_10;
+  FUN_00405520(param_1);
+  local_8 = 0;
+  FUN_00405520(param_1 + 0x18);
+  *(undefined4 *)(in_ECX + 0x30) = *(undefined4 *)(param_1 + 0x30);
+  *(undefined4 *)(in_ECX + 0x34) = *(undefined4 *)(param_1 + 0x34);
+  *(undefined4 *)(in_ECX + 0x38) = *(undefined4 *)(param_1 + 0x38);
+  ExceptionList = local_10;
+  return in_ECX;
+}
+
+
+/* ==== 004bcf10  npk_img_frame_ptr_at  size=30 ==== */
+
+int npk_img_frame_ptr_at(int param_1)
+
+{
+  int *in_ECX;
+  
+  return param_1 * 0x28 + *in_ECX;
+}
+
+
+/* ==== 00426e60  npk_img_texture_slot_store  size=26 ==== */
+
+void npk_img_texture_slot_store(undefined4 param_1)
+
+{
+  FUN_00428040(param_1);
   return;
 }
 

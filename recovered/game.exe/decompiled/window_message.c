@@ -1142,12 +1142,12 @@ if (uMsg == 0x200) {
                 iVar3 = FUN_006a34a0();
                 iStack_fdc = iVar3 + iStack_fdc;
                 FUN_00454ea0();
-                cVar1 = FUN_006a3490();
+                cVar1 = net_packet_write_u8();
                 iStack_fdc = cVar1 + iStack_fdc;
                 FUN_0069eda0();
-                cVar1 = FUN_006a3490();
+                cVar1 = net_packet_write_u8();
                 iStack_fdc = cVar1 + iStack_fdc;
-                FUN_006a31b0();
+                net_socket_send_all();
                 FUN_006f1902();
               }
             }
@@ -1171,9 +1171,9 @@ if (uMsg == 0x200) {
               iVar3 = FUN_006a34a0();
               iStack_fd8 = iVar3 + iStack_fd8;
               FUN_0069eda0();
-              cVar1 = FUN_006a3490();
+              cVar1 = net_packet_write_u8();
               iStack_fd8 = cVar1 + iStack_fd8;
-              FUN_006a31b0();
+              net_socket_send_all();
               FUN_006f1902();
             }
           }
@@ -1287,7 +1287,7 @@ if (uMsg == 0x200) {
                 FUN_00454ea0();
                 puStack_1c40 = (undefined *)0x9c40;
                 apcStack_1c54[4] = &UNK_006874c2;
-                FUN_006a3370();
+                net_packet_send_opcode_u32_bytes();
                 FUN_0044e420();
                 FUN_004053a0();
                 CDocObjectServer::ReleaseDocSite((CDocObjectServer *)(iStack_fe4 + 0xa3c));
@@ -3838,12 +3838,12 @@ LAB_0068389c:
           iVar3 = FUN_006a34a0();
           local_fd4 = iVar3 + local_fd4;
           FUN_00454ea0();
-          cVar1 = FUN_006a3490();
+          cVar1 = net_packet_write_u8();
           local_fd4 = cVar1 + local_fd4;
           FUN_0069eda0();
-          cVar1 = FUN_006a3490();
+          cVar1 = net_packet_write_u8();
           local_fd4 = cVar1 + local_fd4;
-          FUN_006a31b0();
+          net_socket_send_all();
           FUN_006f1902();
         }
       }
@@ -3867,9 +3867,9 @@ LAB_0068389c:
         iVar3 = FUN_006a34a0();
         local_fd0 = iVar3 + local_fd0;
         FUN_0069eda0();
-        cVar1 = FUN_006a3490();
+        cVar1 = net_packet_write_u8();
         local_fd0 = cVar1 + local_fd0;
-        FUN_006a31b0();
+        net_socket_send_all();
         FUN_006f1902();
       }
     }
@@ -5012,12 +5012,12 @@ undefined4 WinMain(HINSTANCE param_1)
           }
           if (local_8 == 0) {
             game_missing_asset_fallback();
-            game_missing_asset_fallback_2();
+            net_wait_until_opcode();
           }
           else {
             game_missing_asset_fallback();
           }
-          puVar2 = (undefined4 *)game_get_global_ptr_f2480();
+          puVar2 = (undefined4 *)net_disconnect_flag_ptr();
           *puVar2 = 0;
           timeGetTime();
           FUN_006f3545();
@@ -5027,7 +5027,7 @@ undefined4 WinMain(HINSTANCE param_1)
             local_28 = 0;
           }
           else {
-            local_28 = npk_or_resource_subsystem_init();
+            local_28 = npk_img_subsystem_init();
           }
           local_48 = local_28;
           DAT_007ca230 = local_28;

@@ -697,7 +697,7 @@ LAB_005b36a6:
                   __strlwr((char *)local_114);
                   FUN_004c7bc0();
                   FUN_004053a0();
-                  FUN_004c4190();
+                  npk_sound_path_join_soundpacks();
                   FUN_004053e0();
                   std::function<void___cdecl(void)>::~function<void___cdecl(void)>(local_8f0);
                   config_section_span_helper();
@@ -4047,7 +4047,7 @@ LAB_005bd203:
           __strlwr((char *)local_114);
           FUN_004c7bc0();
           FUN_004053a0();
-          FUN_004c4190();
+          npk_sound_path_join_soundpacks();
           FUN_004053e0();
           std::function<void___cdecl(void)>::~function<void___cdecl(void)>(local_178);
         }
@@ -4378,7 +4378,7 @@ LAB_005bdb53:
           pcStack_22c = "sprite/";
           pfStack_230 = local_178;
           uStack_234 = 0x5bdc9f;
-          local_1d8 = FUN_004c4190();
+          local_1d8 = npk_sound_path_join_soundpacks();
           pcStack_22c = (char *)0x5bdcba;
           FUN_004053e0();
           std::function<void___cdecl(void)>::~function<void___cdecl(void)>(local_178);
@@ -6399,7 +6399,7 @@ int FUN_005c0660(void)
     std::function<void___cdecl(void)>::~function<void___cdecl(void)>(local_1068);
     __strlwr((char *)local_114);
     FUN_004053a0();
-    FUN_004c4190();
+    npk_sound_path_join_soundpacks();
     FUN_004053e0();
     std::function<void___cdecl(void)>::~function<void___cdecl(void)>(local_1050);
     FUN_0059f350();
@@ -11077,7 +11077,7 @@ int FUN_005d1b00(void)
       local_f1c = FUN_004054a0();
       FUN_004053e0();
       std::function<void___cdecl(void)>::~function<void___cdecl(void)>(local_2e4);
-      local_f20 = FUN_004c4190();
+      local_f20 = npk_sound_path_join_soundpacks();
       FUN_004053e0();
       std::function<void___cdecl(void)>::~function<void___cdecl(void)>(local_23c);
     }
@@ -12232,7 +12232,7 @@ LAB_005d55ea:
         local_e7c = (int)local_b70 - (int)local_e78;
         local_abc = (char *)((int)local_abc + 2 + local_e7c);
         local_abc = (char *)config_section_span_helper();
-        FUN_00426e60();
+        npk_img_texture_slot_store();
       }
     }
     local_abc = *(char **)(local_ac8 + 0x18);
@@ -13593,7 +13593,7 @@ int FUN_005d83e0(void)
             }
             FUN_004054a0();
             local_8 = CONCAT31(local_8._1_3_,7);
-            FUN_004c4190();
+            npk_sound_path_join_soundpacks();
             FUN_004053e0();
             std::function<void___cdecl(void)>::~function<void___cdecl(void)>(local_3d4);
             while( true ) {
@@ -13672,7 +13672,7 @@ LAB_005d939a:
       }
       FUN_004054a0();
       local_8 = CONCAT31(local_8._1_3_,8);
-      FUN_004c4190();
+      npk_sound_path_join_soundpacks();
       FUN_004053e0();
       std::function<void___cdecl(void)>::~function<void___cdecl(void)>(local_3a4);
       while( true ) {
@@ -14144,7 +14144,7 @@ undefined4 FUN_005d9da0(int param_1,int param_2)
       puStack_5bc = local_594;
       uStack_5c0 = 0x5da72a;
       FUN_005ee350();
-      local_558 = FUN_004c4190();
+      local_558 = npk_sound_path_join_soundpacks();
       FUN_004053e0();
       std::function<void___cdecl(void)>::~function<void___cdecl(void)>(local_468);
       FUN_0059f350();
@@ -15162,7 +15162,7 @@ undefined * FUN_005dc370(void)
           FUN_0059f350();
           pcStack_18c = (code *)local_180;
           ppcStack_190 = (char **)0x5dc761;
-          FUN_00426e60();
+          npk_img_texture_slot_store();
         }
         pcStack_18c = (code *)&local_114;
         ppcStack_190 = (char **)0x764354;
@@ -19128,7 +19128,7 @@ LAB_005e3494:
 LAB_005e349f:
             local_9a4 = local_7cc;
             if (local_7cc == 0) goto code_r0x005e34b4;
-            FUN_004be010();
+            npk_sound_entry_ctor();
             local_8._0_1_ = 6;
             local_4d1 = 1;
             bVar2 = FUN_005a11b0();
@@ -19911,7 +19911,7 @@ int FUN_005e4170(int param_1)
       pfStack_3b0 = (function<void___cdecl(void)> *)0x764f8c;
       pfStack_3b4 = local_2d0;
       pcStack_3b8 = (char *)0x5e452c;
-      pfStack_3ac = (function<void___cdecl(void)> *)FUN_004c4190();
+      pfStack_3ac = (function<void___cdecl(void)> *)npk_sound_path_join_soundpacks();
       pfStack_3b0 = (function<void___cdecl(void)> *)0x5e4547;
       local_334 = pfStack_3ac;
       FUN_004053e0();
@@ -21009,7 +21009,7 @@ LAB_005e58e0:
       FUN_004054a0();
       local_8 = CONCAT31(local_8._1_3_,10);
       pcStack_850 = (char *)0x5e64a3;
-      local_7b8 = FUN_004c4190();
+      local_7b8 = npk_sound_path_join_soundpacks();
       FUN_004053e0();
       std::function<void___cdecl(void)>::~function<void___cdecl(void)>(local_4a8);
       do {
@@ -21115,7 +21115,7 @@ LAB_005e58e0:
       FUN_004054a0();
       local_8 = CONCAT31(local_8._1_3_,0xc);
       pcStack_850 = (char *)0x5e6a3c;
-      local_7e0 = FUN_004c4190();
+      local_7e0 = npk_sound_path_join_soundpacks();
       FUN_004053e0();
       std::function<void___cdecl(void)>::~function<void___cdecl(void)>(local_460);
       do {

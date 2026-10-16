@@ -28,8 +28,8 @@
 | `0043f590` | `img_path_loader_14` | string literal *.img path | medium |
 | `00441ef0` | `img_path_loader_15` | string literal *.img path | medium |
 | `004444d0` | `img_path_loader_16` | string literal *.img path | medium |
-| `00446b00` | `img_frame_dispatch_compress_5_6` | else-if local_18==5 / ==6 compression dispatch | medium |
-| `00446d70` | `img_frame_dispatch_compress_5_6_b` | else-if local_70==5 / ==6 compression dispatch | medium |
+| `00446b00` | `gameplay_tinkerbell_absorb_setup` | 原误标 compress；TINGKERBELL_*_ABSORB（见 NPK/IMG pass） | high |
+| `00446d70` | `gameplay_effect_setup_46d70` | 原误标 compress_5_6_b；非 IMG（见 NPK/IMG pass） | medium |
 | `00454ea0` | `game_get_player_or_session_blob` | main loop reads fields at +0xdeb.. from returned ptr | low |
 | `00455170` | `img_path_loader_17` | string literal *.img path | medium |
 | `004586c0` | `img_path_loader_18` | string literal *.img path | medium |
@@ -60,7 +60,7 @@
 | `004ba420` | `d3d9_matrix_transform_2d_004ba420` | D3DXMatrixTransformation2D | high |
 | `004ba6a0` | `d3d9_matrix_transform_2d_004ba6a0` | D3DXMatrixTransformation2D | high |
 | `004bd360` | `config_find_section_marker` | finds [server]/[/server] markers | high |
-| `004bd6c0` | `npk_buffer8_error` | m_pBuffer8 error | high |
+| `004bd6c0` | `sound_npk_load_wav_to_dsound` | 原误用 m_pBuffer8 错误串命名；NPK 内 WAV→CreateSoundBuffer（见 NPK/IMG pass） | high |
 | `004bdca0` | `npk_scan_soundpacks` | SoundPacks\*.npk | high |
 | `004be060` | `sound_dsound_create` | DSOUND Ordinal_11 DirectSoundCreate | high |
 | `004be5c0` | `sound_load_audio_xml` | audio.xml | high |
@@ -80,7 +80,7 @@
 | `005106c0` | `d3d9_texture_from_memory` | D3DXCreateTextureFromFileInMemory | high |
 | `00510800` | `game_main_loop` | WinMain calls this; PeekMessage loop; device+0xa4 BeginScene, +0xac Clear, +0xa8 EndScene, +0x44 Present | high |
 | `005385f0` | `util_time_get_time_1` | timeGetTime wrapper | low |
-| `00584450` | `npk_or_resource_subsystem_init` | WinMain allocates then calls before npk_scan_imagepacks2 | medium |
+| `00584450` | `npk_img_subsystem_init` | WinMain 在 npk_scan_imagepacks2 前调用 → npk_img_map_init | high |
 | `00584490` | `npk_scan_imagepacks2` | ImagePacks2\*.npk | high |
 | `00584ac0` | `npk_img_decode_frames_from_entry` | ReadFile NPK entry; frame count at +0x1c; 0x28-byte frame records; type@+0 (0xE/F/10/11); compress@+4 (5 raw / 6 zlib via inflate) | high |
 | `00585780` | `img_convert_pixels_fmt_0f` | post-inflate convert when frame type==0xF | high |
@@ -134,7 +134,7 @@
 | `006e4b5e` | `crt_or_heap_alloc_helper` | WinMain allocation helper (repeated) | low |
 | `006e5359` | `crt_scrt_common_main` | PE entry CRT -> WinMain | high |
 | `006e54d5` | `entry` | PE entry point | high |
-| `00709d5f` | `util_memmem_or_bytes_find` | searches NeoplePack_Bill in buffer | medium |
+| `00709d5f` | `util_memcmp_n` | 实为 memcmp（等返回 0）；NPK 魔数 NeoplePack_Bill 校验 | high |
 | `0068eb20` | `ui_command_dispatch` | 整数 UI 命令/控件类型 ID 分发（范围 0xa/0x1a4/0x398/0x532…；调用点 push 0x2fa/0x2fc/0x2fe/3000 等；聚焦控件 `*(+0x988)`） | high |
 
 ## Hard-function recovery (WndProc + ui_command_dispatch)
@@ -157,3 +157,39 @@ Dedicated Ghidra headless (timeout 3600s, payload 1024MB, JVM 6G) recovered both
 | `0065dee0` | `ui_activate_widget_pair` | Paired with ui_register_or_show_widget for UI type IDs at ctx+0x98c | medium |
 | `0065dd40` | `ui_clear_flag_bits_on_list` | ESC path: clears byte +0x51 on each game_get_flag_object_01a70 entry | medium |
 | `0069eec0` | `input_remap_vk_lookup` | WM_KEYDOWN/UP: remaps wParam via FUN_006a0400 table when FUN_0040d2d0 says remapped | medium |
+
+## NPK/IMG resource pass (AREA 1)
+
+证据：`npk_scan_imagepacks2` / `npk_img_decode_frames_from_entry` / `npk_scan_soundpacks` 伪代码与反汇编；索引拷贝 `npk_img_entry_copy`（+0x18/+0x1c/+0x20/+0x24/+0x3c/+0x40）；声音 `npk_sound_entry_copy`（+0x30/+0x34/+0x38）；GBK 错误串；`puchikon@…` XOR 循环。辅助函数已迁入 `decompiled/npk_img_resource.c`（unclassified 仅留指针注释）。可读重建见 `reconstructed/npk_img.*`。
+
+| Address | New name | Evidence | Confidence |
+|---------|----------|----------|------------|
+| `005855f0` | `npk_img_lookup_and_decode` | 路径规范化后 map 查找；`*(node+0x58)==0`（即 entry+0x40 frames 空）则调用 `npk_img_decode_frames_from_entry` | high |
+| `005856e0` | `npk_img_free_decoded_frames` | 遍历 `frame_count`，释放每帧 +0x24 像素，再释放帧表 | high |
+| `005859e0` | `img_copy_pixels_fmt_10` | decode/open 在 color==0x10 raw 路径调用；按 4 字节拷贝 | high |
+| `00585a50` | `npk_img_manager_release_all` | 遍历 map，对已解码条目调用 free_decoded_frames，再清空树 | high |
+| `00585b10` | `npk_img_map_init` | `npk_img_subsystem_init` 唯一调用；构造 map | high |
+| `00585b30` | `npk_img_map_clear_nodes` | 清空红黑树节点并重置 size | medium |
+| `00585ba0` | `npk_img_map_destroy_tree` | `npk_img_map_clear` 调用 | medium |
+| `00585bd0` | `npk_img_map_construct` | map 构造辅助 | medium |
+| `00585c10` | `npk_img_map_allocate_sentinel` | 分配哨兵节点 | medium |
+| `00585c60` | `npk_img_map_insert` | `npk_scan_imagepacks2` 每项插入 | high |
+| `00585c90` | `npk_img_map_insert_commit` | insert 后提交迭代器 | medium |
+| `00585e40` | `npk_img_entry_assign_for_insert` | insert 路径赋值 | medium |
+| `00585eb0` | `npk_img_entry_copy` | 拷贝 +0x18 index、+0x1c offset、+0x20 size、+0x24 字符串、+0x3c/+0x40 | high |
+| `00584a50` | `npk_img_entry_ctor` | 扫描循环内两项 string 构造 | high |
+| `00584a80` | `npk_img_entry_dtor` | 对应析构两 string | high |
+| `00584470` | `npk_img_map_clear` | release_all 末尾清空 | medium |
+| `00584450` | `npk_img_subsystem_init` | 原 `npk_or_resource_subsystem_init`；WinMain 在 scan 前调用 → `npk_img_map_init` | high |
+| `004be010` | `npk_sound_entry_ctor` | `npk_scan_soundpacks` 每项构造 | high |
+| `004c4190` | `npk_sound_path_join_soundpacks` | 拼接 `"SoundPacks\\"` + 相对路径；`sound_npk_load_wav_to_dsound` 调用 | high |
+| `004c4220` | `npk_sound_map_insert` | sound scan 插入 | high |
+| `004c4250` | `npk_sound_map_insert_commit` | insert 提交 | medium |
+| `004c4cd0` | `npk_sound_entry_assign_for_insert` | 声音 insert 赋值 | medium |
+| `004c4d40` | `npk_sound_entry_copy` | 两 string + +0x30 index +0x34 offset +0x38 size | high |
+| `004bcf10` | `npk_img_frame_ptr_at` | `index*0x28 + *ecx`；open_path 取帧 | high |
+| `00426e60` | `npk_img_texture_slot_store` | open_path 每帧上传后存槽 | medium |
+| `004bd6c0` | `sound_npk_load_wav_to_dsound` | 原 `npk_buffer8_error`（误用错误串命名）；读 NPK 内 WAV，CreateSoundBuffer，QI Buffer8 | high |
+| `00709d5f` | `util_memcmp_n` | 原 `util_memmem_or_bytes_find`；实为 memcmp（等返回 0）；用于 `NeoplePack_Bill` 头校验 | high |
+| `00446b00` | `gameplay_tinkerbell_absorb_setup` | 原误标 compress_5_6；实为 TINGKERBELL_*_ABSORB 字符串分支 | high |
+| `00446d70` | `gameplay_effect_setup_46d70` | 原误标 compress_5_6_b；非 IMG 压缩分发 | medium |

@@ -2280,7 +2280,7 @@ bool FUN_004033a0(undefined4 param_1)
   undefined4 local_c [2];
   
   local_c[0] = 0;
-  iVar1 = util_memmem_or_bytes_find(param_1,local_c,4);
+  iVar1 = util_memcmp_n(param_1,local_c,4);
   return iVar1 == 0;
 }
 
@@ -7421,7 +7421,7 @@ void FUN_0040c970(undefined4 param_1)
             iStack_148 = local_b0;
             uStack_14c = 0x3f3;
             uStack_150 = 0x40ccc1;
-            FUN_006a4af0();
+            net_packet_send_helper_64af0();
             local_ec = 0x35c;
             puStack_13c = (undefined4 *)local_b0;
             local_11c = (undefined1 *)&puStack_154;
@@ -10304,7 +10304,7 @@ undefined4 compare(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 {
   undefined4 uVar1;
   
-  uVar1 = util_memmem_or_bytes_find(param_1,param_2,param_3);
+  uVar1 = util_memcmp_n(param_1,param_2,param_3);
   return uVar1;
 }
 
@@ -11888,7 +11888,7 @@ void FUN_00414340(undefined4 param_1,float param_2)
           *(int *)(local_b0 + 0x28) = *(int *)(local_b0 + 0x28) + 1;
           game_get_player_or_session_blob();
           FUN_006c9280();
-          FUN_006a4af0();
+          net_packet_send_helper_64af0();
           local_fc = 0x366;
           FUN_004054a0(&DAT_00740194);
           local_8._0_1_ = 3;
@@ -13735,15 +13735,7 @@ int FUN_00426de0(int *param_1)
 }
 
 
-/* ==== 00426e60  FUN_00426e60  size=26 ==== */
-
-void FUN_00426e60(undefined4 param_1)
-
-{
-  FUN_00428040(param_1);
-  return;
-}
-
+/* 00426e60 npk_img_texture_slot_store size=26 → moved to npk_img_resource.c (NPK/IMG pass; single copy) */
 
 /* ==== 00426e80  FUN_00426e80  size=44 ==== */
 
@@ -29722,7 +29714,7 @@ undefined4 FUN_00445aa0(undefined4 param_1)
                              (iVar5 = FUN_0063cf70(), *(int *)(iVar5 + 0x204) == 0)) {
                             uVar8 = FUN_0063cf70();
                             piVar3 = (int *)game_get_state_ptr_d1520(*local_14,uVar8);
-                            FUN_006a39f0(41000,1,*(undefined4 *)(*piVar3 + 0x16c));
+                            net_packet_send_fixed_0x24(41000,1,*(undefined4 *)(*piVar3 + 0x16c));
                           }
                         }
                         else {
@@ -29736,7 +29728,7 @@ undefined4 FUN_00445aa0(undefined4 param_1)
                                 (iVar5 = FUN_0063cf70(), *(int *)(iVar5 + 0x204) == 0)))) {
                               uVar8 = FUN_0063cf70();
                               piVar3 = (int *)game_get_state_ptr_d1520(*local_14,uVar8);
-                              FUN_006a39f0(41000,1,*(undefined4 *)(*piVar3 + 0x16c));
+                              net_packet_send_fixed_0x24(41000,1,*(undefined4 *)(*piVar3 + 0x16c));
                             }
                           }
                         }
@@ -37881,7 +37873,7 @@ void FUN_00454c90(void)
   if ((in_ECX == iVar1) && (*(char *)(in_ECX + 0xdb8) != '\0')) {
     iVar1 = game_get_player_or_session_blob(1);
     piVar2 = (int *)FUN_004d1b20(*(undefined4 *)(iVar1 + 0x1e8));
-    FUN_006a3d30(0x9286,*(undefined4 *)(*piVar2 + 0xc));
+    net_packet_send_375xx(0x9286,*(undefined4 *)(*piVar2 + 0xc));
   }
   FUN_004545f0();
   *(undefined1 *)(in_ECX + 0x96) = 1;
@@ -37904,7 +37896,7 @@ void FUN_00454d00(void)
   if ((in_ECX == iVar1) && (*(char *)(in_ECX + 0xdb8) != '\0')) {
     iVar1 = game_get_player_or_session_blob(0xffffffff);
     piVar2 = (int *)FUN_004d1b20(*(undefined4 *)(iVar1 + 0x1e8));
-    FUN_006a3d30(0x9286,*(undefined4 *)(*piVar2 + 0xc));
+    net_packet_send_375xx(0x9286,*(undefined4 *)(*piVar2 + 0xc));
   }
   *(undefined1 *)(in_ECX + 0x97) = 1;
   FUN_00486660(0);

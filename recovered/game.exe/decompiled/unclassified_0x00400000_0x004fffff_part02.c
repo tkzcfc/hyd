@@ -151,7 +151,7 @@ void FUN_00456d10(int *param_1)
             puStack_22c = (undefined4 *)0x3f4;
             uStack_230 = 0;
             uStack_234 = 0x456f29;
-            FUN_006a47c0();
+            net_packet_send_helper_647c0();
             local_8 = (uint)local_8._1_3_ << 8;
             pWStack_224 = (WorkQueue *)0x456f3b;
             FUN_00456cf0();
@@ -843,7 +843,7 @@ void FUN_004581a0(int param_1)
       local_c4 = *(float *)(*piVar1 + 4);
       uStack_c8 = 0x184d4;
       uStack_cc = 0x458275;
-      FUN_006a39f0();
+      net_packet_send_fixed_0x24();
       piStack_b8 = (int *)&DAT_0074341c;
       local_bc = 6.383471e-39;
       local_98 = FUN_004054a0();
@@ -953,7 +953,7 @@ void FUN_004581a0(int param_1)
       piStack_b8 = local_78;
       local_bc = 7.14662e-41;
       local_c0 = (function<void___cdecl(void)> *)0x4584db;
-      FUN_006a51c0();
+      net_packet_send_helper_651c0();
     }
     piStack_b8 = (int *)0x4584eb;
     (**(code **)(*local_78 + 0xc))();
@@ -5237,7 +5237,7 @@ void FUN_00479180(int param_1)
             iStack_268 = FUN_00405270();
             uStack_26c = 0x3f3;
             uStack_270 = 0x4794d9;
-            FUN_006a4af0();
+            net_packet_send_helper_64af0();
           }
         }
       }
@@ -5309,7 +5309,7 @@ void FUN_00479180(int param_1)
             iStack_268 = local_1d4;
             uStack_26c = 0x3f3;
             uStack_270 = 0x479702;
-            FUN_006a4af0();
+            net_packet_send_helper_64af0();
           }
         }
         local_1dc = local_1dc + 1;
@@ -5466,7 +5466,7 @@ void FUN_00479180(int param_1)
             iStack_268 = FUN_00405270();
             uStack_26c = 0x3f3;
             uStack_270 = 0x479b5b;
-            FUN_006a4af0();
+            net_packet_send_helper_64af0();
           }
         }
       }
@@ -5538,7 +5538,7 @@ void FUN_00479180(int param_1)
             iStack_268 = local_1d0;
             uStack_26c = 0x3f3;
             uStack_270 = 0x479d7b;
-            FUN_006a4af0();
+            net_packet_send_helper_64af0();
           }
         }
         local_1e0 = local_1e0 + 1;
@@ -6009,7 +6009,7 @@ void FUN_0047ac70(float param_1)
   if (((in_ECX == piVar4) && (local_14 != 0)) || (local_18 != 0)) {
     FUN_00479db0();
   }
-  piVar4 = (int *)game_get_global_ptr_f2480();
+  piVar4 = (int *)net_disconnect_flag_ptr();
   if (0 < *piVar4) {
     return;
   }
@@ -6106,7 +6106,7 @@ LAB_0047b38c:
       FUN_004d58e0();
       FUN_004274d0();
       FUN_004ecb30();
-      game_sync_session_blob_f0610();
+      net_packet_send_session_sync_12000();
     }
   }
 LAB_0047b6a1:
@@ -32849,7 +32849,7 @@ void FUN_004ac030(int param_1)
       game_get_flag_object_01a70();
       FUN_006cdee0();
       FUN_00405270();
-      FUN_006a4af0();
+      net_packet_send_helper_64af0();
     }
   }
   ExceptionList = local_10;
@@ -34743,7 +34743,7 @@ void FUN_004adc80(int param_1,int param_2,int param_3)
                   uStack_370 = 0x15;
                   uStack_374 = 0x2904;
                   uStack_378 = 0x4af4b3;
-                  FUN_006a3370();
+                  net_packet_send_opcode_u32_bytes();
                 }
                 else {
                   puStack_364 = (undefined4 *)0x0;
@@ -34779,7 +34779,7 @@ void FUN_004adc80(int param_1,int param_2,int param_3)
                     uStack_370 = 0x15;
                     uStack_374 = 0x2904;
                     uStack_378 = 0x4af3ab;
-                    FUN_006a3370();
+                    net_packet_send_opcode_u32_bytes();
                   }
                 }
                 local_270 = 0x3c;
@@ -35592,9 +35592,9 @@ void FUN_004b6330(void)
   _memset(_Dst,0,0xe10);
   FUN_004054a0(&DAT_0073f897);
   d3d9_create_texture_004b8870();
-  iVar1 = FUN_004bcf10();
+  iVar1 = npk_img_frame_ptr_at();
   *(undefined4 *)(iVar1 + 0xc) = 0;
-  iVar1 = FUN_004bcf10();
+  iVar1 = npk_img_frame_ptr_at();
   *(undefined4 *)(iVar1 + 0x14) = 0;
   FUN_006f1902();
   iVar1 = FUN_006f191d();
@@ -35800,7 +35800,7 @@ undefined4 FUN_004b8ca0(void)
   else {
     uStack_34 = in_stack_0000001c;
     uStack_38 = 0x4b8d1e;
-    local_28 = FUN_004bcf10();
+    local_28 = npk_img_frame_ptr_at();
     local_8 = 0xffffffff;
     uStack_34 = 0x4b8d36;
     local_24 = local_28;
@@ -37329,16 +37329,7 @@ undefined4 FUN_004bcf00(void)
 }
 
 
-/* ==== 004bcf10  FUN_004bcf10  size=30 ==== */
-
-int FUN_004bcf10(int param_1)
-
-{
-  int *in_ECX;
-  
-  return param_1 * 0x28 + *in_ECX;
-}
-
+/* 004bcf10 npk_img_frame_ptr_at size=30 → moved to npk_img_resource.c (NPK/IMG pass; single copy) */
 
 /* ==== 004bcf30  FUN_004bcf30  size=36 ==== */
 
@@ -37598,18 +37589,7 @@ CManualAccessor * __thiscall ATL::CManualAccessor::CManualAccessor(CManualAccess
 }
 
 
-/* ==== 004be010  FUN_004be010  size=34 ==== */
-
-undefined4 FUN_004be010(void)
-
-{
-  undefined4 in_ECX;
-  
-  FUN_0040d8b0();
-  FUN_0040d8b0();
-  return in_ECX;
-}
-
+/* 004be010 npk_sound_entry_ctor size=34 → moved to npk_img_resource.c (NPK/IMG pass; single copy) */
 
 /* ==== 004be040  ~WorkQueue  size=31 ==== */
 
@@ -37915,7 +37895,7 @@ void FUN_004c1450(void)
     uVar3 = FUN_0040d380(local_278);
     cVar1 = FUN_0040d2d0(uVar3);
     if (cVar1 == '\0') {
-      local_23c = (int *)npk_buffer8_error(local_248);
+      local_23c = (int *)sound_npk_load_wav_to_dsound(local_248);
       puVar2 = (undefined4 *)FUN_004c3660(local_248 + 0x18);
       *puVar2 = local_23c;
       uVar5 = (**(code **)(*local_23c + 0x34))(local_23c,0);
@@ -38374,7 +38354,7 @@ undefined4 FUN_004c20b0(undefined4 param_1)
                     ((function<void___cdecl(void)> *)&stack0x00000008);
         }
         else {
-          npk_buffer8_error();
+          sound_npk_load_wav_to_dsound();
           uStack_280 = 0x4c22eb;
           (**(code **)(**(int **)(local_164 + 0x60) + 0x14))();
           FUN_004c3850();
@@ -38450,7 +38430,7 @@ undefined4 FUN_004c20b0(undefined4 param_1)
               local_1b0 = 0;
             }
             else {
-              npk_buffer8_error();
+              sound_npk_load_wav_to_dsound();
               uStack_280 = 0x4c262d;
               (**(code **)(**(int **)(local_164 + 0x60) + 0x14))();
             }
@@ -38485,7 +38465,7 @@ undefined4 FUN_004c20b0(undefined4 param_1)
         FUN_00405520();
         pfStack_28c = (function<void___cdecl(void)> *)0x4c288f;
         local_1b8 = FUN_004c17a0();
-        local_1c4 = npk_buffer8_error();
+        local_1c4 = sound_npk_load_wav_to_dsound();
         FUN_004c3850();
         local_248 = 1;
         local_240 = (int)(*(float *)(local_180 + 0x40) * 1000.0);
@@ -38505,7 +38485,7 @@ undefined4 FUN_004c20b0(undefined4 param_1)
         local_184 = 0;
         while (uVar5 = FUN_004c38a0(), local_184 < uVar5) {
           local_214 = (undefined1 *)&pfStack_28c;
-          uVar6 = FUN_004bcf10(local_184);
+          uVar6 = npk_img_frame_ptr_at(local_184);
           FUN_00405520(uVar6);
           local_218 = FUN_004c20b0(local_15c);
           std::function<void___cdecl(void)>::~function<void___cdecl(void)>(local_15c);

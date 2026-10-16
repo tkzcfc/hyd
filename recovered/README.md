@@ -76,31 +76,27 @@ DLL **未**做全量反编译。
 - `d3d9_texture_from_memory` @ `0x005106c0`：`D3DXCreateTextureFromFileInMemory`
 - 其余矩阵/字体 API 经 IAT（`dep2` / `d3dx9_43.dll`）
 
-### NPK / IMG 格式（伪代码可见部分）
+### NPK / IMG 格式（AREA 1 已加深）
+
+可读重建：**`game.exe/reconstructed/npk_img.h` / `npk_img.cpp`**（及 `texture_cache.*`）；格式表与函数映射见 **`game.exe/reconstructed/README.md`**（NPK/IMG 节）。
 
 **NPK 包扫描**（`npk_scan_imagepacks2` @ `0x00584490`，`npk_scan_soundpacks` @ `0x004bdca0`）：
 
 - 枚举 `ImagePacks2\*.npk` / `SoundPacks\*.npk`
-- `CreateFileA` 后 `SetFilePointer(..., 0x10, ...)` — 跳过约 **16 字节包头**
-- 在缓冲中搜索魔数 **`NeoplePack_Bill`**（15 字节，`util_memmem_or_bytes_find`）
-- 调试串提到密钥相关：`puchikon@neople dungeon and fighter` + `DNF` 填充（名哈希/解密语境；完整算法需对照索引字段继续挖）
+- 头 **16 字节**魔数 `NeoplePack_Bill`（`util_memcmp_n` 比较 15 字节；原误标 memmem）+ **`uint32 count`** + **`count×0x108`** 索引
+- 索引项：`offset@+0`、`size@+4`、名 `@+8`（256）；XOR 密钥 `puchikon@neople dungeon and fighter`+`DNF` 填充（Image 扫描有门控；本映像门控字符串相同导致 XOR 常跳过；Sound **无** XOR）
+- 运行时 `NpkImgEntry`：`string` 包名、`index@+0x18`、`offset@+0x1c`、`size@+0x20`、`string` 路径、`frame_count@+0x3c`、`frames*@+0x40`
 
-**IMG/帧解码**（`npk_img_decode_frames_from_entry` @ `0x00584ac0`）：
+**IMG/帧解码**（`npk_img_decode_frames_from_entry` @ `0x00584ac0`；查找入口 `npk_img_lookup_and_decode` @ `0x005855f0`）：
 
-1. 按 NPK 目录项 `offset=@+0x1C`、`size=@+0x20` `ReadFile` 出数据块
-2. 块内 **`+0x1C`：帧数量**；帧表自 **`+0x20`** 起
-3. **每帧记录 0x28（40）字节**，拷贝字段 `+0..+0x20`
-4. **`+0`：颜色/像素格式**，已见表值：
-   - `0x0E` → `img_convert_pixels_fmt_0e`
-   - `0x0F` → `img_convert_pixels_fmt_0f`
-   - `0x10` → 直接拷贝
-   - `0x11` → 引用其它帧数据
-5. **`+4`：压缩标志**（与调试串一致）：
-   - **`5`**：未压缩（raw）
-   - **`6`**：zlib — 调用 `zlib_uncompress_buffer` @ `0x006ce760` → `zlib_inflate` @ `0x006ce7b0`
-6. 内嵌 **zlib 1.2.13**（Mark Adler 版权串）
+1. 按条目 offset/size 读出数据块；**`blob+0x1C`：帧数**；帧自 **`+0x20`**
+2. 磁盘数据帧头 **0x24** + payload；链接帧 **8** 字节；运行时帧 **0x28**（`+0x24` 像素指针）
+3. 颜色：`0x0E` ARGB1555→8888、`0x0F` ARGB4444→8888、`0x10` ARGB8888 拷贝、`0x11` 链接
+4. 压缩：`5` raw / `6` zlib（`zlib_uncompress_buffer` @ `0x006ce760`）
+5. 本二进制**无** `"Neople Img File"` / 色板 v4–v6 加载分支（经典多版本头未在此路径出现）
 
-`npk_img_open_path_under_imagepacks2` @ `0x004b68a0` 在 `ImagePacks2\` 下打开路径并同样分支 5/6。
+`npk_img_open_path_under_imagepacks2` @ `0x004b68a0`：同上解码逻辑并 `D3DXCreateTexture` 上传。  
+`sound_npk_load_wav_to_dsound` @ `0x004bd6c0`（原误名 `npk_buffer8_error`）：NPK 内 WAV → DirectSound Buffer8。
 
 ### 输入 / 声音 / 网络
 
@@ -123,6 +119,8 @@ DLL **未**做全量反编译。
 | `0x004b6120` | `d3d9_create_device_bootstrap` |
 | `0x00584490` | `npk_scan_imagepacks2` |
 | `0x00584ac0` | `npk_img_decode_frames_from_entry` |
+| `0x005855f0` | `npk_img_lookup_and_decode` |
+| `0x004bd6c0` | `sound_npk_load_wav_to_dsound` |
 | `0x006ce760` / `0x006ce7b0` | `zlib_uncompress_buffer` / `zlib_inflate` |
 | `0x0068de00` | `read_dnf_login_txt` |
 | `0x005e7940` | `parse_server_config_section` |
@@ -137,6 +135,7 @@ DLL **未**做全量反编译。
 ```
 recovered/game.exe/
   hard_functions/          ← 专用超时加大后的两函数产物 + message_map.md
+  reconstructed/           ← 可读 C++ 重建（NPK/IMG：npk_img.* / texture_cache.*）
   decompiled/
     window_message.c         ← 含完整 window_wndproc_main
     ui_command_dispatch.c    ← 完整 UI 命令分发器（自 unclassified 迁出）

@@ -11357,7 +11357,7 @@ LAB_0060df73:
           }
           cVar1 = game_frame_should_continue();
           if (cVar1 == '\0') {
-            FUN_006a47c0(0,0x3f4,local_1b8,param_1);
+            net_packet_send_helper_647c0(0,0x3f4,local_1b8,param_1);
           }
           local_8._0_1_ = 2;
           FUN_00456cf0();
@@ -12830,7 +12830,7 @@ LAB_006119bf:
     uStack_164 = 0;
     uStack_168 = 0x3f8;
     uStack_16c = 0x6119f4;
-    FUN_006a3b20();
+    net_packet_send_fixed_0x20();
   }
   else if (param_2 + 0xc30 == param_3) {
     puStack_15c = (undefined1 *)param_2;
@@ -12838,7 +12838,7 @@ LAB_006119bf:
     uStack_164 = 1;
     uStack_168 = 0x3f8;
     uStack_16c = 0x611a1a;
-    FUN_006a3b20();
+    net_packet_send_fixed_0x20();
   }
   ExceptionList = local_10;
   return;
@@ -12867,7 +12867,7 @@ void FUN_00611a70(char param_1,int param_2,int param_3,int param_4)
 LAB_00611ade:
       FUN_006111b0(param_2);
       if ((param_1 != '\0') && (param_2 + 0xc40 == param_3)) {
-        FUN_006a3b20(0x3f9,0,param_4,param_2);
+        net_packet_send_fixed_0x20(0x3f9,0,param_4,param_2);
       }
       return;
     }
@@ -15045,7 +15045,7 @@ uint FUN_0062bfe0(undefined1 *param_1,int param_2,char param_3,char param_4)
           puStack_368 = (undefined4 *)0x3f4;
           puStack_36c = (undefined1 *)0x0;
           uStack_370 = 0x62d1a3;
-          FUN_006a47c0();
+          net_packet_send_helper_647c0();
         }
         local_8._0_1_ = 3;
         piStack_360 = (int *)0x62d1b5;
@@ -15119,7 +15119,7 @@ uint FUN_0062bfe0(undefined1 *param_1,int param_2,char param_3,char param_4)
                 puStack_36c = local_a8;
                 uStack_370 = 0x3f3;
                 uStack_374 = 0x62d37d;
-                FUN_006a4af0();
+                net_packet_send_helper_64af0();
               }
             }
             goto LAB_0062d4a0;
@@ -15164,7 +15164,7 @@ uint FUN_0062bfe0(undefined1 *param_1,int param_2,char param_3,char param_4)
                 puStack_36c = local_a8;
                 uStack_370 = 0x3f3;
                 uStack_374 = 0x62d49d;
-                FUN_006a4af0();
+                net_packet_send_helper_64af0();
               }
             }
           }
@@ -15247,7 +15247,7 @@ LAB_0062d4a0:
               puStack_36c = local_a8;
               uStack_370 = 0x3f3;
               uStack_374 = 0x62c519;
-              FUN_006a4af0();
+              net_packet_send_helper_64af0();
             }
           }
         }
@@ -15345,7 +15345,7 @@ LAB_0062d4a0:
           puStack_36c = local_a8;
           uStack_370 = 0x3f3;
           uStack_374 = 0x62c333;
-          FUN_006a4af0();
+          net_packet_send_helper_64af0();
         }
       }
     }
@@ -15549,7 +15549,7 @@ LAB_0062c523:
         puStack_368 = (undefined4 *)0x3f4;
         puStack_36c = (undefined1 *)0x0;
         uStack_370 = 0x62c98f;
-        FUN_006a47c0();
+        net_packet_send_helper_647c0();
       }
       local_8._0_1_ = 1;
       piStack_360 = (int *)0x62c9a1;
@@ -15621,7 +15621,7 @@ LAB_0062c523:
               puStack_36c = local_a8;
               uStack_370 = 0x3f3;
               uStack_374 = 0x62cb4d;
-              FUN_006a4af0();
+              net_packet_send_helper_64af0();
             }
           }
           goto LAB_0062cc7f;
@@ -15668,7 +15668,7 @@ LAB_0062c523:
               puStack_36c = local_a8;
               uStack_370 = 0x3f3;
               uStack_374 = 0x62cc7c;
-              FUN_006a4af0();
+              net_packet_send_helper_64af0();
             }
           }
         }
@@ -32898,7 +32898,7 @@ void FUN_006593e0(int *param_1)
             piStack_41c = (int *)0x3f4;
             piStack_420 = (int *)0x0;
             uStack_424 = 0x65973b;
-            FUN_006a47c0();
+            net_packet_send_helper_647c0();
             local_8._0_1_ = 2;
             piStack_414 = (int *)0x65974d;
             FUN_00456cf0();
@@ -34776,7 +34776,7 @@ LAB_0065cb28:
           pfStack_334 = (function<void___cdecl(void)> *)local_2f8;
           puStack_338 = (undefined4 *)0x3f5;
           uStack_33c = 0x65ce8e;
-          FUN_006a4d90();
+          net_packet_send_helper_64d90();
           goto LAB_0065ceaf;
         }
       }
@@ -34787,7 +34787,7 @@ LAB_0065cb28:
     puStack_338 = (undefined4 *)0x3f4;
     uStack_33c = 1;
     uStack_340 = 0x65ceac;
-    FUN_006a47c0();
+    net_packet_send_helper_647c0();
   }
   else {
     piStack_330 = (int *)0x65ce34;
@@ -34795,7 +34795,7 @@ LAB_0065cb28:
     pfStack_334 = (function<void___cdecl(void)> *)local_2f8;
     puStack_338 = (undefined4 *)0x3f5;
     uStack_33c = 0x65ce46;
-    FUN_006a4d90();
+    net_packet_send_helper_64d90();
   }
 LAB_0065ceaf:
   local_2dd = 1;
@@ -34882,16 +34882,16 @@ undefined1 FUN_0065cf10(int param_1,int param_2)
             (iVar1 = game_get_player_or_session_blob(), *(int *)(iVar1 + 0xdc4) < 2)) ||
            (iVar1 = game_get_player_or_session_blob(), *(int *)(iVar1 + 0xdd8) != 4)) {
           uVar2 = game_get_player_or_session_blob();
-          FUN_006a47c0(1,0x3f4,local_164,uVar2);
+          net_packet_send_helper_647c0(1,0x3f4,local_164,uVar2);
         }
         else {
           uVar2 = game_get_player_or_session_blob();
-          FUN_006a4d90(0x3f5,local_164,uVar2);
+          net_packet_send_helper_64d90(0x3f5,local_164,uVar2);
         }
       }
       else {
         uVar2 = game_get_player_or_session_blob();
-        FUN_006a4d90(0x3f5,local_164,uVar2);
+        net_packet_send_helper_64d90(0x3f5,local_164,uVar2);
       }
       local_145 = 1;
       local_8 = local_8 & 0xffffff00;

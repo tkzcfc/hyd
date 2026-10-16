@@ -843,7 +843,7 @@ LAB_00684404:
   006844eb  MOV EDX,dword ptr [EBP + 0xfffff010]
   006844f1  ADD EDX,dword ptr [EBP + 0xfffff034]
   006844f7  PUSH EDX
-  006844f8  CALL 0x006a3490    ; call FUN_006a3490
+  006844f8  CALL 0x006a3490    ; call net_packet_write_u8
   006844fd  ADD ESP,0x8
   00684500  MOVSX EAX,AL
   00684503  ADD EAX,dword ptr [EBP + 0xfffff034]
@@ -852,7 +852,7 @@ LAB_00684404:
   00684515  PUSH ECX
   00684516  MOV EDX,dword ptr [EBP + 0xfffff010]
   0068451c  PUSH EDX
-  0068451d  CALL 0x006a31b0    ; call FUN_006a31b0
+  0068451d  CALL 0x006a31b0    ; call net_socket_send_all
   00684522  ADD ESP,0x8
   00684525  MOV EAX,dword ptr [EBP + 0xfffff010]
   0068452b  PUSH EAX
@@ -924,7 +924,7 @@ LAB_0068458d:
   00684642  MOV EDX,dword ptr [EBP + 0xfffff00c]
   00684648  ADD EDX,dword ptr [EBP + 0xfffff030]
   0068464e  PUSH EDX
-  0068464f  CALL 0x006a3490    ; call FUN_006a3490
+  0068464f  CALL 0x006a3490    ; call net_packet_write_u8
   00684654  ADD ESP,0x8
   00684657  MOVSX EAX,AL
   0068465a  ADD EAX,dword ptr [EBP + 0xfffff030]
@@ -939,7 +939,7 @@ LAB_0068458d:
   0068467a  MOV ECX,dword ptr [EBP + 0xfffff00c]
   00684680  ADD ECX,dword ptr [EBP + 0xfffff030]
   00684686  PUSH ECX
-  00684687  CALL 0x006a3490    ; call FUN_006a3490
+  00684687  CALL 0x006a3490    ; call net_packet_write_u8
   0068468c  ADD ESP,0x8
   0068468f  MOVSX EDX,AL
   00684692  ADD EDX,dword ptr [EBP + 0xfffff030]
@@ -948,7 +948,7 @@ LAB_0068458d:
   006846a4  PUSH EAX
   006846a5  MOV ECX,dword ptr [EBP + 0xfffff00c]
   006846ab  PUSH ECX
-  006846ac  CALL 0x006a31b0    ; call FUN_006a31b0
+  006846ac  CALL 0x006a31b0    ; call net_socket_send_all
   006846b1  ADD ESP,0x8
   006846b4  MOV EDX,dword ptr [EBP + 0xfffff00c]
   006846ba  PUSH EDX

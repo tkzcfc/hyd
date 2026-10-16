@@ -2529,7 +2529,7 @@ void FUN_0067b1a0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undef
   FUN_00426c50(param_7);
   FUN_00489b80(&local_b0);
   uVar1 = game_get_player_or_session_blob();
-  FUN_006a47c0(param_1,0x3f4,local_bc,uVar1);
+  net_packet_send_helper_647c0(param_1,0x3f4,local_bc,uVar1);
   local_8 = (uint)local_8._1_3_ << 8;
   FUN_00456cf0();
   local_8 = 0xffffffff;
@@ -2792,8 +2792,8 @@ void FUN_0067b5a0(void)
   FUN_0065dbd0();
   local_220 = 0;
   local_224 = 0;
-  FUN_006a52a0();
-  game_missing_asset_fallback_2();
+  net_packet_send_helper_652a0();
+  net_wait_until_opcode();
   local_234 = FUN_004a1d50();
   local_230 = game_get_player_or_session_blob();
   local_230 = local_230 + 0xd9c;
@@ -3213,7 +3213,7 @@ void FUN_0067bd70(undefined1 *param_1)
                   puStack_1464 = (undefined4 *)0xb;
                   uStack_1468 = 0x2904;
                   iStack_146c = 0x67ccea;
-                  FUN_006a3b20();
+                  net_packet_send_fixed_0x20();
                   local_1384 = 0xf3c;
                   FUN_004054a0();
                   local_8 = 0xb;
@@ -3269,10 +3269,10 @@ void FUN_0067bd70(undefined1 *param_1)
                   local_18 = local_12b0;
                   piStack_145c = (int *)0xc350;
                   pfStack_1460 = (function<void___cdecl(void)> *)0x67ceac;
-                  FUN_006a52a0();
+                  net_packet_send_helper_652a0();
                   piStack_145c = (int *)0xc350;
                   pfStack_1460 = (function<void___cdecl(void)> *)0x67ceb9;
-                  game_missing_asset_fallback_2();
+                  net_wait_until_opcode();
                   piStack_145c = (int *)0x67cec1;
                   piStack_145c = (int *)FUN_004a1d50();
                   pfStack_1460 = (function<void___cdecl(void)> *)0x67ceca;
@@ -3295,7 +3295,7 @@ void FUN_0067bd70(undefined1 *param_1)
                   uStack_1468 = local_12b0;
                   iStack_146c = local_127c;
                   uStack_1470 = 0x14;
-                  FUN_006a3220();
+                  net_packet_send_fields_blob();
                   piStack_145c = (int *)0x67cf2d;
                   FUN_0067b5a0();
                   piStack_145c = (int *)0x1;
@@ -3583,7 +3583,7 @@ void FUN_0067bd70(undefined1 *param_1)
                 puStack_1464 = (undefined4 *)0x18;
                 uStack_1468 = 0x2904;
                 iStack_146c = 0x67d54d;
-                FUN_006a3b20();
+                net_packet_send_fixed_0x20();
                 piStack_145c = (int *)0x1;
                 pfStack_1460 = (function<void___cdecl(void)> *)local_127c;
                 puStack_1464 = (undefined4 *)0x67d564;
@@ -3653,7 +3653,7 @@ void FUN_0067bd70(undefined1 *param_1)
                 puStack_1464 = (undefined4 *)0x18;
                 uStack_1468 = 0x2904;
                 iStack_146c = 0x67d703;
-                FUN_006a3b20();
+                net_packet_send_fixed_0x20();
                 piStack_145c = (int *)0x1;
                 pfStack_1460 = (function<void___cdecl(void)> *)local_127c;
                 puStack_1464 = (undefined4 *)0x67d71a;
@@ -3723,7 +3723,7 @@ void FUN_0067bd70(undefined1 *param_1)
                 puStack_1464 = (undefined4 *)0x18;
                 uStack_1468 = 0x2904;
                 iStack_146c = 0x67d8b9;
-                FUN_006a3b20();
+                net_packet_send_fixed_0x20();
                 piStack_145c = (int *)0x1;
                 pfStack_1460 = (function<void___cdecl(void)> *)local_127c;
                 puStack_1464 = (undefined4 *)0x67d8d0;
@@ -3793,7 +3793,7 @@ void FUN_0067bd70(undefined1 *param_1)
                 puStack_1464 = (undefined4 *)0x18;
                 uStack_1468 = 0x2904;
                 iStack_146c = 0x67da6e;
-                FUN_006a3b20();
+                net_packet_send_fixed_0x20();
                 piStack_145c = (int *)0x1;
                 pfStack_1460 = (function<void___cdecl(void)> *)local_127c;
                 puStack_1464 = (undefined4 *)0x67da85;
@@ -3863,7 +3863,7 @@ void FUN_0067bd70(undefined1 *param_1)
                 puStack_1464 = (undefined4 *)0x18;
                 uStack_1468 = 0x2904;
                 iStack_146c = 0x67dc24;
-                FUN_006a3b20();
+                net_packet_send_fixed_0x20();
                 piStack_145c = (int *)0x1;
                 pfStack_1460 = (function<void___cdecl(void)> *)local_127c;
                 puStack_1464 = (undefined4 *)0x67dc3b;
@@ -3933,7 +3933,7 @@ void FUN_0067bd70(undefined1 *param_1)
                 puStack_1464 = (undefined4 *)0x18;
                 uStack_1468 = 0x2904;
                 iStack_146c = 0x67ddda;
-                FUN_006a3b20();
+                net_packet_send_fixed_0x20();
                 piStack_145c = (int *)0x1;
                 pfStack_1460 = (function<void___cdecl(void)> *)local_127c;
                 puStack_1464 = (undefined4 *)0x67ddf1;
@@ -4003,7 +4003,7 @@ void FUN_0067bd70(undefined1 *param_1)
                 puStack_1464 = (undefined4 *)0x18;
                 uStack_1468 = 0x2904;
                 iStack_146c = 0x67df8f;
-                FUN_006a3b20();
+                net_packet_send_fixed_0x20();
                 piStack_145c = (int *)0x1;
                 pfStack_1460 = (function<void___cdecl(void)> *)local_127c;
                 puStack_1464 = (undefined4 *)0x67dfa6;
@@ -4073,7 +4073,7 @@ void FUN_0067bd70(undefined1 *param_1)
                 puStack_1464 = (undefined4 *)0x18;
                 uStack_1468 = 0x2904;
                 iStack_146c = 0x67e145;
-                FUN_006a3b20();
+                net_packet_send_fixed_0x20();
                 piStack_145c = (int *)0x1;
                 pfStack_1460 = (function<void___cdecl(void)> *)local_127c;
                 puStack_1464 = (undefined4 *)0x67e15c;
@@ -4619,7 +4619,7 @@ void FUN_0067bd70(undefined1 *param_1)
             pfStack_1460 = (function<void___cdecl(void)> *)local_1404;
             puStack_1464 = (undefined4 *)0x3f5;
             uStack_1468 = 0x67c9b7;
-            FUN_006a4d90();
+            net_packet_send_helper_64d90();
             local_8 = CONCAT31(local_8._1_3_,5);
             piStack_145c = (int *)0x67c9c9;
             FUN_00456cf0();
@@ -4798,7 +4798,7 @@ void FUN_0067bd70(undefined1 *param_1)
               uStack_1468 = FUN_00405270();
               iStack_146c = 0x3f3;
               uStack_1470 = 0x67e3f0;
-              FUN_006a4af0();
+              net_packet_send_helper_64af0();
               local_8 = 0xffffffff;
               piStack_145c = (int *)0x67e405;
               FUN_004039a0();
@@ -4898,7 +4898,7 @@ void FUN_0067bd70(undefined1 *param_1)
                     uStack_1468 = FUN_00405270();
                     iStack_146c = 0x3f3;
                     uStack_1470 = 0x67e604;
-                    FUN_006a4af0();
+                    net_packet_send_helper_64af0();
                   }
                 }
                 else {
@@ -4924,7 +4924,7 @@ void FUN_0067bd70(undefined1 *param_1)
                     pfStack_1460 = (function<void___cdecl(void)> *)local_13f8;
                     puStack_1464 = (undefined4 *)0x3f5;
                     uStack_1468 = 0x67e690;
-                    FUN_006a4d90();
+                    net_packet_send_helper_64d90();
                     local_8 = CONCAT31(local_8._1_3_,0x28);
                     piStack_145c = (int *)0x67e6a2;
                     FUN_00456cf0();
@@ -5798,7 +5798,7 @@ undefined4 FUN_0067f8c0(char param_1,int param_2,int param_3,char param_4)
         iVar2 = game_get_player_or_session_blob();
         pfStack_730 = *(function<void___cdecl(void)> **)(iVar2 + 0x1e8);
         pfStack_734 = (function<void___cdecl(void)> *)0x67fa18;
-        FUN_006a40b0();
+        net_packet_send_helper_640b0();
         local_5e4 = 0;
         local_8 = local_8 & 0xffffff00;
         pcStack_728 = (char *)0x67fa34;
@@ -5864,7 +5864,7 @@ undefined4 FUN_0067f8c0(char param_1,int param_2,int param_3,char param_4)
             pfStack_734 = (function<void___cdecl(void)> *)param_3;
             aiStack_740[2] = 0x3f3;
             aiStack_740[1] = 0x680343;
-            FUN_006a4af0();
+            net_packet_send_helper_64af0();
           }
           ExceptionList = local_10;
           return *(undefined4 *)(local_554 + 0x9d0);
@@ -6021,7 +6021,7 @@ undefined4 FUN_0067f8c0(char param_1,int param_2,int param_3,char param_4)
                   pfStack_734 = (function<void___cdecl(void)> *)FUN_0044ddc0();
                   aiStack_740[2] = 0x3f3;
                   aiStack_740[1] = 0x680248;
-                  FUN_006a4af0();
+                  net_packet_send_helper_64af0();
                 }
                 pcStack_728 = (char *)0x680256;
                 uVar4 = FUN_0044ddc0();
@@ -6178,7 +6178,7 @@ undefined4 FUN_0067f8c0(char param_1,int param_2,int param_3,char param_4)
                 pfStack_734 = (function<void___cdecl(void)> *)FUN_0044ddc0();
                 aiStack_740[2] = 0x3f3;
                 aiStack_740[1] = 0x67fe70;
-                FUN_006a4af0();
+                net_packet_send_helper_64af0();
               }
               pcStack_728 = (char *)0x67fe7e;
               uVar4 = FUN_0044ddc0();
@@ -6250,7 +6250,7 @@ undefined4 FUN_0067f8c0(char param_1,int param_2,int param_3,char param_4)
             pfStack_734 = (function<void___cdecl(void)> *)local_538;
             aiStack_740[2] = 0x3f3;
             aiStack_740[1] = 0x680f7e;
-            FUN_006a4af0();
+            net_packet_send_helper_64af0();
           }
           ExceptionList = local_10;
           return *(undefined4 *)(local_55c + 0x9d0);
@@ -6419,7 +6419,7 @@ undefined4 FUN_0067f8c0(char param_1,int param_2,int param_3,char param_4)
             pfStack_734 = (function<void___cdecl(void)> *)FUN_006c79e0();
             aiStack_740[2] = 0x3f3;
             aiStack_740[1] = 0x6807b8;
-            FUN_006a4af0();
+            net_packet_send_helper_64af0();
           }
           pcStack_728 = *(char **)(param_3 + 4);
           puStack_72c = (undefined *)param_2;
@@ -6510,7 +6510,7 @@ undefined4 FUN_0067f8c0(char param_1,int param_2,int param_3,char param_4)
                   pfStack_734 = (function<void___cdecl(void)> *)FUN_0044ddc0();
                   aiStack_740[2] = 0x3f3;
                   aiStack_740[1] = 0x680e31;
-                  FUN_006a4af0();
+                  net_packet_send_helper_64af0();
                 }
                 pcStack_728 = (char *)0x680e3f;
                 uVar4 = FUN_0044ddc0();
@@ -6697,7 +6697,7 @@ undefined4 FUN_0067f8c0(char param_1,int param_2,int param_3,char param_4)
                 pfStack_734 = (function<void___cdecl(void)> *)FUN_0044ddc0();
                 aiStack_740[2] = 0x3f3;
                 aiStack_740[1] = 0x680c5d;
-                FUN_006a4af0();
+                net_packet_send_helper_64af0();
               }
               pcStack_728 = (char *)0x680c6b;
               uVar4 = FUN_0044ddc0();
@@ -6805,7 +6805,7 @@ void FUN_00680fb0(int param_1,int param_2)
         iVar2 = game_get_player_or_session_blob();
         pfStack_338 = *(function<void___cdecl(void)> **)(iVar2 + 0x1e8);
         pfStack_33c = (function<void___cdecl(void)> *)0x6810db;
-        FUN_006a40b0();
+        net_packet_send_helper_640b0();
         local_8 = local_8 & 0xffffff00;
         puStack_330 = (undefined4 *)0x6810ed;
         FUN_004039a0();
@@ -6842,7 +6842,7 @@ void FUN_00680fb0(int param_1,int param_2)
           pfStack_33c = (function<void___cdecl(void)> *)0xa;
           uStack_340 = 0x2904;
           uStack_344 = 0x6811f3;
-          FUN_006a39f0();
+          net_packet_send_fixed_0x24();
         }
         if (*(int *)(param_2 + 0xde4) < *(int *)(param_2 + 0xac8)) {
           puStack_330 = (undefined4 *)0xffe6c89c;
@@ -6955,7 +6955,7 @@ void FUN_006813f0(undefined4 param_1)
   uStack_28 = 9;
   uStack_2c = 0x2904;
   uStack_30 = 0x681470;
-  FUN_006a3b20();
+  net_packet_send_fixed_0x20();
   *(undefined4 *)(*local_10 + 0xa28) = param_1;
   local_1c = auStack_34;
   FUN_004054a0("SP_GET");
@@ -7852,7 +7852,7 @@ void util_time_get_time(void)
       } while (cVar1 != '\0');
       uVar5 = game_get_player_or_session_blob(local_108);
       puVar6 = (undefined4 *)FUN_006829a0(local_108,0x100,uVar5);
-      FUN_006a3370(40000,*puVar6);
+      net_packet_send_opcode_u32_bytes(40000,*puVar6);
       DAT_007ca870 = DAT_007ca870 + 1;
       uVar5 = 0;
       game_get_player_or_session_blob(0);
@@ -8181,7 +8181,7 @@ bool FUN_0068e130(void)
   int *piVar1;
   
   game_missing_asset_fallback(0x183e4,0x13525f4);
-  game_missing_asset_fallback_2(0x183e4);
+  net_wait_until_opcode(0x183e4);
   piVar1 = (int *)FUN_006426c0();
   return *piVar1 == 1;
 }
@@ -8215,7 +8215,7 @@ undefined4 FUN_0069ed40(uint param_1)
 {
   undefined4 in_ECX;
   
-  FUN_00585a50();
+  npk_img_manager_release_all();
   if ((param_1 & 1) != 0) {
     FUN_006e4b8e(in_ECX,8);
   }
@@ -11589,9 +11589,9 @@ undefined4 FUN_006a30d0(int param_1)
 }
 
 
-/* ==== 006a31b0  FUN_006a31b0  size=100 ==== */
+/* ==== 006a31b0  net_socket_send_all  size=100 ==== */
 
-int FUN_006a31b0(int param_1,int param_2)
+int net_socket_send_all(int param_1,int param_2)
 
 {
   int iVar1;
@@ -11616,10 +11616,10 @@ int FUN_006a31b0(int param_1,int param_2)
 }
 
 
-/* ==== 006a3220  FUN_006a3220  size=326 ==== */
+/* ==== 006a3220  net_packet_send_fields_blob  size=326 ==== */
 
 undefined1
-FUN_006a3220(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
+net_packet_send_fields_blob(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
             undefined4 param_5,int param_6,int param_7)
 
 {
@@ -11649,7 +11649,7 @@ FUN_006a3220(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
     iVar2 = iVar2 + iVar3;
     iVar3 = net_packet_write_field((int)_Dst + iVar2,param_4);
     net_packet_write_bytes((int)_Dst + iVar3 + iVar2,param_5,param_6);
-    uVar1 = FUN_006a31b0(_Dst,_Size);
+    uVar1 = net_socket_send_all(_Dst,_Size);
     FUN_006f1902(_Dst);
   }
   else {
@@ -11659,10 +11659,10 @@ FUN_006a3220(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
 }
 
 
-/* ==== 006a3370  FUN_006a3370  size=276 ==== */
+/* ==== 006a3370  net_packet_send_opcode_u32_bytes  size=276 ==== */
 
 undefined4
-FUN_006a3370(undefined4 param_1,undefined4 param_2,undefined4 param_3,int param_4,int param_5)
+net_packet_send_opcode_u32_bytes(undefined4 param_1,undefined4 param_2,undefined4 param_3,int param_4,int param_5)
 
 {
   int iVar1;
@@ -11687,7 +11687,7 @@ FUN_006a3370(undefined4 param_1,undefined4 param_2,undefined4 param_3,int param_
     iVar1 = iVar1 + iVar4;
     iVar3 = net_packet_write_field((int)_Dst + iVar1,param_2);
     net_packet_write_bytes((int)_Dst + iVar3 + iVar1,param_3,param_4);
-    uVar2 = FUN_006a31b0(_Dst,_Size);
+    uVar2 = net_socket_send_all(_Dst,_Size);
     FUN_006f1902(_Dst);
   }
   else {
@@ -11697,9 +11697,9 @@ FUN_006a3370(undefined4 param_1,undefined4 param_2,undefined4 param_3,int param_
 }
 
 
-/* ==== 006a3490  FUN_006a3490  size=15 ==== */
+/* ==== 006a3490  net_packet_write_u8  size=15 ==== */
 
-undefined4 FUN_006a3490(undefined1 *param_1,undefined1 param_2)
+undefined4 net_packet_write_u8(undefined1 *param_1,undefined1 param_2)
 
 {
   *param_1 = param_2;
@@ -11707,9 +11707,9 @@ undefined4 FUN_006a3490(undefined1 *param_1,undefined1 param_2)
 }
 
 
-/* ==== 006a3520  FUN_006a3520  size=17 ==== */
+/* ==== 006a3520  net_packet_read_u8  size=17 ==== */
 
-undefined4 FUN_006a3520(undefined1 *param_1,undefined1 *param_2)
+undefined4 net_packet_read_u8(undefined1 *param_1,undefined1 *param_2)
 
 {
   *param_1 = *param_2;
@@ -11717,10 +11717,10 @@ undefined4 FUN_006a3520(undefined1 *param_1,undefined1 *param_2)
 }
 
 
-/* ==== 006a3540  FUN_006a3540  size=495 ==== */
+/* ==== 006a3540  net_packet_send_fixed_0x44  size=495 ==== */
 
 undefined4
-FUN_006a3540(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
+net_packet_send_fixed_0x44(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
             undefined4 param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8,
             undefined4 param_9,undefined4 param_10,undefined4 param_11,undefined4 param_12,
             int param_13)
@@ -11764,7 +11764,7 @@ FUN_006a3540(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
     iVar3 = iVar3 + iVar1;
     iVar1 = net_packet_write_field((int)_Dst + iVar3,param_11);
     net_packet_write_field((int)_Dst + iVar1 + iVar3,param_12);
-    uVar2 = FUN_006a31b0(_Dst,0x44);
+    uVar2 = net_socket_send_all(_Dst,0x44);
     FUN_006f1902(_Dst);
   }
   else {
@@ -11774,10 +11774,10 @@ FUN_006a3540(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
 }
 
 
-/* ==== 006a3730  FUN_006a3730  size=370 ==== */
+/* ==== 006a3730  net_packet_send_fixed_0x30  size=370 ==== */
 
 undefined4
-FUN_006a3730(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
+net_packet_send_fixed_0x30(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
             undefined4 param_5,undefined4 param_6,undefined4 param_7,int param_8)
 
 {
@@ -11809,7 +11809,7 @@ FUN_006a3730(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
     iVar1 = iVar1 + iVar3;
     iVar3 = net_packet_write_field((int)_Dst + iVar1,param_6);
     net_packet_write_field((int)_Dst + iVar3 + iVar1,param_7);
-    uVar2 = FUN_006a31b0(_Dst,0x30);
+    uVar2 = net_socket_send_all(_Dst,0x30);
     FUN_006f1902(_Dst);
   }
   else {
@@ -11819,10 +11819,10 @@ FUN_006a3730(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
 }
 
 
-/* ==== 006a38b0  FUN_006a38b0  size=320 ==== */
+/* ==== 006a38b0  net_packet_send_fixed_0x28  size=320 ==== */
 
 undefined4
-FUN_006a38b0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
+net_packet_send_fixed_0x28(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
             undefined4 param_5,int param_6)
 
 {
@@ -11850,7 +11850,7 @@ FUN_006a38b0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
     iVar1 = iVar1 + iVar3;
     iVar3 = net_packet_write_field((int)_Dst + iVar1,param_4);
     net_packet_write_field((int)_Dst + iVar3 + iVar1,param_5);
-    uVar2 = FUN_006a31b0(_Dst,0x28);
+    uVar2 = net_socket_send_all(_Dst,0x28);
     FUN_006f1902(_Dst);
   }
   else {
@@ -11860,10 +11860,10 @@ FUN_006a38b0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
 }
 
 
-/* ==== 006a39f0  FUN_006a39f0  size=295 ==== */
+/* ==== 006a39f0  net_packet_send_fixed_0x24  size=295 ==== */
 
 undefined4
-FUN_006a39f0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,int param_5
+net_packet_send_fixed_0x24(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,int param_5
             )
 
 {
@@ -11889,7 +11889,7 @@ FUN_006a39f0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
     iVar3 = iVar3 + iVar1;
     iVar1 = net_packet_write_field((int)_Dst + iVar3,param_3);
     net_packet_write_field((int)_Dst + iVar1 + iVar3,param_4);
-    uVar2 = FUN_006a31b0(_Dst,0x24);
+    uVar2 = net_socket_send_all(_Dst,0x24);
     FUN_006f1902(_Dst);
   }
   else {
@@ -11899,9 +11899,9 @@ FUN_006a39f0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
 }
 
 
-/* ==== 006a3b20  FUN_006a3b20  size=270 ==== */
+/* ==== 006a3b20  net_packet_send_fixed_0x20  size=270 ==== */
 
-undefined4 FUN_006a3b20(undefined4 param_1,undefined4 param_2,undefined4 param_3,int param_4)
+undefined4 net_packet_send_fixed_0x20(undefined4 param_1,undefined4 param_2,undefined4 param_3,int param_4)
 
 {
   int iVar1;
@@ -11924,7 +11924,7 @@ undefined4 FUN_006a3b20(undefined4 param_1,undefined4 param_2,undefined4 param_3
     iVar1 = iVar1 + iVar4;
     iVar3 = net_packet_write_field((int)_Dst + iVar1,param_2);
     net_packet_write_field((int)_Dst + iVar3 + iVar1,param_3);
-    uVar2 = FUN_006a31b0(_Dst,0x20);
+    uVar2 = net_socket_send_all(_Dst,0x20);
     FUN_006f1902(_Dst);
   }
   else {
@@ -11934,9 +11934,9 @@ undefined4 FUN_006a3b20(undefined4 param_1,undefined4 param_2,undefined4 param_3
 }
 
 
-/* ==== 006a3c30  FUN_006a3c30  size=245 ==== */
+/* ==== 006a3c30  net_packet_send_opcode_onlyish  size=245 ==== */
 
-undefined4 FUN_006a3c30(undefined4 param_1,undefined4 param_2,int param_3)
+undefined4 net_packet_send_opcode_onlyish(undefined4 param_1,undefined4 param_2,int param_3)
 
 {
   int iVar1;
@@ -11957,7 +11957,7 @@ undefined4 FUN_006a3c30(undefined4 param_1,undefined4 param_2,int param_3)
     iVar4 = iVar4 + iVar3 + iVar1;
     iVar1 = net_packet_write_field((int)_Dst + iVar4,*(undefined4 *)(param_3 + 0x1e8));
     net_packet_write_field((int)_Dst + iVar1 + iVar4,param_2);
-    uVar2 = FUN_006a31b0(_Dst,0x1c);
+    uVar2 = net_socket_send_all(_Dst,0x1c);
     FUN_006f1902(_Dst);
   }
   else {
@@ -11967,9 +11967,9 @@ undefined4 FUN_006a3c30(undefined4 param_1,undefined4 param_2,int param_3)
 }
 
 
-/* ==== 006a3d30  FUN_006a3d30  size=247 ==== */
+/* ==== 006a3d30  net_packet_send_375xx  size=247 ==== */
 
-undefined4 FUN_006a3d30(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+undefined4 net_packet_send_375xx(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
 
 {
   void *_Dst;
@@ -11990,15 +11990,15 @@ undefined4 FUN_006a3d30(undefined4 param_1,undefined4 param_2,undefined4 param_3
   iVar1 = iVar1 + iVar3;
   iVar2 = net_packet_write_field((int)_Dst + iVar1,param_3);
   net_packet_write_field((int)_Dst + iVar2 + iVar1,param_4);
-  uVar4 = FUN_006a31b0(_Dst,0x20);
+  uVar4 = net_socket_send_all(_Dst,0x20);
   FUN_006f1902(_Dst);
   return uVar4;
 }
 
 
-/* ==== 006a3e30  FUN_006a3e30  size=222 ==== */
+/* ==== 006a3e30  net_packet_send_helper_63e30  size=222 ==== */
 
-undefined4 FUN_006a3e30(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+undefined4 net_packet_send_helper_63e30(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
 {
   void *_Dst;
@@ -12017,7 +12017,7 @@ undefined4 FUN_006a3e30(undefined4 param_1,undefined4 param_2,undefined4 param_3
   iVar3 = iVar3 + iVar2 + iVar1;
   iVar1 = net_packet_write_field((int)_Dst + iVar3,param_2);
   net_packet_write_field((int)_Dst + iVar1 + iVar3,param_3);
-  uVar4 = FUN_006a31b0(_Dst,0x1c);
+  uVar4 = net_socket_send_all(_Dst,0x1c);
   FUN_006f1902(_Dst);
   return uVar4;
 }
@@ -12042,15 +12042,15 @@ undefined4 game_missing_asset_fallback(undefined4 param_1,undefined4 param_2)
   iVar2 = net_packet_write_field((int)_Dst + iVar1,param_1);
   iVar3 = net_packet_write_bytes((int)_Dst + iVar2 + iVar1,&DAT_007ca204,0xc);
   net_packet_write_field((int)_Dst + iVar3 + iVar2 + iVar1,param_2);
-  uVar4 = FUN_006a31b0(_Dst,0x18);
+  uVar4 = net_socket_send_all(_Dst,0x18);
   FUN_006f1902(_Dst);
   return uVar4;
 }
 
 
-/* ==== 006a40b0  FUN_006a40b0  size=689 ==== */
+/* ==== 006a40b0  net_packet_send_helper_640b0  size=689 ==== */
 
-undefined4 FUN_006a40b0(undefined4 param_1,undefined4 param_2,undefined4 *param_3)
+undefined4 net_packet_send_helper_640b0(undefined4 param_1,undefined4 param_2,undefined4 *param_3)
 
 {
   void *_Dst;
@@ -12101,16 +12101,16 @@ undefined4 FUN_006a40b0(undefined4 param_1,undefined4 param_2,undefined4 *param_
   iVar2 = iVar2 + iVar1;
   iVar1 = net_packet_write_field((int)_Dst + iVar2,param_3[0x2e]);
   net_packet_write_bytes((int)_Dst + iVar1 + iVar2,param_3 + 0x2f,0x100);
-  uVar4 = FUN_006a31b0(_Dst,0x1a0);
+  uVar4 = net_socket_send_all(_Dst,0x1a0);
   FUN_006f1902(_Dst);
   return uVar4;
 }
 
 
-/* ==== 006a4370  FUN_006a4370  size=614 ==== */
+/* ==== 006a4370  net_packet_send_helper_64370  size=614 ==== */
 
 undefined4
-FUN_006a4370(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 *param_4,
+net_packet_send_helper_64370(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 *param_4,
             undefined4 param_5)
 
 {
@@ -12158,15 +12158,15 @@ FUN_006a4370(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
   iVar2 = iVar2 + iVar1;
   iVar1 = net_packet_write_bytes((int)_Dst + iVar2,param_4 + 0x13,0x14);
   net_packet_write_field((int)_Dst + iVar1 + iVar2,param_5);
-  uVar4 = FUN_006a31b0(_Dst,0x80);
+  uVar4 = net_socket_send_all(_Dst,0x80);
   FUN_006f1902(_Dst);
   return uVar4;
 }
 
 
-/* ==== 006a45e0  FUN_006a45e0  size=479 ==== */
+/* ==== 006a45e0  net_packet_send_helper_645e0  size=479 ==== */
 
-undefined4 FUN_006a45e0(undefined4 param_1,int param_2)
+undefined4 net_packet_send_helper_645e0(undefined4 param_1,int param_2)
 
 {
   int iVar1;
@@ -12210,7 +12210,7 @@ undefined4 FUN_006a45e0(undefined4 param_1,int param_2)
       local_8 = net_packet_write_field((int)_Dst + iVar3,local_14[4]);
       local_8 = local_8 + iVar3;
     }
-    uVar2 = FUN_006a31b0(_Dst,_Size);
+    uVar2 = net_socket_send_all(_Dst,_Size);
     FUN_006f1902(_Dst,uVar2,puVar5,param_2);
   }
   else {
@@ -12220,9 +12220,9 @@ undefined4 FUN_006a45e0(undefined4 param_1,int param_2)
 }
 
 
-/* ==== 006a47c0  FUN_006a47c0  size=805 ==== */
+/* ==== 006a47c0  net_packet_send_helper_647c0  size=805 ==== */
 
-undefined4 FUN_006a47c0(undefined4 param_1,undefined4 param_2,undefined4 param_3,int param_4)
+undefined4 net_packet_send_helper_647c0(undefined4 param_1,undefined4 param_2,undefined4 param_3,int param_4)
 
 {
   char cVar1;
@@ -12265,21 +12265,21 @@ undefined4 FUN_006a47c0(undefined4 param_1,undefined4 param_2,undefined4 param_3
       iVar4 = iVar4 + iVar2;
       iVar2 = net_packet_write_field((int)_Dst + iVar4,local_14[4]);
       iVar2 = iVar2 + iVar4;
-      cVar1 = FUN_006a3490((int)_Dst + iVar2,*(undefined1 *)(local_14 + 9));
+      cVar1 = net_packet_write_u8((int)_Dst + iVar2,*(undefined1 *)(local_14 + 9));
       iVar2 = cVar1 + iVar2;
-      cVar1 = FUN_006a3490((int)_Dst + iVar2,*(undefined1 *)(local_14 + 0xb));
+      cVar1 = net_packet_write_u8((int)_Dst + iVar2,*(undefined1 *)(local_14 + 0xb));
       iVar2 = cVar1 + iVar2;
-      cVar1 = FUN_006a3490((int)_Dst + iVar2,*(undefined1 *)(local_14 + 5));
+      cVar1 = net_packet_write_u8((int)_Dst + iVar2,*(undefined1 *)(local_14 + 5));
       iVar2 = cVar1 + iVar2;
-      cVar1 = FUN_006a3490((int)_Dst + iVar2,*(undefined1 *)(local_14 + 6));
+      cVar1 = net_packet_write_u8((int)_Dst + iVar2,*(undefined1 *)(local_14 + 6));
       iVar2 = cVar1 + iVar2;
-      cVar1 = FUN_006a3490((int)_Dst + iVar2,*(undefined1 *)(local_14 + 7));
+      cVar1 = net_packet_write_u8((int)_Dst + iVar2,*(undefined1 *)(local_14 + 7));
       iVar2 = cVar1 + iVar2;
-      cVar1 = FUN_006a3490((int)_Dst + iVar2,*(undefined1 *)(local_14 + 8));
+      cVar1 = net_packet_write_u8((int)_Dst + iVar2,*(undefined1 *)(local_14 + 8));
       iVar2 = cVar1 + iVar2;
-      cVar1 = FUN_006a3490((int)_Dst + iVar2,*(undefined1 *)(local_14 + 10));
+      cVar1 = net_packet_write_u8((int)_Dst + iVar2,*(undefined1 *)(local_14 + 10));
       iVar2 = cVar1 + iVar2;
-      cVar1 = FUN_006a3490((int)_Dst + iVar2,*(undefined1 *)(local_14 + 0xc));
+      cVar1 = net_packet_write_u8((int)_Dst + iVar2,*(undefined1 *)(local_14 + 0xc));
       iVar2 = cVar1 + iVar2;
       iVar4 = net_packet_write_bytes((int)_Dst + iVar2,local_14 + 0xd,0x20);
       iVar4 = iVar4 + iVar2;
@@ -12287,7 +12287,7 @@ undefined4 FUN_006a47c0(undefined4 param_1,undefined4 param_2,undefined4 param_3
       local_8 = local_8 + iVar4;
     }
     net_packet_write_field((int)_Dst + local_8,param_1);
-    uVar3 = FUN_006a31b0(_Dst,_Size);
+    uVar3 = net_socket_send_all(_Dst,_Size);
     FUN_006f1902(_Dst);
   }
   else {
@@ -12297,10 +12297,10 @@ undefined4 FUN_006a47c0(undefined4 param_1,undefined4 param_2,undefined4 param_3
 }
 
 
-/* ==== 006a4af0  FUN_006a4af0  size=669 ==== */
+/* ==== 006a4af0  net_packet_send_helper_64af0  size=669 ==== */
 
 undefined4
-FUN_006a4af0(undefined4 param_1,undefined4 *param_2,int param_3,undefined4 param_4,
+net_packet_send_helper_64af0(undefined4 param_1,undefined4 *param_2,int param_3,undefined4 param_4,
             undefined4 param_5)
 
 {
@@ -12333,25 +12333,25 @@ FUN_006a4af0(undefined4 param_1,undefined4 *param_2,int param_3,undefined4 param
     iVar2 = iVar2 + iVar4;
     iVar4 = net_packet_write_field((int)_Dst + iVar2,param_2[2]);
     iVar4 = iVar4 + iVar2;
-    cVar1 = FUN_006a3490((int)_Dst + iVar4,*(undefined1 *)(param_2 + 7));
+    cVar1 = net_packet_write_u8((int)_Dst + iVar4,*(undefined1 *)(param_2 + 7));
     iVar4 = cVar1 + iVar4;
-    cVar1 = FUN_006a3490((int)_Dst + iVar4,*(undefined1 *)(param_2 + 9));
+    cVar1 = net_packet_write_u8((int)_Dst + iVar4,*(undefined1 *)(param_2 + 9));
     iVar4 = cVar1 + iVar4;
-    cVar1 = FUN_006a3490((int)_Dst + iVar4,*(undefined1 *)(param_2 + 3));
+    cVar1 = net_packet_write_u8((int)_Dst + iVar4,*(undefined1 *)(param_2 + 3));
     iVar4 = cVar1 + iVar4;
-    cVar1 = FUN_006a3490((int)_Dst + iVar4,*(undefined1 *)(param_2 + 4));
+    cVar1 = net_packet_write_u8((int)_Dst + iVar4,*(undefined1 *)(param_2 + 4));
     iVar4 = cVar1 + iVar4;
-    cVar1 = FUN_006a3490((int)_Dst + iVar4,*(undefined1 *)(param_2 + 5));
+    cVar1 = net_packet_write_u8((int)_Dst + iVar4,*(undefined1 *)(param_2 + 5));
     iVar4 = cVar1 + iVar4;
-    cVar1 = FUN_006a3490((int)_Dst + iVar4,*(undefined1 *)(param_2 + 6));
+    cVar1 = net_packet_write_u8((int)_Dst + iVar4,*(undefined1 *)(param_2 + 6));
     iVar4 = cVar1 + iVar4;
-    cVar1 = FUN_006a3490((int)_Dst + iVar4,*(undefined1 *)(param_2 + 8));
+    cVar1 = net_packet_write_u8((int)_Dst + iVar4,*(undefined1 *)(param_2 + 8));
     iVar4 = cVar1 + iVar4;
-    cVar1 = FUN_006a3490((int)_Dst + iVar4,*(undefined1 *)(param_2 + 10));
+    cVar1 = net_packet_write_u8((int)_Dst + iVar4,*(undefined1 *)(param_2 + 10));
     iVar4 = cVar1 + iVar4;
     iVar2 = net_packet_write_bytes((int)_Dst + iVar4,param_2 + 0xb,0x20);
     net_packet_write_bytes((int)_Dst + iVar2 + iVar4,param_2 + 0x13,0x14);
-    uVar3 = FUN_006a31b0(_Dst,0x68);
+    uVar3 = net_socket_send_all(_Dst,0x68);
     FUN_006f1902(_Dst);
   }
   else {
@@ -12361,9 +12361,9 @@ FUN_006a4af0(undefined4 param_1,undefined4 *param_2,int param_3,undefined4 param
 }
 
 
-/* ==== 006a4d90  FUN_006a4d90  size=814 ==== */
+/* ==== 006a4d90  net_packet_send_helper_64d90  size=814 ==== */
 
-undefined4 FUN_006a4d90(undefined4 param_1,undefined4 param_2,int param_3)
+undefined4 net_packet_send_helper_64d90(undefined4 param_1,undefined4 param_2,int param_3)
 
 {
   char cVar1;
@@ -12391,7 +12391,7 @@ undefined4 FUN_006a4d90(undefined4 param_1,undefined4 param_2,int param_3)
     iVar5 = iVar5 + iVar4 + iVar2;
     iVar2 = net_packet_write_field((int)_Dst + iVar5,*(undefined4 *)(param_3 + 0xdbc));
     iVar2 = iVar2 + iVar5;
-    cVar1 = FUN_006a3490((int)_Dst + iVar2,*(undefined1 *)(param_3 + 0xdc0));
+    cVar1 = net_packet_write_u8((int)_Dst + iVar2,*(undefined1 *)(param_3 + 0xdc0));
     iVar2 = cVar1 + iVar2;
     uVar3 = FUN_006a56a0();
     local_8 = net_packet_write_field((int)_Dst + iVar2,uVar3);
@@ -12408,28 +12408,28 @@ undefined4 FUN_006a4d90(undefined4 param_1,undefined4 param_2,int param_3)
       iVar4 = iVar4 + iVar2;
       iVar2 = net_packet_write_field((int)_Dst + iVar4,local_14[4]);
       iVar2 = iVar2 + iVar4;
-      cVar1 = FUN_006a3490((int)_Dst + iVar2,*(undefined1 *)(local_14 + 9));
+      cVar1 = net_packet_write_u8((int)_Dst + iVar2,*(undefined1 *)(local_14 + 9));
       iVar2 = cVar1 + iVar2;
-      cVar1 = FUN_006a3490((int)_Dst + iVar2,*(undefined1 *)(local_14 + 0xb));
+      cVar1 = net_packet_write_u8((int)_Dst + iVar2,*(undefined1 *)(local_14 + 0xb));
       iVar2 = cVar1 + iVar2;
-      cVar1 = FUN_006a3490((int)_Dst + iVar2,*(undefined1 *)(local_14 + 5));
+      cVar1 = net_packet_write_u8((int)_Dst + iVar2,*(undefined1 *)(local_14 + 5));
       iVar2 = cVar1 + iVar2;
-      cVar1 = FUN_006a3490((int)_Dst + iVar2,*(undefined1 *)(local_14 + 6));
+      cVar1 = net_packet_write_u8((int)_Dst + iVar2,*(undefined1 *)(local_14 + 6));
       iVar2 = cVar1 + iVar2;
-      cVar1 = FUN_006a3490((int)_Dst + iVar2,*(undefined1 *)(local_14 + 7));
+      cVar1 = net_packet_write_u8((int)_Dst + iVar2,*(undefined1 *)(local_14 + 7));
       iVar2 = cVar1 + iVar2;
-      cVar1 = FUN_006a3490((int)_Dst + iVar2,*(undefined1 *)(local_14 + 8));
+      cVar1 = net_packet_write_u8((int)_Dst + iVar2,*(undefined1 *)(local_14 + 8));
       iVar2 = cVar1 + iVar2;
-      cVar1 = FUN_006a3490((int)_Dst + iVar2,*(undefined1 *)(local_14 + 10));
+      cVar1 = net_packet_write_u8((int)_Dst + iVar2,*(undefined1 *)(local_14 + 10));
       iVar2 = cVar1 + iVar2;
-      cVar1 = FUN_006a3490((int)_Dst + iVar2,*(undefined1 *)(local_14 + 0xc));
+      cVar1 = net_packet_write_u8((int)_Dst + iVar2,*(undefined1 *)(local_14 + 0xc));
       iVar2 = cVar1 + iVar2;
       iVar4 = net_packet_write_bytes((int)_Dst + iVar2,local_14 + 0xd,0x20);
       iVar4 = iVar4 + iVar2;
       local_8 = net_packet_write_bytes((int)_Dst + iVar4,local_14 + 0x15,0x14);
       local_8 = local_8 + iVar4;
     }
-    uVar3 = FUN_006a31b0(_Dst,_Size);
+    uVar3 = net_socket_send_all(_Dst,_Size);
     FUN_006f1902(_Dst,uVar3,puVar6,param_2);
   }
   else {
@@ -12439,9 +12439,9 @@ undefined4 FUN_006a4d90(undefined4 param_1,undefined4 param_2,int param_3)
 }
 
 
-/* ==== 006a50c0  FUN_006a50c0  size=249 ==== */
+/* ==== 006a50c0  net_packet_send_helper_650c0  size=249 ==== */
 
-undefined4 FUN_006a50c0(undefined4 param_1,undefined1 param_2,int param_3)
+undefined4 net_packet_send_helper_650c0(undefined4 param_1,undefined1 param_2,int param_3)
 
 {
   int iVar1;
@@ -12461,8 +12461,8 @@ undefined4 FUN_006a50c0(undefined4 param_1,undefined1 param_2,int param_3)
     iVar4 = net_packet_write_bytes((int)_Dst + iVar3 + iVar1,&DAT_007ca204,0xc);
     iVar4 = iVar4 + iVar3 + iVar1;
     iVar1 = net_packet_write_field((int)_Dst + iVar4,*(undefined4 *)(param_3 + 0x1e8));
-    FUN_006a3490((int)_Dst + iVar1 + iVar4,param_2);
-    uVar2 = FUN_006a31b0(_Dst,0x1c);
+    net_packet_write_u8((int)_Dst + iVar1 + iVar4,param_2);
+    uVar2 = net_socket_send_all(_Dst,0x1c);
     FUN_006f1902(_Dst);
   }
   else {
@@ -12472,9 +12472,9 @@ undefined4 FUN_006a50c0(undefined4 param_1,undefined1 param_2,int param_3)
 }
 
 
-/* ==== 006a51c0  FUN_006a51c0  size=220 ==== */
+/* ==== 006a51c0  net_packet_send_helper_651c0  size=220 ==== */
 
-undefined4 FUN_006a51c0(undefined4 param_1,int param_2)
+undefined4 net_packet_send_helper_651c0(undefined4 param_1,int param_2)
 
 {
   int iVar1;
@@ -12493,7 +12493,7 @@ undefined4 FUN_006a51c0(undefined4 param_1,int param_2)
     iVar3 = net_packet_write_field((int)_Dst + iVar1,param_1);
     iVar4 = net_packet_write_bytes((int)_Dst + iVar3 + iVar1,&DAT_007ca204,0xc);
     net_packet_write_field((int)_Dst + iVar4 + iVar3 + iVar1,*(undefined4 *)(param_2 + 0x1e8));
-    uVar2 = FUN_006a31b0(_Dst,0x18);
+    uVar2 = net_socket_send_all(_Dst,0x18);
     FUN_006f1902(_Dst);
   }
   else {
@@ -12503,9 +12503,9 @@ undefined4 FUN_006a51c0(undefined4 param_1,int param_2)
 }
 
 
-/* ==== 006a52a0  FUN_006a52a0  size=172 ==== */
+/* ==== 006a52a0  net_packet_send_helper_652a0  size=172 ==== */
 
-undefined4 FUN_006a52a0(undefined4 param_1)
+undefined4 net_packet_send_helper_652a0(undefined4 param_1)
 
 {
   void *_Dst;
@@ -12520,15 +12520,15 @@ undefined4 FUN_006a52a0(undefined4 param_1)
   iVar1 = net_packet_write_field(_Dst,0x14);
   iVar2 = net_packet_write_field((int)_Dst + iVar1,param_1);
   net_packet_write_bytes((int)_Dst + iVar2 + iVar1,&DAT_007ca204,0xc);
-  uVar3 = FUN_006a31b0(_Dst,0x14);
+  uVar3 = net_socket_send_all(_Dst,0x14);
   FUN_006f1902(_Dst);
   return uVar3;
 }
 
 
-/* ==== 006a5350  FUN_006a5350  size=413 ==== */
+/* ==== 006a5350  net_packet_send_helper_65350  size=413 ==== */
 
-void FUN_006a5350(void)
+void net_packet_send_helper_65350(void)
 
 {
   size_t _Size;
@@ -12573,7 +12573,7 @@ void FUN_006a5350(void)
       iVar4 = net_packet_write_field((int)_Dst + iVar3 + local_14,*(undefined4 *)(*local_1c + 0xa94));
       local_14 = iVar4 + iVar3 + local_14;
     }
-    uVar6 = FUN_006a31b0(_Dst,_Size);
+    uVar6 = net_socket_send_all(_Dst,_Size);
     FUN_006f1902(_Dst,uVar2,uVar6);
   }
   local_8 = 0xffffffff;
@@ -12583,9 +12583,9 @@ void FUN_006a5350(void)
 }
 
 
-/* ==== 006a54f0  FUN_006a54f0  size=216 ==== */
+/* ==== 006a54f0  net_packet_send_helper_654f0  size=216 ==== */
 
-void FUN_006a54f0(undefined4 param_1,undefined4 param_2)
+void net_packet_send_helper_654f0(undefined4 param_1,undefined4 param_2)
 
 {
   void *_Dst;
@@ -12608,7 +12608,7 @@ void FUN_006a54f0(undefined4 param_1,undefined4 param_2)
   iVar2 = net_packet_write_field((int)_Dst + iVar1,param_1);
   iVar2 = iVar2 + iVar1;
   iVar1 = net_packet_write_bytes((int)_Dst + iVar2,param_2,0x20);
-  FUN_006a31b0(_Dst,_Size,_Size,_Dst,iVar1 + iVar2);
+  net_socket_send_all(_Dst,_Size,_Size,_Dst,iVar1 + iVar2);
   FUN_006f1902(_Dst);
   return;
 }
@@ -12935,11 +12935,11 @@ void FUN_006a6840(int param_1,float param_2)
             local_8 = 6;
             puStack_1b0 = *(undefined4 **)(local_ac + 0xc);
             puStack_1b4 = (undefined1 *)0x6a701e;
-            iVar4 = FUN_004bcf10();
+            iVar4 = npk_img_frame_ptr_at();
             local_a4 = *(undefined4 *)(iVar4 + 0x20);
             puStack_1b0 = *(undefined4 **)(local_ac + 0xc);
             puStack_1b4 = (undefined1 *)0x6a703c;
-            iVar4 = FUN_004bcf10();
+            iVar4 = npk_img_frame_ptr_at();
             local_a0 = *(undefined4 *)(iVar4 + 0x24);
             puStack_1b0 = (undefined4 *)0x0;
             puStack_1b4 = local_a8;
@@ -12963,7 +12963,7 @@ void FUN_006a6840(int param_1,float param_2)
               if (*(int *)(local_ac + 0xc) < 10) {
                 puStack_1b0 = *(undefined4 **)(local_ac + 0xc);
                 puStack_1b4 = (undefined1 *)0x6a720a;
-                iVar4 = FUN_004bcf10();
+                iVar4 = npk_img_frame_ptr_at();
                 *(int *)(local_ac + 0xc) = *(int *)(local_ac + 0xc) - *(int *)(iVar4 + 0x1c);
                 if (*(int *)(local_ac + 0xc) < 1) {
                   *(undefined4 *)(local_ac + 0xc) = 0;
@@ -13015,7 +13015,7 @@ void FUN_006a6840(int param_1,float param_2)
                 puStack_1bc = (undefined1 *)local_ac;
                 uStack_1c0 = 0x3f3;
                 uStack_1c4 = 0x6a7337;
-                FUN_006a4af0();
+                net_packet_send_helper_64af0();
               }
               else {
                 puStack_1b0 = (undefined4 *)0x6a7344;
@@ -13025,7 +13025,7 @@ void FUN_006a6840(int param_1,float param_2)
                 puStack_1bc = (undefined1 *)0x0;
                 uStack_1c0 = 42000;
                 uStack_1c4 = 0x6a7368;
-                FUN_006a39f0();
+                net_packet_send_fixed_0x24();
                 *(undefined4 *)(local_ac + 0xc) = 0xffffffff;
                 local_180 = (undefined1 *)&uStack_1c4;
                 pcStack_1c8 = "EQUIP_BROKEN";
@@ -13052,7 +13052,7 @@ void FUN_006a6840(int param_1,float param_2)
                 puStack_1bc = (undefined1 *)0x1;
                 uStack_1c0 = 42000;
                 uStack_1c4 = 0x6a70e5;
-                FUN_006a39f0();
+                net_packet_send_fixed_0x24();
               }
               *(int *)(local_ac + 0xc) = *(int *)(local_ac + 0xc) + 1;
               local_164 = (undefined1 *)&uStack_1c4;
@@ -13094,7 +13094,7 @@ void FUN_006a6840(int param_1,float param_2)
               puStack_1bc = (undefined1 *)local_ac;
               uStack_1c0 = 0x3f3;
               uStack_1c4 = 0x6a71dd;
-              FUN_006a4af0();
+              net_packet_send_helper_64af0();
             }
             local_8 = 0xffffffff;
             puStack_1b0 = (undefined4 *)0x6a73e6;
@@ -13139,7 +13139,7 @@ int FUN_006abf60(undefined4 param_1,int param_2,int param_3,undefined4 param_4)
     iVar2 = 0;
   }
   else {
-    piVar3 = (int *)FUN_004bcf10(param_3 + -1);
+    piVar3 = (int *)npk_img_frame_ptr_at(param_3 + -1);
     iVar2 = *piVar3;
     piVar3 = (int *)game_get_flag_object_01a70(0);
     iVar1 = *piVar3;
@@ -13164,7 +13164,7 @@ int FUN_006abff0(undefined4 param_1,int param_2,int param_3,undefined4 param_4)
     iVar2 = 0;
   }
   else {
-    iVar2 = FUN_004bcf10(param_3 + -1);
+    iVar2 = npk_img_frame_ptr_at(param_3 + -1);
     fVar1 = *(float *)(iVar2 + 4);
     piVar3 = (int *)game_get_flag_object_01a70(1);
     iVar2 = *piVar3;
@@ -13189,7 +13189,7 @@ float10 FUN_006ac080(undefined4 param_1,undefined4 param_2,int param_3,undefined
     fVar4 = (float10)0;
   }
   else {
-    iVar2 = FUN_004bcf10(param_3 + -1);
+    iVar2 = npk_img_frame_ptr_at(param_3 + -1);
     fVar1 = *(float *)(iVar2 + 8);
     pfVar3 = (float *)game_get_flag_object_01a70(param_4);
     fVar4 = (float10)(fVar1 * *pfVar3);
@@ -13212,7 +13212,7 @@ int FUN_006ac0f0(undefined4 param_1,int param_2,int param_3,undefined4 param_4)
     iVar2 = 0;
   }
   else {
-    iVar2 = FUN_004bcf10(param_3 + -1);
+    iVar2 = npk_img_frame_ptr_at(param_3 + -1);
     fVar1 = *(float *)(iVar2 + 0xc);
     piVar3 = (int *)game_get_flag_object_01a70(2);
     iVar2 = *piVar3;
@@ -13237,7 +13237,7 @@ float10 FUN_006ac180(undefined4 param_1,undefined4 param_2,int param_3,undefined
     fVar4 = (float10)0;
   }
   else {
-    iVar2 = FUN_004bcf10(param_3 + -1);
+    iVar2 = npk_img_frame_ptr_at(param_3 + -1);
     fVar1 = *(float *)(iVar2 + 0x10);
     pfVar3 = (float *)game_get_flag_object_01a70(param_4);
     fVar4 = (float10)(fVar1 * *pfVar3);
@@ -13268,22 +13268,22 @@ undefined4 FUN_006ac1f0(void)
   }
   game_loop_helper_cc840();
   FUN_005dc370();
-  FUN_004bcf10();
+  npk_img_frame_ptr_at();
   iVar1 = FUN_006c79e0();
   if (iVar1 == 0) {
     local_214 = 0;
   }
   else {
-    FUN_004bcf10();
+    npk_img_frame_ptr_at();
     iVar1 = FUN_006c79e0();
     local_214 = *(int *)(iVar1 + 8);
   }
-  iVar1 = FUN_004bcf10();
+  iVar1 = npk_img_frame_ptr_at();
   if (local_214 < *(int *)(iVar1 + 0x24)) {
-    FUN_004bcf10();
+    npk_img_frame_ptr_at();
     iVar1 = game_loop_helper_caba0();
     if (iVar1 == 0x8e) {
-      FUN_004bcf10();
+      npk_img_frame_ptr_at();
       game_loop_helper_cd6d0();
       npk_get_relative_res_path();
       FUN_00414e80();
@@ -13291,10 +13291,10 @@ undefined4 FUN_006ac1f0(void)
       FUN_006634f0();
       return 0;
     }
-    FUN_004bcf10();
+    npk_img_frame_ptr_at();
     iVar1 = game_loop_helper_caba0();
     if (iVar1 == 0x71) {
-      FUN_004bcf10();
+      npk_img_frame_ptr_at();
       game_loop_helper_cc840();
       npk_get_relative_res_path();
       FUN_00414e80();

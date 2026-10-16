@@ -205,7 +205,7 @@ LAB_0068ef86:
   0068ef8c  MOV ECX,dword ptr [EBP + 0xffffe470]
   0068ef92  PUSH ECX
   0068ef93  PUSH 0x184ac
-  0068ef98  CALL 0x006a3c30    ; call FUN_006a3c30
+  0068ef98  CALL 0x006a3c30    ; call net_packet_send_opcode_onlyish
   0068ef9d  ADD ESP,0xc
   0068efa0  PUSH 0x0
   0068efa2  PUSH 0x0
@@ -339,10 +339,10 @@ LAB_0068f153:
   0068f159  MOV EAX,dword ptr [EBP + 0xffffe474]
   0068f15f  PUSH EAX
   0068f160  PUSH 0x184b6
-  0068f165  CALL 0x006a3c30    ; call FUN_006a3c30
+  0068f165  CALL 0x006a3c30    ; call net_packet_send_opcode_onlyish
   0068f16a  ADD ESP,0xc
   0068f16d  PUSH 0x184b6
-  0068f172  CALL 0x004f2720    ; call FUN_004f2720
+  0068f172  CALL 0x004f2720    ; call net_wait_until_opcode
   0068f177  ADD ESP,0x4
   0068f17a  JMP 0x0068f1a3
 LAB_0068f17c:
@@ -431,7 +431,7 @@ LAB_0068f270:
   0068f27f  MOV EAX,dword ptr [EBP + 0xffffdbf0]
   0068f285  PUSH EAX
   0068f286  PUSH 0x184c0
-  0068f28b  CALL 0x006a3f10    ; call FUN_006a3f10
+  0068f28b  CALL 0x006a3f10    ; call net_packet_send_helper_63f10
   0068f290  ADD ESP,0x8
   0068f293  PUSH 0x0
   0068f295  PUSH 0x0
@@ -3008,7 +3008,7 @@ LAB_00691eb6:
   00691f01  MOV EAX,dword ptr [EAX + 0xdbc]
   00691f07  PUSH EAX
   00691f08  PUSH 0x91b4
-  00691f0d  CALL 0x006a3f10    ; call FUN_006a3f10
+  00691f0d  CALL 0x006a3f10    ; call net_packet_send_helper_63f10
   00691f12  ADD ESP,0x8
 LAB_00691f15:
   00691f15  JMP 0x0069e6d6
@@ -3073,7 +3073,7 @@ LAB_00691fd3:
   0069201e  MOV EAX,dword ptr [EAX + 0xdbc]
   00692024  PUSH EAX
   00692025  PUSH 0x9150
-  0069202a  CALL 0x006a3f10    ; call FUN_006a3f10
+  0069202a  CALL 0x006a3f10    ; call net_packet_send_helper_63f10
   0069202f  ADD ESP,0x8
 LAB_00692032:
   00692032  JMP 0x0069e6d6
@@ -3178,7 +3178,7 @@ LAB_0069218e:
   0069221b  MOV EDX,dword ptr [EAX + 0xdbc]
   00692221  PUSH EDX
   00692222  PUSH 0x90ec
-  00692227  CALL 0x006a3f10    ; call FUN_006a3f10
+  00692227  CALL 0x006a3f10    ; call net_packet_send_helper_63f10
   0069222c  ADD ESP,0x8
 LAB_0069222f:
   0069222f  JMP 0x00692250
@@ -3189,7 +3189,7 @@ LAB_00692231:
   0069223c  MOV EAX,dword ptr [EAX + 0xdbc]
   00692242  PUSH EAX
   00692243  PUSH 0x9218
-  00692248  CALL 0x006a3c30    ; call FUN_006a3c30
+  00692248  CALL 0x006a3c30    ; call net_packet_send_opcode_onlyish
   0069224d  ADD ESP,0xc
 LAB_00692250:
   00692250  JMP 0x0069e6d6
@@ -3292,7 +3292,7 @@ LAB_006923d4:
   006923ec  MOV EAX,dword ptr [EAX + 0x1e8]
   006923f2  PUSH EAX
   006923f3  PUSH 0x7918
-  006923f8  CALL 0x006a3f10    ; call FUN_006a3f10
+  006923f8  CALL 0x006a3f10    ; call net_packet_send_helper_63f10
   006923fd  ADD ESP,0x8
   00692400  JMP 0x00692429
 LAB_00692402:
@@ -3330,7 +3330,7 @@ LAB_00692454:
   00692459  MOV ECX,dword ptr [EAX + 0x1e8]
   0069245f  PUSH ECX
   00692460  PUSH 0x7918
-  00692465  CALL 0x006a3f10    ; call FUN_006a3f10
+  00692465  CALL 0x006a3f10    ; call net_packet_send_helper_63f10
   0069246a  ADD ESP,0x8
 LAB_0069246d:
   0069246d  CALL 0x00454ea0    ; call FUN_00454ea0
@@ -3340,7 +3340,7 @@ LAB_0069246d:
   0069247a  MOVZX EAX,byte ptr [EDX + 0x44]
   0069247e  PUSH EAX
   0069247f  PUSH 0x84d0
-  00692484  CALL 0x006a3c30    ; call FUN_006a3c30
+  00692484  CALL 0x006a3c30    ; call net_packet_send_opcode_onlyish
   00692489  ADD ESP,0xc
   0069248c  JMP 0x0069e6d6
 LAB_00692491:
@@ -3442,7 +3442,7 @@ LAB_00692610:
   00692628  MOV EAX,dword ptr [EAX + 0x1e8]
   0069262e  PUSH EAX
   0069262f  PUSH 0x7918
-  00692634  CALL 0x006a3f10    ; call FUN_006a3f10
+  00692634  CALL 0x006a3f10    ; call net_packet_send_helper_63f10
   00692639  ADD ESP,0x8
   0069263c  JMP 0x00692665
 LAB_0069263e:
@@ -3480,7 +3480,7 @@ LAB_00692690:
   00692695  MOV ECX,dword ptr [EAX + 0x1e8]
   0069269b  PUSH ECX
   0069269c  PUSH 0x7918
-  006926a1  CALL 0x006a3f10    ; call FUN_006a3f10
+  006926a1  CALL 0x006a3f10    ; call net_packet_send_helper_63f10
   006926a6  ADD ESP,0x8
 LAB_006926a9:
   006926a9  JMP 0x0069e6d6
@@ -4213,7 +4213,7 @@ LAB_00693273:
   00693273  PUSH 0x1
   00693275  CALL 0x00454ea0    ; call FUN_00454ea0
   0069327a  PUSH EAX
-  0069327b  CALL 0x004f0610    ; call FUN_004f0610
+  0069327b  CALL 0x004f0610    ; call net_packet_send_session_sync_12000
   00693280  ADD ESP,0x8
   00693283  MOV EDX,dword ptr [EBP + 0xffffe620]
   00693289  PUSH EDX
@@ -4226,7 +4226,7 @@ LAB_00693273:
   006932a5  PUSH EAX
   006932a6  PUSH 0x7
   006932a8  PUSH 0x2904
-  006932ad  CALL 0x006a38b0    ; call FUN_006a38b0
+  006932ad  CALL 0x006a38b0    ; call net_packet_send_fixed_0x28
   006932b2  ADD ESP,0x18
   006932b5  MOV dword ptr [EBP + -0x4],0xffffffff
   006932bc  LEA ECX,[EBP + 0xfffff7d0]
@@ -4237,19 +4237,19 @@ LAB_0069378e:
   0069378e  MOV EDX,dword ptr [0x007ca1d8]
   00693794  PUSH EDX
   00693795  PUSH 0x28
-  00693797  CALL 0x006a3f10    ; call FUN_006a3f10
+  00693797  CALL 0x006a3f10    ; call net_packet_send_helper_63f10
   0069379c  ADD ESP,0x8
   0069379f  PUSH 0x28
-  006937a1  CALL 0x004f2720    ; call FUN_004f2720
+  006937a1  CALL 0x004f2720    ; call net_wait_until_opcode
   006937a6  ADD ESP,0x4
   006937a9  JMP 0x0069e6d6
 LAB_006937ae:
   006937ae  PUSH 0x1
   006937b0  PUSH 0xa
-  006937b2  CALL 0x006a3f10    ; call FUN_006a3f10
+  006937b2  CALL 0x006a3f10    ; call net_packet_send_helper_63f10
   006937b7  ADD ESP,0x8
   006937ba  PUSH 0xa
-  006937bc  CALL 0x004f2720    ; call FUN_004f2720
+  006937bc  CALL 0x004f2720    ; call net_wait_until_opcode
   006937c1  ADD ESP,0x4
   006937c4  JMP 0x0069e6d6
 LAB_006937c9:

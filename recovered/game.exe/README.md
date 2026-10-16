@@ -21,4 +21,5 @@ Ghidra 伪代码恢复（非原始源码）。约 **15462** 函数；**140+** �
 
 ## NPK/IMG
 
-见上级 `../README.md` 中格式小节；实现集中在 `npk_img_resource.c`（如 `npk_img_decode_frames_from_entry`）。
+见上级 `../README.md` 中格式小节；伪代码在 `decompiled/npk_img_resource.c`（含本 pass 迁入的 map/entry/声音辅助函数）。  
+**可读重建**：`reconstructed/npk_img.h`、`npk_img.cpp`、`texture_cache.h`、`texture_cache.cpp`；格式表与地址→新名见 `reconstructed/README.md`。重命名证据见 `renames.md`「NPK/IMG resource pass」。

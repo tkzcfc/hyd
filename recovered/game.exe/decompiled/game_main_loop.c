@@ -150,9 +150,9 @@ void game_loop_helper_e50d0(void)
 }
 
 
-/* ==== 004f0610  game_sync_session_blob_f0610  size=496 ==== */
+/* ==== 004f0610  net_packet_send_session_sync_12000  size=496 ==== */
 
-undefined4 game_sync_session_blob_f0610(int param_1,byte param_2)
+undefined4 net_packet_send_session_sync_12000(int param_1,byte param_2)
 
 {
   char cVar1;
@@ -176,11 +176,11 @@ undefined4 game_sync_session_blob_f0610(int param_1,byte param_2)
   iVar2 = iVar2 + iVar4;
   iVar4 = net_packet_write_field((int)_Dst + iVar2,*(undefined4 *)(param_1 + 0x1e8));
   iVar4 = iVar4 + iVar2;
-  cVar1 = FUN_006a3490((int)_Dst + iVar4,*(undefined1 *)(param_1 + 0xdd8));
+  cVar1 = net_packet_write_u8((int)_Dst + iVar4,*(undefined1 *)(param_1 + 0xdd8));
   iVar4 = cVar1 + iVar4;
-  cVar1 = FUN_006a3490((int)_Dst + iVar4,*(undefined1 *)(param_1 + 0xadc));
+  cVar1 = net_packet_write_u8((int)_Dst + iVar4,*(undefined1 *)(param_1 + 0xadc));
   iVar4 = cVar1 + iVar4;
-  cVar1 = FUN_006a3490((int)_Dst + iVar4,*(undefined1 *)(param_1 + 0xae0));
+  cVar1 = net_packet_write_u8((int)_Dst + iVar4,*(undefined1 *)(param_1 + 0xae0));
   iVar4 = cVar1 + iVar4;
   iVar2 = net_packet_write_field((int)_Dst + iVar4,*(undefined4 *)(param_1 + 0x224));
   iVar2 = iVar2 + iVar4;
@@ -188,20 +188,20 @@ undefined4 game_sync_session_blob_f0610(int param_1,byte param_2)
   iVar4 = iVar4 + iVar2;
   iVar2 = net_packet_write_field((int)_Dst + iVar4,*(undefined4 *)(param_1 + 500));
   iVar2 = iVar2 + iVar4;
-  cVar1 = FUN_006a3490((int)_Dst + iVar2,
+  cVar1 = net_packet_write_u8((int)_Dst + iVar2,
                        param_2 | *(char *)(param_1 + 0xdeb) << 1 | *(char *)(param_1 + 0xdec) << 2 |
                        *(char *)(param_1 + 0xded) << 3 | *(char *)(param_1 + 0xdee) << 4);
   iVar2 = cVar1 + iVar2;
-  uVar3 = FUN_006a31b0(_Dst,_Size);
+  uVar3 = net_socket_send_all(_Dst,_Size);
   FUN_006f1902(_Dst,uVar3,_Size,_Dst,iVar2);
   return 0;
 }
 
 
-/* ==== 004f27a0  game_frame_update_or_draw_prep  size=116237 ==== */
+/* ==== 004f27a0  game_frame_pump_packets  size=116237 ==== */
 /* DECOMPILE_FAILED: Exception while decompiling 004f27a0: process: timeout
  */
-void game_frame_update_or_draw_prep(void) { /* failed */ }
+void game_frame_pump_packets(void) { /* failed */ }
 
 /* ==== 00510800  game_main_loop  size=11700 ==== */
 
@@ -1290,7 +1290,7 @@ LAB_00511059:
               _DAT_007ca7f8 = *(undefined4 *)(iVar3 + 0xdf7);
               DAT_007ca7fc = *(undefined1 *)(iVar3 + 0xdfb);
               game_get_player_or_session_blob();
-              game_sync_session_blob_f0610();
+              net_packet_send_session_sync_12000();
             }
             iVar3 = game_get_player_or_session_blob();
             *(undefined1 *)(iVar3 + 0xe04) = 1;
@@ -1356,7 +1356,7 @@ LAB_00512a1e:
           }
           (**(code **)(**(int **)(DAT_007ca1a4 + 0xc) + 0x20))
                     (*(undefined4 *)(DAT_007ca1a4 + 0xc),0x10);
-          game_frame_update_or_draw_prep();
+          game_frame_pump_packets();
           if (DAT_007ca1d8 == 0) {
             local_570 = 7000;
             iVar3 = local_2b8;
@@ -1605,7 +1605,7 @@ LAB_00512a1e:
             FUN_004d1440();
             DAT_007ca1d8 = 2;
             game_missing_asset_fallback();
-            game_missing_asset_fallback_2();
+            net_wait_until_opcode();
           }
         }
       }

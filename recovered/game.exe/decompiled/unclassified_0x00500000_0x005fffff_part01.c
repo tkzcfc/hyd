@@ -1,9 +1,9 @@
 /* Auto-decompiled pseudo-code from game.exe / unclassified_0x00500000_0x005fffff part 1/4 */
 /* NOT original source. Bucketed by evidence (strings/imports/call-graph), not raw address. */
 
-/* ==== 0050f480  FUN_0050f480  size=757 ==== */
+/* ==== 0050f480  net_packet_parser_50f480  size=757 ==== */
 
-void FUN_0050f480(undefined4 *param_1,undefined4 param_2,undefined4 param_3,int param_4,int *param_5
+void net_packet_parser_50f480(undefined4 *param_1,undefined4 param_2,undefined4 param_3,int param_4,int *param_5
                  )
 
 {
@@ -20,7 +20,7 @@ void FUN_0050f480(undefined4 *param_1,undefined4 param_2,undefined4 param_3,int 
   int local_c;
   int local_8;
   
-  iVar2 = FUN_006a34f0(param_1,param_4 + *param_5);
+  iVar2 = net_packet_read_u32_be(param_1,param_4 + *param_5);
   *param_5 = iVar2 + *param_5;
   FUN_0040d5a0(*param_1);
   local_10 = 0;
@@ -28,9 +28,9 @@ void FUN_0050f480(undefined4 *param_1,undefined4 param_2,undefined4 param_3,int 
     uVar3 = FUN_004274a0();
     if (uVar3 <= local_10) break;
     local_8 = FUN_00405270(local_10);
-    iVar2 = FUN_006a34f0(local_8,param_4 + *param_5);
+    iVar2 = net_packet_read_u32_be(local_8,param_4 + *param_5);
     *param_5 = iVar2 + *param_5;
-    iVar2 = FUN_006a34f0(local_8 + 4,param_4 + *param_5);
+    iVar2 = net_packet_read_u32_be(local_8 + 4,param_4 + *param_5);
     *param_5 = iVar2 + *param_5;
     if (0 < *(int *)(local_8 + 4)) {
       local_c = 0;
@@ -60,23 +60,23 @@ void FUN_0050f480(undefined4 *param_1,undefined4 param_2,undefined4 param_3,int 
         *(undefined4 *)(local_8 + 4) = 0;
       }
     }
-    iVar2 = FUN_006a34f0(local_8 + 8,param_4 + *param_5);
+    iVar2 = net_packet_read_u32_be(local_8 + 8,param_4 + *param_5);
     *param_5 = iVar2 + *param_5;
-    cVar1 = FUN_006a3520(local_8 + 0x1c,param_4 + *param_5);
+    cVar1 = net_packet_read_u8(local_8 + 0x1c,param_4 + *param_5);
     *param_5 = (int)cVar1 + *param_5;
-    cVar1 = FUN_006a3520(local_8 + 0x24,param_4 + *param_5);
+    cVar1 = net_packet_read_u8(local_8 + 0x24,param_4 + *param_5);
     *param_5 = (int)cVar1 + *param_5;
-    cVar1 = FUN_006a3520(local_8 + 0xc,param_4 + *param_5);
+    cVar1 = net_packet_read_u8(local_8 + 0xc,param_4 + *param_5);
     *param_5 = (int)cVar1 + *param_5;
-    cVar1 = FUN_006a3520(local_8 + 0x10,param_4 + *param_5);
+    cVar1 = net_packet_read_u8(local_8 + 0x10,param_4 + *param_5);
     *param_5 = (int)cVar1 + *param_5;
-    cVar1 = FUN_006a3520(local_8 + 0x14,param_4 + *param_5);
+    cVar1 = net_packet_read_u8(local_8 + 0x14,param_4 + *param_5);
     *param_5 = (int)cVar1 + *param_5;
-    cVar1 = FUN_006a3520(local_8 + 0x18,param_4 + *param_5);
+    cVar1 = net_packet_read_u8(local_8 + 0x18,param_4 + *param_5);
     *param_5 = (int)cVar1 + *param_5;
-    cVar1 = FUN_006a3520(local_8 + 0x20,param_4 + *param_5);
+    cVar1 = net_packet_read_u8(local_8 + 0x20,param_4 + *param_5);
     *param_5 = (int)cVar1 + *param_5;
-    cVar1 = FUN_006a3520(local_8 + 0x28,param_4 + *param_5);
+    cVar1 = net_packet_read_u8(local_8 + 0x28,param_4 + *param_5);
     *param_5 = (int)cVar1 + *param_5;
     iVar2 = net_packet_write_bytes(local_8 + 0x2c,param_4 + *param_5,0x20);
     *param_5 = iVar2 + *param_5;
@@ -88,11 +88,11 @@ void FUN_0050f480(undefined4 *param_1,undefined4 param_2,undefined4 param_3,int 
 }
 
 
-/* ==== 0050f780  FUN_0050f780  size=1192 ==== */
+/* ==== 0050f780  net_packet_parser_50f780  size=1192 ==== */
 
 /* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
 
-void FUN_0050f780(undefined4 *param_1,undefined4 param_2,undefined4 param_3,int param_4,int *param_5
+void net_packet_parser_50f780(undefined4 *param_1,undefined4 param_2,undefined4 param_3,int param_4,int *param_5
                  )
 
 {
@@ -121,19 +121,19 @@ void FUN_0050f780(undefined4 *param_1,undefined4 param_2,undefined4 param_3,int 
   local_10 = ExceptionList;
   local_14 = DAT_007c5940 ^ (uint)&stack0xfffffffc;
   ExceptionList = &local_10;
-  iVar2 = FUN_006a34f0(param_1,param_4 + *param_5,local_14);
+  iVar2 = net_packet_read_u32_be(param_1,param_4 + *param_5,local_14);
   *param_5 = iVar2 + *param_5;
   FUN_0048a120(*param_1);
   local_38 = 0;
   while (uVar3 = FUN_00519c90(), local_38 < uVar3) {
     local_30 = FUN_00519c60(local_38);
-    iVar2 = FUN_006a34f0(local_30,param_4 + *param_5);
+    iVar2 = net_packet_read_u32_be(local_30,param_4 + *param_5);
     *param_5 = iVar2 + *param_5;
     iVar2 = net_packet_write_bytes(local_30 + 4,param_4 + *param_5,0x20);
     *param_5 = iVar2 + *param_5;
-    iVar2 = FUN_006a34f0(local_30 + 0x24,param_4 + *param_5);
+    iVar2 = net_packet_read_u32_be(local_30 + 0x24,param_4 + *param_5);
     *param_5 = iVar2 + *param_5;
-    iVar2 = FUN_006a34f0(local_30 + 0x28,param_4 + *param_5);
+    iVar2 = net_packet_read_u32_be(local_30 + 0x28,param_4 + *param_5);
     *param_5 = iVar2 + *param_5;
     if (0 < *(int *)(local_30 + 0x28)) {
       local_34 = 0;
@@ -187,29 +187,29 @@ void FUN_0050f780(undefined4 *param_1,undefined4 param_2,undefined4 param_3,int 
         *(undefined4 *)(local_30 + 0x28) = 0;
       }
     }
-    iVar2 = FUN_006a34f0(local_30 + 0x2c,param_4 + *param_5);
+    iVar2 = net_packet_read_u32_be(local_30 + 0x2c,param_4 + *param_5);
     *param_5 = iVar2 + *param_5;
-    cVar1 = FUN_006a3520(local_30 + 0x40,param_4 + *param_5);
+    cVar1 = net_packet_read_u8(local_30 + 0x40,param_4 + *param_5);
     *param_5 = (int)cVar1 + *param_5;
-    cVar1 = FUN_006a3520(local_30 + 0x48,param_4 + *param_5);
+    cVar1 = net_packet_read_u8(local_30 + 0x48,param_4 + *param_5);
     *param_5 = (int)cVar1 + *param_5;
-    cVar1 = FUN_006a3520(local_30 + 0x30,param_4 + *param_5);
+    cVar1 = net_packet_read_u8(local_30 + 0x30,param_4 + *param_5);
     *param_5 = (int)cVar1 + *param_5;
-    cVar1 = FUN_006a3520(local_30 + 0x34,param_4 + *param_5);
+    cVar1 = net_packet_read_u8(local_30 + 0x34,param_4 + *param_5);
     *param_5 = (int)cVar1 + *param_5;
-    cVar1 = FUN_006a3520(local_30 + 0x38,param_4 + *param_5);
+    cVar1 = net_packet_read_u8(local_30 + 0x38,param_4 + *param_5);
     *param_5 = (int)cVar1 + *param_5;
-    cVar1 = FUN_006a3520(local_30 + 0x3c,param_4 + *param_5);
+    cVar1 = net_packet_read_u8(local_30 + 0x3c,param_4 + *param_5);
     *param_5 = (int)cVar1 + *param_5;
-    cVar1 = FUN_006a3520(local_30 + 0x44,param_4 + *param_5);
+    cVar1 = net_packet_read_u8(local_30 + 0x44,param_4 + *param_5);
     *param_5 = (int)cVar1 + *param_5;
-    cVar1 = FUN_006a3520(local_30 + 0x4c,param_4 + *param_5);
+    cVar1 = net_packet_read_u8(local_30 + 0x4c,param_4 + *param_5);
     *param_5 = (int)cVar1 + *param_5;
     iVar2 = net_packet_write_bytes(local_30 + 0x50,param_4 + *param_5,0x20);
     *param_5 = iVar2 + *param_5;
     iVar2 = net_packet_write_bytes(local_30 + 0x70,param_4 + *param_5,0x14);
     *param_5 = iVar2 + *param_5;
-    iVar2 = FUN_006a34f0(local_30 + 0xb8,param_4 + *param_5);
+    iVar2 = net_packet_read_u32_be(local_30 + 0xb8,param_4 + *param_5);
     *param_5 = iVar2 + *param_5;
     iVar2 = net_packet_write_bytes(local_30 + 0xbc,param_4 + *param_5,0x100);
     *param_5 = iVar2 + *param_5;
@@ -220,9 +220,9 @@ void FUN_0050f780(undefined4 *param_1,undefined4 param_2,undefined4 param_3,int 
 }
 
 
-/* ==== 0050fc30  FUN_0050fc30  size=700 ==== */
+/* ==== 0050fc30  net_packet_parser_50fc30  size=700 ==== */
 
-void FUN_0050fc30(undefined4 *param_1,undefined4 param_2,int param_3,int param_4,int *param_5)
+void net_packet_parser_50fc30(undefined4 *param_1,undefined4 param_2,int param_3,int param_4,int *param_5)
 
 {
   char cVar1;
@@ -236,7 +236,7 @@ void FUN_0050fc30(undefined4 *param_1,undefined4 param_2,int param_3,int param_4
   uint local_c;
   int local_8;
   
-  iVar2 = FUN_006a34f0(param_1,param_4 + *param_5);
+  iVar2 = net_packet_read_u32_be(param_1,param_4 + *param_5);
   *param_5 = iVar2 + *param_5;
   FUN_0040d5a0(*param_1);
   local_c = 0;
@@ -244,9 +244,9 @@ void FUN_0050fc30(undefined4 *param_1,undefined4 param_2,int param_3,int param_4
     uVar3 = FUN_004274a0();
     if (uVar3 <= local_c) break;
     local_8 = FUN_00405270(local_c);
-    iVar2 = FUN_006a34f0(local_8,param_4 + *param_5);
+    iVar2 = net_packet_read_u32_be(local_8,param_4 + *param_5);
     *param_5 = iVar2 + *param_5;
-    iVar2 = FUN_006a34f0(local_8 + 4,param_4 + *param_5);
+    iVar2 = net_packet_read_u32_be(local_8 + 4,param_4 + *param_5);
     *param_5 = iVar2 + *param_5;
     if (0 < *(int *)(local_8 + 4)) {
       puVar6 = local_14;
@@ -265,23 +265,23 @@ void FUN_0050fc30(undefined4 *param_1,undefined4 param_2,int param_3,int param_4
         *(undefined4 *)(local_8 + 4) = 0;
       }
     }
-    iVar2 = FUN_006a34f0(local_8 + 8,param_4 + *param_5);
+    iVar2 = net_packet_read_u32_be(local_8 + 8,param_4 + *param_5);
     *param_5 = iVar2 + *param_5;
-    cVar1 = FUN_006a3520(local_8 + 0x1c,param_4 + *param_5);
+    cVar1 = net_packet_read_u8(local_8 + 0x1c,param_4 + *param_5);
     *param_5 = (int)cVar1 + *param_5;
-    cVar1 = FUN_006a3520(local_8 + 0x24,param_4 + *param_5);
+    cVar1 = net_packet_read_u8(local_8 + 0x24,param_4 + *param_5);
     *param_5 = (int)cVar1 + *param_5;
-    cVar1 = FUN_006a3520(local_8 + 0xc,param_4 + *param_5);
+    cVar1 = net_packet_read_u8(local_8 + 0xc,param_4 + *param_5);
     *param_5 = (int)cVar1 + *param_5;
-    cVar1 = FUN_006a3520(local_8 + 0x10,param_4 + *param_5);
+    cVar1 = net_packet_read_u8(local_8 + 0x10,param_4 + *param_5);
     *param_5 = (int)cVar1 + *param_5;
-    cVar1 = FUN_006a3520(local_8 + 0x14,param_4 + *param_5);
+    cVar1 = net_packet_read_u8(local_8 + 0x14,param_4 + *param_5);
     *param_5 = (int)cVar1 + *param_5;
-    cVar1 = FUN_006a3520(local_8 + 0x18,param_4 + *param_5);
+    cVar1 = net_packet_read_u8(local_8 + 0x18,param_4 + *param_5);
     *param_5 = (int)cVar1 + *param_5;
-    cVar1 = FUN_006a3520(local_8 + 0x20,param_4 + *param_5);
+    cVar1 = net_packet_read_u8(local_8 + 0x20,param_4 + *param_5);
     *param_5 = (int)cVar1 + *param_5;
-    cVar1 = FUN_006a3520(local_8 + 0x28,param_4 + *param_5);
+    cVar1 = net_packet_read_u8(local_8 + 0x28,param_4 + *param_5);
     *param_5 = (int)cVar1 + *param_5;
     iVar2 = net_packet_write_bytes(local_8 + 0x2c,param_4 + *param_5,0x20);
     *param_5 = iVar2 + *param_5;
@@ -293,9 +293,9 @@ void FUN_0050fc30(undefined4 *param_1,undefined4 param_2,int param_3,int param_4
 }
 
 
-/* ==== 0050fef0  FUN_0050fef0  size=662 ==== */
+/* ==== 0050fef0  net_packet_parser_50fef0  size=662 ==== */
 
-void FUN_0050fef0(undefined4 *param_1,undefined4 param_2,undefined4 param_3,int param_4,int *param_5
+void net_packet_parser_50fef0(undefined4 *param_1,undefined4 param_2,undefined4 param_3,int param_4,int *param_5
                  )
 
 {
@@ -309,7 +309,7 @@ void FUN_0050fef0(undefined4 *param_1,undefined4 param_2,undefined4 param_3,int 
   uint local_c;
   int local_8;
   
-  iVar2 = FUN_006a34f0(param_1,param_4 + *param_5);
+  iVar2 = net_packet_read_u32_be(param_1,param_4 + *param_5);
   *param_5 = iVar2 + *param_5;
   FUN_0040d5a0(*param_1);
   local_c = 0;
@@ -317,9 +317,9 @@ void FUN_0050fef0(undefined4 *param_1,undefined4 param_2,undefined4 param_3,int 
     uVar3 = FUN_004274a0();
     if (uVar3 <= local_c) break;
     local_8 = FUN_00405270(local_c);
-    iVar2 = FUN_006a34f0(local_8,param_4 + *param_5);
+    iVar2 = net_packet_read_u32_be(local_8,param_4 + *param_5);
     *param_5 = iVar2 + *param_5;
-    iVar2 = FUN_006a34f0(local_8 + 4,param_4 + *param_5);
+    iVar2 = net_packet_read_u32_be(local_8 + 4,param_4 + *param_5);
     *param_5 = iVar2 + *param_5;
     if (0 < *(int *)(local_8 + 4)) {
       puVar5 = local_14;
@@ -334,23 +334,23 @@ void FUN_0050fef0(undefined4 *param_1,undefined4 param_2,undefined4 param_3,int 
         *(undefined4 *)(local_8 + 4) = 0;
       }
     }
-    iVar2 = FUN_006a34f0(local_8 + 8,param_4 + *param_5);
+    iVar2 = net_packet_read_u32_be(local_8 + 8,param_4 + *param_5);
     *param_5 = iVar2 + *param_5;
-    cVar1 = FUN_006a3520(local_8 + 0x1c,param_4 + *param_5);
+    cVar1 = net_packet_read_u8(local_8 + 0x1c,param_4 + *param_5);
     *param_5 = (int)cVar1 + *param_5;
-    cVar1 = FUN_006a3520(local_8 + 0x24,param_4 + *param_5);
+    cVar1 = net_packet_read_u8(local_8 + 0x24,param_4 + *param_5);
     *param_5 = (int)cVar1 + *param_5;
-    cVar1 = FUN_006a3520(local_8 + 0xc,param_4 + *param_5);
+    cVar1 = net_packet_read_u8(local_8 + 0xc,param_4 + *param_5);
     *param_5 = (int)cVar1 + *param_5;
-    cVar1 = FUN_006a3520(local_8 + 0x10,param_4 + *param_5);
+    cVar1 = net_packet_read_u8(local_8 + 0x10,param_4 + *param_5);
     *param_5 = (int)cVar1 + *param_5;
-    cVar1 = FUN_006a3520(local_8 + 0x14,param_4 + *param_5);
+    cVar1 = net_packet_read_u8(local_8 + 0x14,param_4 + *param_5);
     *param_5 = (int)cVar1 + *param_5;
-    cVar1 = FUN_006a3520(local_8 + 0x18,param_4 + *param_5);
+    cVar1 = net_packet_read_u8(local_8 + 0x18,param_4 + *param_5);
     *param_5 = (int)cVar1 + *param_5;
-    cVar1 = FUN_006a3520(local_8 + 0x20,param_4 + *param_5);
+    cVar1 = net_packet_read_u8(local_8 + 0x20,param_4 + *param_5);
     *param_5 = (int)cVar1 + *param_5;
-    cVar1 = FUN_006a3520(local_8 + 0x28,param_4 + *param_5);
+    cVar1 = net_packet_read_u8(local_8 + 0x28,param_4 + *param_5);
     *param_5 = (int)cVar1 + *param_5;
     iVar2 = net_packet_write_bytes(local_8 + 0x2c,param_4 + *param_5,0x20);
     *param_5 = iVar2 + *param_5;
@@ -551,7 +551,7 @@ void util_time_get_time_2(void)
       *puVar3 = 1;
       pDVar4 = (DWORD *)FUN_004f2450();
       *pDVar4 = DVar1;
-      FUN_006a52a0(60000);
+      net_packet_send_helper_652a0(60000);
     }
   }
   return;
@@ -16106,7 +16106,7 @@ int FUN_00529a70(int param_1)
   puStack_c = &LAB_0071537d;
   local_10 = ExceptionList;
   ExceptionList = &local_10;
-  FUN_004c4d40(param_1);
+  npk_sound_entry_copy(param_1);
   local_8 = 0;
   FUN_00408530(param_1 + 0x3c);
   *(undefined4 *)(in_ECX + 0x170) = *(undefined4 *)(param_1 + 0x170);
@@ -16939,7 +16939,7 @@ void FUN_0052aa10(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
 {
   FUN_004013e0(0x3c,param_2);
-  FUN_004c4d40(param_3);
+  npk_sound_entry_copy(param_3);
   return;
 }
 
@@ -19194,7 +19194,7 @@ void FUN_0052c550(int param_1,int param_2,int param_3)
             pfStack_aa8 = (function<void___cdecl(void)> *)0x1a;
             puStack_aac = (undefined4 *)0x2904;
             puStack_ab0 = (undefined *)0x52f635;
-            FUN_006a3b20();
+            net_packet_send_fixed_0x20();
             pfStack_aa8 = (function<void___cdecl(void)> *)auStack_970;
             puStack_aac = (undefined4 *)0x52f661;
             FUN_004021b0();
@@ -19246,7 +19246,7 @@ void FUN_0052c550(int param_1,int param_2,int param_3)
             pfStack_aa8 = (function<void___cdecl(void)> *)0x1b;
             puStack_aac = (undefined4 *)0x2904;
             puStack_ab0 = (undefined *)0x52f7e1;
-            FUN_006a3b20();
+            net_packet_send_fixed_0x20();
             pfStack_aa8 = (function<void___cdecl(void)> *)auStack_988;
             puStack_aac = (undefined4 *)0x52f80d;
             FUN_004021b0();
@@ -19289,7 +19289,7 @@ void FUN_0052c550(int param_1,int param_2,int param_3)
           pfStack_aa8 = (function<void___cdecl(void)> *)0x1c;
           puStack_aac = (undefined4 *)0x2904;
           puStack_ab0 = (undefined *)0x52f936;
-          FUN_006a3b20();
+          net_packet_send_fixed_0x20();
           FUN_00519c60();
           FUN_00519cc0();
           pfStack_aa8 = (function<void___cdecl(void)> *)auStack_998;
@@ -20048,9 +20048,9 @@ LAB_0053066b:
               iVar7 = game_get_player_or_session_blob();
               pfStack_aa8 = *(function<void___cdecl(void)> **)(iVar7 + 0x1e8);
               puStack_aac = (undefined4 *)0x530766;
-              FUN_006a40b0();
+              net_packet_send_helper_640b0();
               pfStack_aa8 = (function<void___cdecl(void)> *)0x530778;
-              FUN_004f2750();
+              net_wait_until_opcode_either();
               local_8 = 0xffffffff;
               FUN_00493fe0();
             }
@@ -21894,7 +21894,7 @@ LAB_00536a82:
       pfStack_378 = *(function<void___cdecl(void)> **)(*local_278 + 0x9a0);
       uStack_37c = 43000;
       iStack_380 = 0x536869;
-      FUN_006a3b20();
+      net_packet_send_fixed_0x20();
     }
     else if ((*(int *)(local_2e4 + 0xb8) == 3) || (*(int *)(local_2e4 + 0xb8) == 4)) {
       pfStack_370 = (function<void___cdecl(void)> *)0x536891;
@@ -21903,7 +21903,7 @@ LAB_00536a82:
       pfStack_378 = *(function<void___cdecl(void)> **)(*local_278 + 0x9a0);
       uStack_37c = 43000;
       iStack_380 = 0x5368b2;
-      FUN_006a3b20();
+      net_packet_send_fixed_0x20();
     }
   }
   else {
@@ -21921,7 +21921,7 @@ LAB_00536a82:
         pfStack_378 = *(function<void___cdecl(void)> **)(*local_278 + 0x9a0);
         uStack_37c = 43000;
         iStack_380 = 0x536929;
-        FUN_006a3b20();
+        net_packet_send_fixed_0x20();
       }
     }
   }
@@ -27808,7 +27808,7 @@ LAB_005469d7:
         if (((local_ab8 == 4) || (local_ab8 == 3)) && ((local_ac0 == 2 || (local_ac0 == 4)))) {
           game_get_player_or_session_blob();
           game_get_state_ptr_d1520();
-          FUN_006a39f0();
+          net_packet_send_fixed_0x24();
         }
       }
       else {
@@ -27823,7 +27823,7 @@ LAB_005469d7:
             if (((local_ab8 == 4) || (local_ab8 == 3)) && ((local_ac0 == 2 || (local_ac0 == 4)))) {
               game_get_player_or_session_blob();
               game_get_state_ptr_d1520();
-              FUN_006a39f0();
+              net_packet_send_fixed_0x24();
             }
             break;
           }
@@ -28059,7 +28059,7 @@ LAB_005469d7:
       if ((local_ac8 == 4) || (local_ac8 == 3)) {
         game_get_player_or_session_blob();
         game_get_state_ptr_d1520();
-        FUN_006a39f0();
+        net_packet_send_fixed_0x24();
       }
     }
     else {
@@ -28074,7 +28074,7 @@ LAB_005469d7:
           if ((local_ac8 == 4) || (local_ac8 == 3)) {
             game_get_player_or_session_blob();
             game_get_state_ptr_d1520();
-            FUN_006a39f0();
+            net_packet_send_fixed_0x24();
           }
           break;
         }

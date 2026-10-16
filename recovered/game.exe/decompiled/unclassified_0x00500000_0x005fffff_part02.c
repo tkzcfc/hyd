@@ -23112,41 +23112,11 @@ undefined4 * <>(undefined4 *param_1)
 }
 
 
-/* ==== 00584470  FUN_00584470  size=20 ==== */
+/* 00584470 npk_img_map_clear size=20 → moved to npk_img_resource.c (NPK/IMG pass; single copy) */
 
-void FUN_00584470(void)
+/* 00584a50 npk_img_entry_ctor size=34 → moved to npk_img_resource.c (NPK/IMG pass; single copy) */
 
-{
-  FUN_00585ba0();
-  return;
-}
-
-
-/* ==== 00584a50  FUN_00584a50  size=34 ==== */
-
-undefined4 FUN_00584a50(void)
-
-{
-  undefined4 in_ECX;
-  
-  FUN_0040d8b0();
-  FUN_0040d8b0();
-  return in_ECX;
-}
-
-
-/* ==== 00584a80  FUN_00584a80  size=31 ==== */
-
-void FUN_00584a80(void)
-
-{
-  function<void___cdecl(void)> *in_ECX;
-  
-  std::function<void___cdecl(void)>::~function<void___cdecl(void)>(in_ECX + 0x24);
-  std::function<void___cdecl(void)>::~function<void___cdecl(void)>(in_ECX);
-  return;
-}
-
+/* 00584a80 npk_img_entry_dtor size=31 → moved to npk_img_resource.c (NPK/IMG pass; single copy) */
 
 /* ==== 00584aa0  ~WorkQueue  size=31 ==== */
 
@@ -23158,242 +23128,34 @@ void FUN_00584a80(void)
 void __thiscall Concurrency::details::WorkQueue::~WorkQueue(WorkQueue *this)
 
 {
-  FUN_00584a80();
+  npk_img_entry_dtor();
   std::function<void___cdecl(void)>::~function<void___cdecl(void)>
             ((function<void___cdecl(void)> *)this);
   return;
 }
 
 
-/* ==== 005855f0  FUN_005855f0  size=232 ==== */
+/* 005855f0 npk_img_lookup_and_decode size=232 → moved to npk_img_resource.c (NPK/IMG pass; single copy) */
 
-/* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
+/* 005856e0 npk_img_free_decoded_frames size=152 → moved to npk_img_resource.c (NPK/IMG pass; single copy) */
 
-int FUN_005855f0(undefined4 param_1)
+/* 005859e0 img_copy_pixels_fmt_10 size=106 → moved to npk_img_resource.c (NPK/IMG pass; single copy) */
 
-{
-  char cVar1;
-  uint uVar2;
-  undefined4 *puVar3;
-  undefined4 uVar4;
-  int iVar5;
-  undefined1 local_44 [4];
-  undefined1 local_40 [4];
-  int local_3c;
-  undefined4 local_34;
-  int local_30;
-  function<void___cdecl(void)> local_2c [24];
-  uint local_14;
-  void *local_10;
-  undefined1 *puStack_c;
-  undefined4 local_8;
-  
-  local_8 = 0xffffffff;
-  puStack_c = &LAB_0071d0dd;
-  local_10 = ExceptionList;
-  uVar2 = DAT_007c5940 ^ (uint)&stack0xfffffffc;
-  ExceptionList = &local_10;
-  local_30 = 0;
-  local_14 = uVar2;
-  FUN_004054a0(param_1);
-  local_8 = 0;
-  npk_path_normalize_helper(uVar2);
-  puVar3 = (undefined4 *)FUN_0048aa30(local_40,local_2c);
-  local_34 = *puVar3;
-  uVar4 = FUN_00489e00(local_44);
-  cVar1 = FUN_0040d970(uVar4);
-  if (cVar1 != '\0') {
-    MessageBoxA((HWND)0x0,&DAT_0075a5b0,(LPCSTR)0x0,0);
-  }
-  iVar5 = FUN_00489a10();
-  local_30 = iVar5 + 0x18;
-  if (*(int *)(iVar5 + 0x58) == 0) {
-    npk_img_decode_frames_from_entry(local_30);
-  }
-  local_3c = local_30;
-  local_8 = 0xffffffff;
-  std::function<void___cdecl(void)>::~function<void___cdecl(void)>(local_2c);
-  ExceptionList = local_10;
-  return local_3c;
-}
+/* 00585a50 npk_img_manager_release_all size=173 → moved to npk_img_resource.c (NPK/IMG pass; single copy) */
 
+/* 00585b10 npk_img_map_init size=29 → moved to npk_img_resource.c (NPK/IMG pass; single copy) */
 
-/* ==== 005856e0  FUN_005856e0  size=152 ==== */
+/* 00585b30 npk_img_map_clear_nodes size=102 → moved to npk_img_resource.c (NPK/IMG pass; single copy) */
 
-void FUN_005856e0(int param_1)
+/* 00585ba0 npk_img_map_destroy_tree size=42 → moved to npk_img_resource.c (NPK/IMG pass; single copy) */
 
-{
-  int local_8;
-  
-  for (local_8 = 0; local_8 < *(int *)(param_1 + 0x3c); local_8 = local_8 + 1) {
-    if (*(int *)(*(int *)(param_1 + 0x40) + 0x24 + local_8 * 0x28) != 0) {
-      FUN_006e4b8e(*(undefined4 *)(*(int *)(param_1 + 0x40) + 0x24 + local_8 * 0x28),1);
-      *(undefined4 *)(*(int *)(param_1 + 0x40) + 0x24 + local_8 * 0x28) = 0;
-    }
-  }
-  thunk_FUN_006f1902(*(undefined4 *)(param_1 + 0x40));
-  *(undefined4 *)(param_1 + 0x40) = 0;
-  return;
-}
+/* 00585bd0 npk_img_map_construct size=49 → moved to npk_img_resource.c (NPK/IMG pass; single copy) */
 
+/* 00585c10 npk_img_map_allocate_sentinel size=78 → moved to npk_img_resource.c (NPK/IMG pass; single copy) */
 
-/* ==== 005859e0  FUN_005859e0  size=106 ==== */
+/* 00585c60 npk_img_map_insert size=43 → moved to npk_img_resource.c (NPK/IMG pass; single copy) */
 
-void FUN_005859e0(int param_1,int param_2,int param_3)
-
-{
-  undefined4 local_8;
-  
-  for (local_8 = 0; local_8 < param_3; local_8 = local_8 + 4) {
-    *(undefined1 *)(param_1 + local_8) = *(undefined1 *)(param_2 + local_8);
-    *(undefined1 *)(param_1 + local_8 + 1) = *(undefined1 *)(param_2 + local_8 + 1);
-    *(undefined1 *)(param_1 + local_8 + 2) = *(undefined1 *)(param_2 + local_8 + 2);
-    *(undefined1 *)(param_1 + local_8 + 3) = *(undefined1 *)(param_2 + local_8 + 3);
-  }
-  return;
-}
-
-
-/* ==== 00585a50  FUN_00585a50  size=173 ==== */
-
-void FUN_00585a50(void)
-
-{
-  char cVar1;
-  uint uVar2;
-  int iVar3;
-  undefined1 local_1c [11];
-  undefined1 local_11;
-  void *local_10;
-  undefined1 *puStack_c;
-  undefined4 uStack_8;
-  
-  uStack_8 = 0xffffffff;
-  puStack_c = &LAB_0070c8f0;
-  local_10 = ExceptionList;
-  uVar2 = DAT_007c5940 ^ (uint)&stack0xfffffffc;
-  ExceptionList = &local_10;
-  FUN_0044dff0(local_1c);
-  FUN_0044dfd0(&local_11);
-  while( true ) {
-    cVar1 = FUN_0044dd70(local_11);
-    if (cVar1 == '\0') break;
-    iVar3 = FUN_0044dd50();
-    if (*(int *)(iVar3 + 0x58) != 0) {
-      FUN_005856e0(iVar3 + 0x18);
-    }
-    FUN_0044dd30();
-  }
-  FUN_00585b30(uVar2);
-  FUN_00584470();
-  ExceptionList = local_10;
-  return;
-}
-
-
-/* ==== 00585b10  FUN_00585b10  size=29 ==== */
-
-undefined4 FUN_00585b10(void)
-
-{
-  undefined4 in_ECX;
-  undefined1 local_5;
-  
-  FUN_00585bd0(&local_5);
-  return in_ECX;
-}
-
-
-/* ==== 00585b30  FUN_00585b30  size=102 ==== */
-
-void FUN_00585b30(void)
-
-{
-  int iVar1;
-  int *piVar2;
-  undefined4 uVar3;
-  undefined4 uVar4;
-  
-  piVar2 = (int *)FUN_004057d0();
-  FUN_00401720(0);
-  iVar1 = *piVar2;
-  uVar4 = *(undefined4 *)(iVar1 + 4);
-  uVar3 = FUN_00401c60(uVar4);
-  FUN_00585cb0(uVar3,uVar4);
-  *(int *)(iVar1 + 4) = iVar1;
-  *(int *)iVar1 = iVar1;
-  *(int *)(iVar1 + 8) = iVar1;
-  piVar2[1] = 0;
-  return;
-}
-
-
-/* ==== 00585ba0  FUN_00585ba0  size=42 ==== */
-
-void FUN_00585ba0(void)
-
-{
-  undefined4 uVar1;
-  
-  uVar1 = FUN_004057d0();
-  uVar1 = FUN_00401c60(uVar1);
-  FUN_00585d00(uVar1);
-  return;
-}
-
-
-/* ==== 00585bd0  FUN_00585bd0  size=49 ==== */
-
-undefined4 FUN_00585bd0(undefined4 param_1)
-
-{
-  undefined4 in_ECX;
-  undefined1 local_6;
-  undefined1 local_5;
-  
-  FUN_0040ebd0(local_6,param_1,&local_5);
-  FUN_00585c10();
-  return in_ECX;
-}
-
-
-/* ==== 00585c10  FUN_00585c10  size=78 ==== */
-
-void FUN_00585c10(void)
-
-{
-  undefined4 *puVar1;
-  undefined4 uVar2;
-  
-  puVar1 = (undefined4 *)FUN_004057d0();
-  FUN_00401740(&DAT_0073ff46,puVar1);
-  uVar2 = FUN_00401c60();
-  uVar2 = FUN_00585d40(uVar2);
-  *puVar1 = uVar2;
-  FUN_00401710();
-  return;
-}
-
-
-/* ==== 00585c60  FUN_00585c60  size=43 ==== */
-
-undefined4 FUN_00585c60(undefined4 param_1,undefined4 param_2,undefined4 param_3)
-
-{
-  FUN_00585e40(param_2,param_3);
-  return param_1;
-}
-
-
-/* ==== 00585c90  FUN_00585c90  size=32 ==== */
-
-undefined4 FUN_00585c90(undefined4 param_1,undefined4 param_2)
-
-{
-  FUN_00585f60(param_1,param_2);
-  return param_1;
-}
-
+/* 00585c90 npk_img_map_insert_commit size=32 → moved to npk_img_resource.c (NPK/IMG pass; single copy) */
 
 /* ==== 00585cb0  FUN_00585cb0  size=74 ==== */
 
@@ -23483,54 +23245,9 @@ void allocate(undefined4 param_1)
 }
 
 
-/* ==== 00585e40  FUN_00585e40  size=100 ==== */
+/* 00585e40 npk_img_entry_assign_for_insert size=100 → moved to npk_img_resource.c (NPK/IMG pass; single copy) */
 
-undefined4 FUN_00585e40(undefined4 param_1,undefined4 param_2)
-
-{
-  undefined4 in_ECX;
-  void *local_10;
-  undefined1 *puStack_c;
-  undefined4 local_8;
-  
-  local_8 = 0xffffffff;
-  puStack_c = &LAB_0070ce0d;
-  local_10 = ExceptionList;
-  ExceptionList = &local_10;
-  FUN_00405520(param_1);
-  local_8 = 0;
-  FUN_00585eb0(param_2);
-  ExceptionList = local_10;
-  return in_ECX;
-}
-
-
-/* ==== 00585eb0  FUN_00585eb0  size=162 ==== */
-
-int FUN_00585eb0(int param_1)
-
-{
-  int in_ECX;
-  void *local_10;
-  undefined1 *puStack_c;
-  undefined4 local_8;
-  
-  local_8 = 0xffffffff;
-  puStack_c = &LAB_0070ce0d;
-  local_10 = ExceptionList;
-  ExceptionList = &local_10;
-  FUN_00405520(param_1);
-  local_8 = 0;
-  *(undefined4 *)(in_ECX + 0x18) = *(undefined4 *)(param_1 + 0x18);
-  *(undefined4 *)(in_ECX + 0x1c) = *(undefined4 *)(param_1 + 0x1c);
-  *(undefined4 *)(in_ECX + 0x20) = *(undefined4 *)(param_1 + 0x20);
-  FUN_00405520(param_1 + 0x24);
-  *(undefined4 *)(in_ECX + 0x3c) = *(undefined4 *)(param_1 + 0x3c);
-  *(undefined4 *)(in_ECX + 0x40) = *(undefined4 *)(param_1 + 0x40);
-  ExceptionList = local_10;
-  return in_ECX;
-}
-
+/* 00585eb0 npk_img_entry_copy size=162 → moved to npk_img_resource.c (NPK/IMG pass; single copy) */
 
 /* ==== 00585f60  FUN_00585f60  size=70 ==== */
 
@@ -25641,7 +25358,7 @@ void FUN_00586540(int param_1,int param_2,int param_3)
             iVar2 = net_packet_write_bytes();
             iStack_a44 = iVar2 + iStack_a44;
           }
-          FUN_006a31b0();
+          net_socket_send_all();
           FUN_006f1902();
         }
         break;
@@ -25716,7 +25433,7 @@ void FUN_00586540(int param_1,int param_2,int param_3)
         if (cVar1 == '\0') {
           pfStack_122c = (function<void___cdecl(void)> *)0x0;
           pfStack_1230 = (function<void___cdecl(void)> *)0x58a0b2;
-          FUN_006a47c0();
+          net_packet_send_helper_647c0();
         }
         FUN_0040d540();
         iVar2 = game_get_player_or_session_blob();
@@ -25732,7 +25449,7 @@ void FUN_00586540(int param_1,int param_2,int param_3)
     if (param_1 == 0x11f8) {
       local_ef0 = *(undefined4 *)(param_2 + 0x9a0);
       pfStack_122c = (function<void___cdecl(void)> *)0x58a627;
-      FUN_006a3c30();
+      net_packet_send_opcode_onlyish();
       local_ef4 = 0x42e;
       local_b68 = game_timing_or_delay_helper();
       local_aec = (int *)game_loop_helper_018d0();
@@ -25790,7 +25507,7 @@ void FUN_00586540(int param_1,int param_2,int param_3)
       if (param_1 == 0x1068) {
         local_ed8 = *(undefined4 *)(param_2 + 0x9a0);
         pfStack_122c = (function<void___cdecl(void)> *)0x58a42b;
-        FUN_006a3c30();
+        net_packet_send_opcode_onlyish();
         pfStack_122c = (function<void___cdecl(void)> *)0x0;
         pfStack_1230 = (function<void___cdecl(void)> *)0xa;
         FUN_004054a0(&DAT_0075aac4);
@@ -25831,7 +25548,7 @@ void FUN_00586540(int param_1,int param_2,int param_3)
               }
               else {
                 pfStack_122c = (function<void___cdecl(void)> *)0x58a22f;
-                FUN_006a3c30();
+                net_packet_send_opcode_onlyish();
                 pfStack_122c = (function<void___cdecl(void)> *)0x0;
                 pfStack_1230 = (function<void___cdecl(void)> *)0xa;
                 FUN_004054a0(&DAT_0075aa54);
@@ -25871,7 +25588,7 @@ void FUN_00586540(int param_1,int param_2,int param_3)
           iVar2 = FUN_0044de10();
           if (*(char *)(*(int *)(iVar2 + 4) + 0xe06) == '\0') {
             pfStack_122c = (function<void___cdecl(void)> *)0x58a367;
-            FUN_006a3c30();
+            net_packet_send_opcode_onlyish();
             FUN_00454ee0();
             FUN_00489bf0();
             FUN_0058d680();
@@ -25894,7 +25611,7 @@ void FUN_00586540(int param_1,int param_2,int param_3)
     else if (param_1 == 0x1194) {
       local_ee4 = *(undefined4 *)(param_2 + 0x9a0);
       pfStack_122c = (function<void___cdecl(void)> *)0x58a4cb;
-      FUN_006a3c30();
+      net_packet_send_opcode_onlyish();
       local_ee8 = 0x42e;
       local_b64 = game_timing_or_delay_helper();
       local_ae8 = (int *)game_loop_helper_018d0();
@@ -25931,7 +25648,7 @@ void FUN_00586540(int param_1,int param_2,int param_3)
       local_b88 = *(undefined4 *)(param_2 + 0x9a0);
       game_get_player_or_session_blob();
       pfStack_122c = (function<void___cdecl(void)> *)0x58ab8e;
-      FUN_006a3c30();
+      net_packet_send_opcode_onlyish();
       local_f34 = 0x42e;
       local_b78 = game_timing_or_delay_helper();
       local_b04 = game_loop_helper_018d0();
@@ -25987,7 +25704,7 @@ void FUN_00586540(int param_1,int param_2,int param_3)
         game_get_player_or_session_blob();
         pfStack_122c = (function<void___cdecl(void)> *)0x0;
         pfStack_1230 = (function<void___cdecl(void)> *)0x58adcc;
-        FUN_006a47c0();
+        net_packet_send_helper_647c0();
       }
       local_f40 = 0x42e;
       game_timing_or_delay_helper();
@@ -26021,7 +25738,7 @@ void FUN_00586540(int param_1,int param_2,int param_3)
     else if (param_1 == 0x125c) {
       local_f0c = *(undefined4 *)(param_2 + 0x9a0);
       pfStack_122c = (function<void___cdecl(void)> *)0x58a89d;
-      FUN_006a3c30();
+      net_packet_send_opcode_onlyish();
       local_f10 = 0x38;
       local_f14 = 0x38;
       game_timing_or_delay_helper();
@@ -26032,7 +25749,7 @@ void FUN_00586540(int param_1,int param_2,int param_3)
     else if (param_1 == 0x12c0) {
       local_f18 = *(undefined4 *)(param_2 + 0x9a0);
       pfStack_122c = (function<void___cdecl(void)> *)0x58a916;
-      FUN_006a3c30();
+      net_packet_send_opcode_onlyish();
       local_f1c = 0x42e;
       local_b70 = game_timing_or_delay_helper();
       local_af8 = (int *)game_loop_helper_018d0();
@@ -26183,7 +25900,7 @@ void FUN_00586540(int param_1,int param_2,int param_3)
             pfStack_122c = *(function<void___cdecl(void)> **)(local_e98 + 0x9a0);
             pfStack_1230 = (function<void___cdecl(void)> *)0x1450;
             uStack_1234 = 0x589d4f;
-            FUN_006a39f0();
+            net_packet_send_fixed_0x24();
             local_e9c = 0x38;
             local_ea0 = 0x38;
             game_timing_or_delay_helper();
@@ -30016,7 +29733,7 @@ void FUN_0059e8c0(undefined4 param_1,undefined4 param_2,char *param_3)
     }
     FUN_004054a0(&local_114);
     local_8 = 0;
-    uVar3 = FUN_004c4190(local_178,&DAT_0075cee0,local_12c);
+    uVar3 = npk_sound_path_join_soundpacks(local_178,&DAT_0075cee0,local_12c);
     FUN_004053e0(uVar3);
     std::function<void___cdecl(void)>::~function<void___cdecl(void)>(local_178);
     while( true ) {
@@ -30136,7 +29853,7 @@ undefined4 FUN_0059ee30(undefined4 param_1,undefined4 param_2,char *param_3)
     }
     FUN_004054a0(&local_114);
     local_8 = 0;
-    uVar3 = FUN_004c4190(local_164,&DAT_0075cf14,local_12c);
+    uVar3 = npk_sound_path_join_soundpacks(local_164,&DAT_0075cf14,local_12c);
     FUN_004053e0(uVar3);
     std::function<void___cdecl(void)>::~function<void___cdecl(void)>(local_164);
     while( true ) {
@@ -31982,7 +31699,7 @@ undefined1 FUN_005a3200(undefined4 param_1,undefined4 param_2,char *param_3)
   }
   FUN_004054a0(&local_114);
   local_8 = 0;
-  local_180 = FUN_004c4190(local_144,&DAT_0075d228,local_12c);
+  local_180 = npk_sound_path_join_soundpacks(local_144,&DAT_0075d228,local_12c);
   FUN_004053e0(local_180);
   std::function<void___cdecl(void)>::~function<void___cdecl(void)>(local_144);
   do {
@@ -32070,7 +31787,7 @@ undefined4 FUN_005a3520(undefined4 param_1,undefined4 param_2,char *param_3)
   }
   FUN_004054a0(&local_114);
   local_8 = 0;
-  uVar3 = FUN_004c4190(local_160,&DAT_0075d234,local_148);
+  uVar3 = npk_sound_path_join_soundpacks(local_160,&DAT_0075d234,local_148);
   FUN_004053e0(uVar3);
   std::function<void___cdecl(void)>::~function<void___cdecl(void)>(local_160);
   do {
@@ -32185,7 +31902,7 @@ undefined4 FUN_005a39e0(undefined4 param_1,int *param_2,undefined4 param_3,char 
   }
   FUN_004054a0(local_114);
   local_8 = 1;
-  uVar2 = FUN_004c4190(local_144,&DAT_0075d25c,local_12c);
+  uVar2 = npk_sound_path_join_soundpacks(local_144,&DAT_0075d25c,local_12c);
   FUN_004053e0(uVar2);
   std::function<void___cdecl(void)>::~function<void___cdecl(void)>(local_144);
   do {
@@ -32296,7 +32013,7 @@ undefined1 FUN_005a3df0(undefined4 param_1,undefined4 param_2,char *param_3)
   }
   FUN_004054a0(&local_114);
   local_8 = 0;
-  local_180 = FUN_004c4190(local_144,&DAT_0075d270,local_12c);
+  local_180 = npk_sound_path_join_soundpacks(local_144,&DAT_0075d270,local_12c);
   FUN_004053e0(local_180);
   std::function<void___cdecl(void)>::~function<void___cdecl(void)>(local_144);
   do {
@@ -32393,7 +32110,7 @@ undefined4 FUN_005a4110(undefined4 param_1,int *param_2,undefined4 param_3,char 
   }
   FUN_004054a0(local_114);
   local_8 = 1;
-  uVar2 = FUN_004c4190(local_144,&DAT_0075d280,local_12c);
+  uVar2 = npk_sound_path_join_soundpacks(local_144,&DAT_0075d280,local_12c);
   FUN_004053e0(uVar2);
   std::function<void___cdecl(void)>::~function<void___cdecl(void)>(local_144);
   do {
@@ -32503,7 +32220,7 @@ undefined1 FUN_005a4580(undefined4 param_1,undefined4 param_2,char *param_3)
   }
   FUN_004054a0(local_114);
   local_8 = 0;
-  uVar2 = FUN_004c4190(local_144,&DAT_0075d2cc,local_12c);
+  uVar2 = npk_sound_path_join_soundpacks(local_144,&DAT_0075d2cc,local_12c);
   FUN_004053e0(uVar2);
   std::function<void___cdecl(void)>::~function<void___cdecl(void)>(local_144);
   do {
@@ -32609,7 +32326,7 @@ undefined1 FUN_005a4910(undefined4 param_1,undefined4 param_2,char *param_3)
   }
   FUN_004054a0(&local_114);
   local_8 = 0;
-  local_188 = FUN_004c4190(local_144,&DAT_0075d2ec,local_12c);
+  local_188 = npk_sound_path_join_soundpacks(local_144,&DAT_0075d2ec,local_12c);
   FUN_004053e0(local_188);
   std::function<void___cdecl(void)>::~function<void___cdecl(void)>(local_144);
   do {
@@ -32715,7 +32432,7 @@ undefined1 FUN_005a4d10(undefined4 param_1,undefined4 param_2,char *param_3)
   }
   FUN_004054a0(local_114);
   local_8 = 0;
-  uVar2 = FUN_004c4190(local_144,&DAT_0075d330,local_12c);
+  uVar2 = npk_sound_path_join_soundpacks(local_144,&DAT_0075d330,local_12c);
   FUN_004053e0(uVar2);
   std::function<void___cdecl(void)>::~function<void___cdecl(void)>(local_144);
   do {
@@ -32829,7 +32546,7 @@ undefined1 FUN_005a5140(undefined4 param_1,undefined4 param_2,char *param_3)
   }
   FUN_004054a0(local_114);
   local_8 = 0;
-  uVar2 = FUN_004c4190(local_144,&DAT_0075d3bc,local_12c);
+  uVar2 = npk_sound_path_join_soundpacks(local_144,&DAT_0075d3bc,local_12c);
   FUN_004053e0(uVar2);
   std::function<void___cdecl(void)>::~function<void___cdecl(void)>(local_144);
   do {
@@ -32988,7 +32705,7 @@ undefined1 FUN_005a58f0(undefined4 param_1,undefined4 param_2,char *param_3)
   }
   FUN_004054a0(local_114);
   local_8 = 0;
-  uVar2 = FUN_004c4190(local_144,&DAT_0075d400,local_12c);
+  uVar2 = npk_sound_path_join_soundpacks(local_144,&DAT_0075d400,local_12c);
   FUN_004053e0(uVar2);
   std::function<void___cdecl(void)>::~function<void___cdecl(void)>(local_144);
   do {
@@ -33105,7 +32822,7 @@ undefined1 FUN_005a5dc0(undefined4 param_1,undefined4 param_2,char *param_3)
   }
   FUN_004054a0(local_114);
   local_8 = 0;
-  uVar2 = FUN_004c4190(local_144,&DAT_0075d458,local_12c);
+  uVar2 = npk_sound_path_join_soundpacks(local_144,&DAT_0075d458,local_12c);
   FUN_004053e0(uVar2);
   std::function<void___cdecl(void)>::~function<void___cdecl(void)>(local_144);
   do {
@@ -33240,7 +32957,7 @@ undefined4 FUN_005a63d0(undefined4 param_1,undefined4 param_2,char *param_3)
   }
   FUN_004054a0(&local_114);
   local_8 = 0;
-  uVar3 = FUN_004c4190(local_144,&DAT_0075d4a8,local_12c);
+  uVar3 = npk_sound_path_join_soundpacks(local_144,&DAT_0075d4a8,local_12c);
   FUN_004053e0(uVar3);
   std::function<void___cdecl(void)>::~function<void___cdecl(void)>(local_144);
   do {
@@ -33396,7 +33113,7 @@ undefined1 FUN_005a6b60(undefined4 param_1,undefined4 param_2,char *param_3)
   }
   FUN_004054a0(local_114);
   local_8 = 0;
-  uVar2 = FUN_004c4190(local_144,&DAT_0075d50c,local_12c);
+  uVar2 = npk_sound_path_join_soundpacks(local_144,&DAT_0075d50c,local_12c);
   FUN_004053e0(uVar2);
   std::function<void___cdecl(void)>::~function<void___cdecl(void)>(local_144);
   do {
@@ -33536,7 +33253,7 @@ undefined4 FUN_005a7210(undefined4 param_1,undefined4 param_2,char *param_3,unde
     std::function<void___cdecl(void)>::~function<void___cdecl(void)>(local_120);
     pcVar2 = __strlwr(local_108);
     FUN_004053a0(pcVar2);
-    uVar3 = FUN_004c4190(local_138,"sprite/",param_4);
+    uVar3 = npk_sound_path_join_soundpacks(local_138,"sprite/",param_4);
     FUN_004053e0(uVar3);
     std::function<void___cdecl(void)>::~function<void___cdecl(void)>(local_138);
     uVar3 = 1;
@@ -33593,7 +33310,7 @@ FUN_005a73d0(undefined4 param_1,undefined4 param_2,char *param_3,undefined4 para
     std::function<void___cdecl(void)>::~function<void___cdecl(void)>(local_120);
     pcVar2 = __strlwr(local_108);
     FUN_004053a0(pcVar2);
-    uVar3 = FUN_004c4190(local_138,"sprite/",param_4);
+    uVar3 = npk_sound_path_join_soundpacks(local_138,"sprite/",param_4);
     FUN_004053e0(uVar3);
     std::function<void___cdecl(void)>::~function<void___cdecl(void)>(local_138);
     FUN_0059f350(&local_140,&param_2,param_5);
@@ -34231,7 +33948,7 @@ LAB_005a81ce:
             pfStack_470 = (function<void___cdecl(void)> *)0x75d5f0;
             pfStack_474 = local_1f8;
             uStack_478 = 0x5a8329;
-            local_360 = FUN_004c4190();
+            local_360 = npk_sound_path_join_soundpacks();
             pfStack_470 = (function<void___cdecl(void)> *)0x5a8344;
             FUN_004053e0();
             std::function<void___cdecl(void)>::~function<void___cdecl(void)>(local_1f8);
@@ -35766,7 +35483,7 @@ LAB_005aa6a9:
       pfStack_68c = (function<void___cdecl(void)> *)0x75d7f0;
       pfStack_690 = local_344;
       uStack_694 = 0x5aa7c3;
-      local_650 = FUN_004c4190();
+      local_650 = npk_sound_path_join_soundpacks();
       pfStack_68c = (function<void___cdecl(void)> *)0x5aa7de;
       FUN_004053e0();
       std::function<void___cdecl(void)>::~function<void___cdecl(void)>(local_344);
@@ -35842,7 +35559,7 @@ LAB_005aa94e:
       pfStack_68c = (function<void___cdecl(void)> *)0x75d810;
       pfStack_690 = local_35c;
       uStack_694 = 0x5aaa68;
-      local_53c = FUN_004c4190();
+      local_53c = npk_sound_path_join_soundpacks();
       pfStack_68c = (function<void___cdecl(void)> *)0x5aaa83;
       FUN_004053e0();
       std::function<void___cdecl(void)>::~function<void___cdecl(void)>(local_35c);
@@ -35918,7 +35635,7 @@ LAB_005aabf3:
         pfStack_68c = (function<void___cdecl(void)> *)0x75d830;
         pfStack_690 = local_374;
         uStack_694 = 0x5aad0d;
-        local_554 = FUN_004c4190();
+        local_554 = npk_sound_path_join_soundpacks();
         pfStack_68c = (function<void___cdecl(void)> *)0x5aad28;
         FUN_004053e0();
         std::function<void___cdecl(void)>::~function<void___cdecl(void)>(local_374);
@@ -37492,7 +37209,7 @@ LAB_005adf90:
               __strlwr((char *)local_114);
               FUN_004c7bc0();
               FUN_004053a0();
-              FUN_004c4190();
+              npk_sound_path_join_soundpacks();
               FUN_004053e0();
               std::function<void___cdecl(void)>::~function<void___cdecl(void)>(local_1bc);
               config_section_span_helper();
@@ -39050,7 +38767,7 @@ int FUN_005b0aa0(void)
           puStack_398 = (uint *)0x75e4b0;
           pfStack_39c = local_2a0;
           puStack_3a0 = (undefined1 *)0x5b1cde;
-          local_348 = FUN_004c4190();
+          local_348 = npk_sound_path_join_soundpacks();
           puStack_398 = (uint *)0x5b1cf9;
           FUN_004053e0();
           std::function<void___cdecl(void)>::~function<void___cdecl(void)>(local_2a0);

@@ -8538,7 +8538,7 @@ void FUN_00549580(void)
             pfStack_3ec = *(function<void___cdecl(void)> **)(*piVar3 + 0xc);
             puStack_3f0 = (undefined4 *)0x9290;
             uStack_3f4 = 0x549ead;
-            FUN_006a3d30();
+            net_packet_send_375xx();
           }
         }
         puStack_3e4 = (uint *)0x549eb5;

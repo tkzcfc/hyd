@@ -5178,7 +5178,7 @@ void FUN_00653820(void)
         pfStack_2b0 = (function<void___cdecl(void)> *)local_28;
         pfStack_2b4 = local_a0;
         puStack_2b8 = (undefined4 *)0x654005;
-        pcStack_2ac = (code *)FUN_004c4190();
+        pcStack_2ac = (code *)npk_sound_path_join_soundpacks();
         pfStack_2b0 = (function<void___cdecl(void)> *)0x654026;
         local_f8 = pcStack_2ac;
         FUN_004053e0();
@@ -10194,7 +10194,7 @@ LAB_006698ad:
       pcStack_2a0 = local_114;
       pfStack_2a4 = local_18c;
       uStack_2a8 = 0x669879;
-      pcStack_29c = (char *)FUN_004c4190();
+      pcStack_29c = (char *)npk_sound_path_join_soundpacks();
       pcStack_2a0 = (char *)0x66989a;
       local_1a0 = pcStack_29c;
       FUN_004053e0();
@@ -11592,7 +11592,7 @@ void ui_handle_lbutton_up(void)
         pfStack_210c = (function<void___cdecl(void)> *)0x19;
         puStack_2110 = (undefined1 *)0x2904;
         pfStack_2114 = (function<void___cdecl(void)> *)0x67232e;
-        FUN_006a39f0();
+        net_packet_send_fixed_0x24();
       }
       if (0 < *(int *)(local_1900 + 0x28)) {
         pfStack_2100 = (function<void___cdecl(void)> *)(local_1900 + 0x24);
@@ -11641,7 +11641,7 @@ void ui_handle_lbutton_up(void)
         pfStack_210c = (function<void___cdecl(void)> *)0x19;
         puStack_2110 = (undefined1 *)0x2904;
         pfStack_2114 = (function<void___cdecl(void)> *)0x67241b;
-        FUN_006a39f0();
+        net_packet_send_fixed_0x24();
       }
       *(undefined4 *)(local_1900 + 0xb8) = 0;
       pfStack_2100 = (function<void___cdecl(void)> *)0x67243c;
@@ -13703,7 +13703,7 @@ LAB_00676ce7:
             pfStack_2108 = (function<void___cdecl(void)> *)0x3f4;
             pfStack_210c = (function<void___cdecl(void)> *)0x0;
             puStack_2110 = (undefined1 *)0x676c21;
-            FUN_006a47c0();
+            net_packet_send_helper_647c0();
             pfStack_2100 = (function<void___cdecl(void)> *)local_18d8;
             pfStack_2104 = (function<void___cdecl(void)> *)local_193c;
             pfStack_2108 = (function<void___cdecl(void)> *)0x676c3d;
@@ -15076,7 +15076,7 @@ LAB_006758a6:
                             pfStack_2104 = (function<void___cdecl(void)> *)local_19f8;
                             pfStack_2108 = (function<void___cdecl(void)> *)0x3f5;
                             pfStack_210c = (function<void___cdecl(void)> *)0x67744c;
-                            FUN_006a4d90();
+                            net_packet_send_helper_64d90();
                             goto LAB_0067746d;
                           }
                         }
@@ -15087,7 +15087,7 @@ LAB_006758a6:
                       pfStack_2108 = (function<void___cdecl(void)> *)0x3f4;
                       pfStack_210c = (function<void___cdecl(void)> *)0x1;
                       puStack_2110 = (undefined1 *)0x67746a;
-                      FUN_006a47c0();
+                      net_packet_send_helper_647c0();
                     }
                     else {
                       pfStack_2100 = (function<void___cdecl(void)> *)0x6773f2;
@@ -15095,7 +15095,7 @@ LAB_006758a6:
                       pfStack_2104 = (function<void___cdecl(void)> *)local_19f8;
                       pfStack_2108 = (function<void___cdecl(void)> *)0x3f5;
                       pfStack_210c = (function<void___cdecl(void)> *)0x677404;
-                      FUN_006a4d90();
+                      net_packet_send_helper_64d90();
                     }
 LAB_0067746d:
                     local_8 = CONCAT31(local_8._1_3_,0x1d);
@@ -15186,7 +15186,7 @@ LAB_0067746d:
             pfStack_2104 = (function<void___cdecl(void)> *)local_1a6c;
             pfStack_2108 = (function<void___cdecl(void)> *)0x3f5;
             pfStack_210c = (function<void___cdecl(void)> *)0x677655;
-            FUN_006a4d90();
+            net_packet_send_helper_64d90();
             goto LAB_00677676;
           }
         }
@@ -15197,7 +15197,7 @@ LAB_0067746d:
       pfStack_2108 = (function<void___cdecl(void)> *)0x3f4;
       pfStack_210c = (function<void___cdecl(void)> *)0x1;
       puStack_2110 = (undefined1 *)0x677673;
-      FUN_006a47c0();
+      net_packet_send_helper_647c0();
     }
     else {
       pfStack_2100 = (function<void___cdecl(void)> *)0x6775fb;
@@ -15205,7 +15205,7 @@ LAB_0067746d:
       pfStack_2104 = (function<void___cdecl(void)> *)local_1a6c;
       pfStack_2108 = (function<void___cdecl(void)> *)0x3f5;
       pfStack_210c = (function<void___cdecl(void)> *)0x67760d;
-      FUN_006a4d90();
+      net_packet_send_helper_64d90();
     }
 LAB_00677676:
     local_8._0_1_ = 0x21;
@@ -15817,7 +15817,7 @@ LAB_0067832e:
             pfStack_210c = *(function<void___cdecl(void)> **)(iVar2 + 0x1e8);
             puStack_2110 = (undefined1 *)0x10cc;
             pfStack_2114 = (function<void___cdecl(void)> *)0x679571;
-            FUN_006a4370();
+            net_packet_send_helper_64370();
           }
           else {
             pfStack_2100 = *(function<void___cdecl(void)> **)(DAT_007ca1ec + 0xa10);
@@ -16836,7 +16836,7 @@ LAB_00679c10:
           pfStack_210c = *(function<void___cdecl(void)> **)(iVar2 + 0x1e8);
           puStack_2110 = (undefined1 *)0x10cc;
           pfStack_2114 = (function<void___cdecl(void)> *)0x678eab;
-          FUN_006a4370();
+          net_packet_send_helper_64370();
           break;
         }
         local_1930 = local_1930 + 1;
@@ -16971,7 +16971,7 @@ LAB_00679c10:
             pfStack_210c = *(function<void___cdecl(void)> **)(iVar2 + 0x1e8);
             puStack_2110 = (undefined1 *)0x10cc;
             pfStack_2114 = (function<void___cdecl(void)> *)0x6791b7;
-            FUN_006a4370();
+            net_packet_send_helper_64370();
             local_190b = '\x01';
             break;
           }
@@ -17073,7 +17073,7 @@ LAB_00679c10:
               pfStack_210c = *(function<void___cdecl(void)> **)(iVar2 + 0x1e8);
               puStack_2110 = (undefined1 *)0x10cc;
               pfStack_2114 = (function<void___cdecl(void)> *)0x6793df;
-              FUN_006a4370();
+              net_packet_send_helper_64370();
               break;
             }
             local_1934 = local_1934 + 1;
@@ -18201,7 +18201,7 @@ void FUN_006a56d0(int param_1,int param_2,undefined4 param_3)
             apcStack_30c[7] = (char *)0x3f4;
             apcStack_30c[6] = (char *)0x0;
             apcStack_30c[5] = (char *)0x6a5a83;
-            FUN_006a47c0();
+            net_packet_send_helper_647c0();
             local_2b0 = (undefined1 *)(apcStack_30c + 4);
             apcStack_30c[3] = "STRENGTHEN_SUCCESS";
             apcStack_30c[2] = (char *)0x6a5a9b;
@@ -18236,7 +18236,7 @@ void FUN_006a56d0(int param_1,int param_2,undefined4 param_3)
               apcStack_30c[6] = (char *)0x1;
               apcStack_30c[5] = (char *)0xa410;
               apcStack_30c[4] = (char *)0x6a5b48;
-              FUN_006a39f0();
+              net_packet_send_fixed_0x24();
             }
             local_8._0_1_ = 1;
             pcStack_2e8 = (code *)0x6a5b5a;
@@ -19981,7 +19981,7 @@ void FUN_006a8110(int param_1,undefined1 *param_2,undefined1 *param_3)
         local_1254 = (function<void___cdecl(void)> *)0x3f4;
         puStack_1258 = (undefined4 *)0x0;
         uStack_125c = 0x6aa103;
-        FUN_006a47c0();
+        net_packet_send_helper_647c0();
       }
       local_8._0_1_ = 0x27;
       local_124c = (code *)0x6aa115;
@@ -20533,7 +20533,7 @@ void FUN_006a8110(int param_1,undefined1 *param_2,undefined1 *param_3)
       *(int *)(iVar2 + 0x28) = iVar6;
       local_124c = *(code **)(param_3 + 0xc);
       local_1250 = (function<void___cdecl(void)> *)0x6ab22a;
-      iVar2 = FUN_004bcf10();
+      iVar2 = npk_img_frame_ptr_at();
       local_124c = *(code **)(iVar2 + 0x20);
       local_1250 = (function<void___cdecl(void)> *)0x6ab239;
       iVar2 = game_loop_helper_cd6d0();
@@ -20548,7 +20548,7 @@ void FUN_006a8110(int param_1,undefined1 *param_2,undefined1 *param_3)
       FUN_0040d840();
       local_124c = *(code **)(param_3 + 0xc);
       local_1250 = (function<void___cdecl(void)> *)0x6ab27a;
-      iVar2 = FUN_004bcf10();
+      iVar2 = npk_img_frame_ptr_at();
       local_124c = *(code **)(iVar2 + 0x20);
       local_1250 = (function<void___cdecl(void)> *)0x6ab289;
       iVar2 = game_loop_helper_cd6d0();
@@ -20707,7 +20707,7 @@ void FUN_006a8110(int param_1,undefined1 *param_2,undefined1 *param_3)
       local_fb0 = local_1078;
       FUN_005dc370();
       local_1250 = (function<void___cdecl(void)> *)0x6ab706;
-      iVar2 = FUN_004bcf10();
+      iVar2 = npk_img_frame_ptr_at();
       local_124c = *(code **)(iVar2 + 0x24);
       local_1250 = local_6f0;
       local_1254 = (function<void___cdecl(void)> *)0x6ab716;
@@ -20726,7 +20726,7 @@ void FUN_006a8110(int param_1,undefined1 *param_2,undefined1 *param_3)
       local_124c = *(code **)(param_3 + 0xc);
       local_1250 = (function<void___cdecl(void)> *)0x6ab78d;
       local_1004 = local_106c;
-      iVar2 = FUN_004bcf10();
+      iVar2 = npk_img_frame_ptr_at();
       local_124c = *(code **)(iVar2 + 0x20);
       local_1250 = (function<void___cdecl(void)> *)0x6ab79c;
       local_124c = (code *)game_loop_helper_cd6d0();
@@ -20786,7 +20786,7 @@ void FUN_006a8110(int param_1,undefined1 *param_2,undefined1 *param_3)
       local_8c = 1;
       local_124c = *(code **)(param_3 + 0xc);
       local_1250 = (function<void___cdecl(void)> *)0x6ab91a;
-      iVar2 = FUN_004bcf10();
+      iVar2 = npk_img_frame_ptr_at();
       local_124c = *(code **)(iVar2 + 0x20);
       local_1250 = (function<void___cdecl(void)> *)0x6ab929;
       iVar2 = game_loop_helper_cd6d0();

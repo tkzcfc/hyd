@@ -1338,7 +1338,7 @@ LAB_00422508:
           pfStack_2218 = (function<void___cdecl(void)> *)0xf;
           pcStack_221c = (char *)0x2904;
           pcStack_2220 = &UNK_00424a80;
-          FUN_006a3b20();
+          net_packet_send_fixed_0x20();
           acStack_18fc[0] = 'P';
           acStack_18fc[1] = '\0';
           acStack_18fc[2] = '\0';
@@ -1360,7 +1360,7 @@ LAB_00422508:
           pfStack_2218 = (function<void___cdecl(void)> *)0xb;
           pcStack_221c = (undefined *)0x2904;
           pcStack_2220 = &UNK_00424b20;
-          FUN_006a3b20();
+          net_packet_send_fixed_0x20();
           acStack_1904[0] = '<';
           acStack_1904[1] = '\x0f';
           acStack_1904[2] = '\0';
@@ -1399,7 +1399,7 @@ LAB_00422508:
           pfStack_2218 = (function<void___cdecl(void)> *)0xf;
           pcStack_221c = (char *)0x2904;
           pcStack_2220 = &UNK_00424c01;
-          FUN_006a3b20();
+          net_packet_send_fixed_0x20();
           acStack_1914[0] = 'P';
           acStack_1914[1] = '\0';
           acStack_1914[2] = '\0';
@@ -1421,9 +1421,9 @@ LAB_00422508:
           puStack_618 = puStack_5d4;
           uStack_614 = 0x1e;
           pfStack_2214 = (function<void___cdecl(void)> *)&UNK_00424c9e;
-          FUN_006a52a0();
+          net_packet_send_helper_652a0();
           pfStack_2214 = (function<void___cdecl(void)> *)&UNK_00424cab;
-          game_missing_asset_fallback_2();
+          net_wait_until_opcode();
           FUN_004a1d50();
           pfStack_2214 = (function<void___cdecl(void)> *)&UNK_00424cbf;
           uStack_191c = FUN_004054a0();
@@ -1440,7 +1440,7 @@ LAB_00422508:
           piStack_2224 = (int *)0x14;
           pcStack_2228 = (char *)0x2904;
           apfStack_2234[2] = (function<void___cdecl(void)> *)&UNK_00424d19;
-          FUN_006a3220();
+          net_packet_send_fields_blob();
           pfStack_2214 = (function<void___cdecl(void)> *)&UNK_00424d25;
           FUN_004ad9d0();
           pfStack_2214 = (function<void___cdecl(void)> *)0x2711;
@@ -1500,7 +1500,7 @@ LAB_00422508:
           pfStack_2218 = (function<void___cdecl(void)> *)0xf;
           pcStack_221c = (char *)0x2904;
           pcStack_2220 = &UNK_00424e81;
-          FUN_006a3b20();
+          net_packet_send_fixed_0x20();
           acStack_192c[0] = 'P';
           acStack_192c[1] = '\0';
           acStack_192c[2] = '\0';
@@ -1540,9 +1540,9 @@ LAB_00422508:
             puStack_5f8 = puStack_5d4;
             puStack_5f4 = puStack_1470;
             pfStack_2214 = (function<void___cdecl(void)> *)&UNK_00424fec;
-            FUN_006a52a0();
+            net_packet_send_helper_652a0();
             pfStack_2214 = (function<void___cdecl(void)> *)&UNK_00424ff9;
-            game_missing_asset_fallback_2();
+            net_wait_until_opcode();
             FUN_004a1d50();
             pfStack_2214 = (function<void___cdecl(void)> *)&UNK_0042500d;
             uStack_1934 = FUN_004054a0();
@@ -1559,7 +1559,7 @@ LAB_00422508:
             piStack_2224 = (int *)0x14;
             pcStack_2228 = (char *)0x2904;
             apfStack_2234[2] = (function<void___cdecl(void)> *)&UNK_0042506c;
-            FUN_006a3220();
+            net_packet_send_fields_blob();
             FUN_0067b5a0();
             local_8._0_1_ = 0x84;
             FUN_004089b0();
@@ -1615,9 +1615,9 @@ LAB_00422508:
                     else {
                       uStack_5bc = 0x1e;
                       pfStack_2214 = (function<void___cdecl(void)> *)&UNK_00425225;
-                      FUN_006a52a0();
+                      net_packet_send_helper_652a0();
                       pfStack_2214 = (function<void___cdecl(void)> *)&UNK_00425232;
-                      game_missing_asset_fallback_2();
+                      net_wait_until_opcode();
                       pcStack_1518 = (char *)FUN_004a1d50();
                       pcStack_1fcc = acStack_58c;
                       pcStack_14e4 = pcStack_1fcc;
@@ -1633,9 +1633,9 @@ LAB_00422508:
                   else {
                     uStack_5bc = 7;
                     pfStack_2214 = (function<void___cdecl(void)> *)&UNK_00425176;
-                    FUN_006a52a0();
+                    net_packet_send_helper_652a0();
                     pfStack_2214 = (function<void___cdecl(void)> *)&UNK_00425183;
-                    game_missing_asset_fallback_2();
+                    net_wait_until_opcode();
                     pcStack_1514 = (char *)FUN_004a1d50();
                     pcStack_1fc8 = acStack_58c;
                     pcStack_14e8 = pcStack_1fc8;
@@ -1689,7 +1689,7 @@ LAB_00422508:
         pfStack_2218 = (function<void___cdecl(void)> *)0xf;
         pcStack_221c = (char *)0x2904;
         pcStack_2220 = &UNK_00423fa4;
-        FUN_006a3b20();
+        net_packet_send_fixed_0x20();
         acStack_18c0[0] = 'P';
         acStack_18c0[1] = '\0';
         acStack_18c0[2] = '\0';
@@ -1715,7 +1715,7 @@ LAB_00422508:
         pfStack_2218 = (function<void___cdecl(void)> *)0xd;
         pcStack_221c = (undefined *)0x2904;
         pcStack_2220 = &UNK_00424067;
-        FUN_006a3b20();
+        net_packet_send_fixed_0x20();
         FUN_0040d540();
         pfStack_2214 = (function<void___cdecl(void)> *)&UNK_00424090;
         FUN_0040d5a0();
@@ -2256,7 +2256,7 @@ LAB_00422508:
       pfStack_2218 = (function<void___cdecl(void)> *)0x1d;
       pcStack_221c = (char *)0x2904;
       pcStack_2220 = (char *)0x425b75;
-      FUN_006a3b20();
+      net_packet_send_fixed_0x20();
       iVar2 = game_get_player_or_session_blob();
       piStack_1570 = (int *)(iVar2 + 0xacc);
       *piStack_1570 = *piStack_1570 - *(int *)(param_2 + 0x9a0);
@@ -4187,7 +4187,7 @@ LAB_00422071:
         }
         local_1c6c = local_15e8;
         pfStack_2214 = (function<void___cdecl(void)> *)0x41fb90;
-        FUN_00426e60();
+        npk_img_texture_slot_store();
         pfStack_2214 = (function<void___cdecl(void)> *)0x41fba1;
         local_1c44 = FUN_004054a0();
         local_8._0_1_ = 0x12;
@@ -4689,7 +4689,7 @@ LAB_00422071:
         local_1c98 = 0xe0;
         local_1c94 = 0x36;
         pfStack_2214 = (function<void___cdecl(void)> *)0x420c35;
-        FUN_00426e60();
+        npk_img_texture_slot_store();
         pfStack_2214 = (function<void___cdecl(void)> *)0x420c46;
         FUN_004054a0();
         local_8._0_1_ = 0x28;
@@ -7324,7 +7324,7 @@ LAB_004a49b9:
       local_9e0 = local_788;
       pfStack_b44 = (function<void___cdecl(void)> *)&local_9f8;
       pfStack_b48 = (function<void___cdecl(void)> *)0x4a53ec;
-      FUN_00426e60();
+      npk_img_texture_slot_store();
       pfStack_b44 = (function<void___cdecl(void)> *)&DAT_0074c430;
       pfStack_b48 = (function<void___cdecl(void)> *)0x4a53fd;
       pfStack_b44 = (function<void___cdecl(void)> *)FUN_004054a0();
@@ -7882,7 +7882,7 @@ LAB_004a49b9:
       pfStack_b4c = (function<void___cdecl(void)> *)0x3f4;
       pcStack_b50 = (char *)0x0;
       pcStack_b54 = (char *)0x4a338b;
-      FUN_006a47c0();
+      net_packet_send_helper_647c0();
     }
     local_95c = 0x20;
     pfStack_b44 = (function<void___cdecl(void)> *)&local_95c;
@@ -8186,7 +8186,7 @@ LAB_004a395b:
           pfStack_b48 = (function<void___cdecl(void)> *)local_67c;
           pfStack_b4c = (function<void___cdecl(void)> *)0xabe0;
           pcStack_b50 = (char *)0x4a3aa7;
-          FUN_006a3c30();
+          net_packet_send_opcode_onlyish();
         }
         local_8 = CONCAT31(local_8._1_3_,3);
         pfStack_b44 = (function<void___cdecl(void)> *)0x4a3ab9;
@@ -8533,7 +8533,7 @@ int d3d9_create_texture_004b7450(void)
       local_34 = 0x1e;
     }
     uVar3 = npk_get_relative_res_path();
-    local_4c = FUN_005855f0(uVar3);
+    local_4c = npk_img_lookup_and_decode(uVar3);
     local_38 = local_34 * 0x28 + *(int *)(local_4c + 0x40);
     local_48 = (local_34 + 1) * 0x28 + *(int *)(local_4c + 0x40);
     local_68 = (local_34 + 2) * 0x28 + *(int *)(local_4c + 0x40);
@@ -8641,11 +8641,11 @@ int d3d9_create_texture_004b7450(void)
     local_e8 = local_b4;
     local_e4 = local_30;
     local_e0 = local_b4;
-    FUN_00426e60(&local_f8);
+    npk_img_texture_slot_store(&local_f8);
     puVar4 = local_d0;
     FUN_004bcf30(&stack0x00000004);
     FUN_00426de0(puVar4);
-    FUN_005856e0(local_4c);
+    npk_img_free_decoded_frames(local_4c);
     puVar2 = (undefined4 *)FUN_0040e2f0(local_110,&stack0x00000004);
     local_60 = *puVar2;
     uVar3 = FUN_0040d380(local_104);
@@ -8787,7 +8787,7 @@ CCmdUI * d3d9_create_texture_004b7f20(CCmdUI *param_1)
     local_34 = 0x1e;
   }
   uVar2 = npk_get_relative_res_path(uVar1);
-  local_4c = FUN_005855f0(uVar2);
+  local_4c = npk_img_lookup_and_decode(uVar2);
   local_38 = local_34 * 0x28 + *(int *)(local_4c + 0x40);
   local_48 = (local_34 + 1) * 0x28 + *(int *)(local_4c + 0x40);
   local_64 = (local_34 + 2) * 0x28 + *(int *)(local_4c + 0x40);
@@ -8895,7 +8895,7 @@ CCmdUI * d3d9_create_texture_004b7f20(CCmdUI *param_1)
   *(int *)(param_1 + 0x10) = local_ac;
   *(int *)(param_1 + 0x14) = local_30;
   *(int *)(param_1 + 0x18) = local_ac;
-  FUN_005856e0(local_4c);
+  npk_img_free_decoded_frames(local_4c);
   local_8 = local_8 & 0xffffff00;
   std::function<void___cdecl(void)>::~function<void___cdecl(void)>(local_2c);
   local_8 = 0xffffffff;
@@ -8968,7 +8968,7 @@ int d3d9_create_texture_004b8870(void)
     local_64 = in_stack_00000020;
     local_60 = in_stack_00000024;
     local_5c = in_stack_00000028;
-    FUN_00426e60(&local_74);
+    npk_img_texture_slot_store(&local_74);
     puVar4 = local_4c;
     FUN_004bcf30(&stack0x00000004);
     FUN_00426de0(puVar4);
@@ -9186,7 +9186,7 @@ LAB_004b918c:
           }
         }
         local_40 = (**(code **)(*local_7c[0] + 0x50))(local_7c[0],0);
-        FUN_00426e60(local_7c);
+        npk_img_texture_slot_store(local_7c);
       }
       return;
     }
@@ -10119,7 +10119,7 @@ void d3d9_create_texture_004e4ee0(undefined4 param_1,undefined4 param_2,int para
           }
         }
         local_40 = (**(code **)(*local_7c[0] + 0x50))(local_7c[0],0);
-        FUN_00426e60(local_7c);
+        npk_img_texture_slot_store(local_7c);
       }
       return;
     }
@@ -10489,7 +10489,7 @@ void d3d9_create_texture_0066d9b0(void)
     local_884 = 0x10e;
     local_880 = 0x7c;
     local_87c = 0x10e;
-    FUN_00426e60();
+    npk_img_texture_slot_store();
     FUN_004054a0();
     local_8._0_1_ = 8;
     FUN_004273d0();
@@ -10627,7 +10627,7 @@ void d3d9_create_texture_0066d9b0(void)
     local_8ac = 0x5a;
     local_8a8 = 0x7c;
     local_8a4 = 0x5a;
-    FUN_00426e60();
+    npk_img_texture_slot_store();
     FUN_004054a0();
     local_8._0_1_ = 0x21;
     FUN_004273d0();
@@ -11526,7 +11526,7 @@ void game_load_string_resource_helper(void)
     local_68 = in_stack_00000030;
     local_64 = in_stack_0000002c;
     local_60 = in_stack_00000030;
-    FUN_00426e60(&local_78);
+    npk_img_texture_slot_store(&local_78);
     puVar4 = local_84;
     FUN_004bcf30(&stack0x00000004);
     FUN_00426de0(puVar4);
@@ -11728,7 +11728,7 @@ undefined4 * d3d9_create_texture_006af740(undefined4 *param_1)
   local_150 = (**(code **)(**(int **)(local_12c + 0xc0) + 0x4c))();
   pcStack_1fc = "sprite/interface/dungeoninfo/dungeoninfo.img";
   uStack_200 = 0x6afea9;
-  local_15c = FUN_005855f0();
+  local_15c = npk_img_lookup_and_decode();
   pcStack_1fc = (char *)0x8dc0;
   uStack_200 = *(undefined4 *)(*(int *)(local_15c + 0x40) + 0x24);
   uStack_204 = local_184;
@@ -11736,7 +11736,7 @@ undefined4 * d3d9_create_texture_006af740(undefined4 *param_1)
   FUN_006e6bd0();
   pcStack_1fc = (char *)local_15c;
   uStack_200 = 0x6afeeb;
-  FUN_005856e0();
+  npk_img_free_decoded_frames();
   pcStack_1fc = (char *)0x0;
   uStack_200 = *(undefined4 *)(local_12c + 0xc0);
   uStack_204 = 0x6aff0d;
@@ -12308,7 +12308,7 @@ undefined4 * d3d9_create_texture_006aff40(undefined4 *param_1,int param_2,char p
   local_1e8 = (**(code **)(**(int **)(local_17c + 0xc0) + 0x4c))();
   pcStack_338 = "sprite/interface/popup.img";
   uStack_33c = 0x6b1657;
-  local_208 = FUN_005855f0();
+  local_208 = npk_img_lookup_and_decode();
   for (local_1e4 = 0; local_1e4 < 0x13; local_1e4 = local_1e4 + 1) {
     pcStack_338 = *(char **)(*(int *)(local_208 + 0x40) + 0x1690);
     uStack_33c = *(undefined4 *)(*(int *)(local_208 + 0x40) + 0x16a4);
@@ -12319,7 +12319,7 @@ undefined4 * d3d9_create_texture_006aff40(undefined4 *param_1,int param_2,char p
   }
   pcStack_338 = (char *)local_208;
   uStack_33c = 0x6b16fa;
-  FUN_005856e0();
+  npk_img_free_decoded_frames();
   pcStack_338 = (char *)0x0;
   uStack_33c = *(undefined4 *)(local_17c + 0xc0);
   iStack_340 = 0x6b171c;
@@ -13489,7 +13489,7 @@ LAB_006b239a:
   local_1354 = (**(code **)(**(int **)(local_1298 + 0xc0) + 0x4c))();
   pcStack_159c = "sprite/interface/popup.img";
   uStack_15a0 = 0x6b4251;
-  local_1364 = FUN_005855f0();
+  local_1364 = npk_img_lookup_and_decode();
   for (local_1350 = 0; local_1350 < 0x10; local_1350 = local_1350 + 1) {
     pcStack_159c = *(char **)(*(int *)(local_1364 + 0x40) + 0x1690);
     uStack_15a0 = *(undefined4 *)(*(int *)(local_1364 + 0x40) + 0x16a4);
@@ -13500,7 +13500,7 @@ LAB_006b239a:
   }
   pcStack_159c = (char *)local_1364;
   uStack_15a0 = 0x6b42f4;
-  FUN_005856e0();
+  npk_img_free_decoded_frames();
   pcStack_159c = (char *)0x0;
   uStack_15a0 = *(undefined4 *)(local_1298 + 0xc0);
   pfStack_15a4 = (function<void___cdecl(void)> *)0x6b4316;
@@ -16335,7 +16335,7 @@ LAB_006baca0:
   local_1714 = (**(code **)(**(int **)(local_14fc + 0xc0) + 0x4c))();
   pcStack_1be4 = "sprite/interface/popup.img";
   uStack_1be8 = 0x6bb5ae;
-  local_1744 = FUN_005855f0();
+  local_1744 = npk_img_lookup_and_decode();
   for (local_1710 = 0; local_1710 < 0x10; local_1710 = local_1710 + 1) {
     pcStack_1be4 = *(char **)(*(int *)(local_1744 + 0x40) + 0x1690);
     uStack_1be8 = *(undefined4 *)(*(int *)(local_1744 + 0x40) + 0x16a4);
@@ -16346,7 +16346,7 @@ LAB_006baca0:
   }
   pcStack_1be4 = (char *)local_1744;
   uStack_1be8 = 0x6bb651;
-  FUN_005856e0();
+  npk_img_free_decoded_frames();
   pcStack_1be4 = (char *)0x0;
   uStack_1be8 = *(undefined4 *)(local_14fc + 0xc0);
   pfStack_1bec = (function<void___cdecl(void)> *)0x6bb673;
@@ -17111,8 +17111,8 @@ LAB_006bbf76:
     FUN_00414e80();
   }
   else {
-    FUN_006a52a0();
-    game_missing_asset_fallback_2();
+    net_packet_send_helper_652a0();
+    net_wait_until_opcode();
     FUN_004a1d50();
     FUN_004a1be0();
     FUN_00414e80();
@@ -17215,7 +17215,7 @@ LAB_006bbf76:
   local_115c = (**(code **)(**(int **)(local_10b4 + 0xc0) + 0x4c))();
   pcStack_1344 = "sprite/interface/popup.img";
   uStack_1348 = 0x6bd677;
-  local_1170 = FUN_005855f0();
+  local_1170 = npk_img_lookup_and_decode();
   for (local_1158 = 0; local_1158 < 0x10; local_1158 = local_1158 + 1) {
     pcStack_1344 = *(char **)(*(int *)(local_1170 + 0x40) + 0x1690);
     uStack_1348 = *(undefined4 *)(*(int *)(local_1170 + 0x40) + 0x16a4);
@@ -17226,7 +17226,7 @@ LAB_006bbf76:
   }
   pcStack_1344 = (char *)local_1170;
   uStack_1348 = 0x6bd71a;
-  FUN_005856e0();
+  npk_img_free_decoded_frames();
   pcStack_1344 = (char *)0x0;
   uStack_1348 = *(undefined4 *)(local_10b4 + 0xc0);
   iStack_134c = 0x6bd73c;
@@ -19243,7 +19243,7 @@ undefined4 * d3d9_create_texture_006bd790(undefined4 *param_1,int param_2)
   local_11c8 = (**(code **)(**(int **)(local_105c + 0xc0) + 0x4c))();
   pcStack_14e0 = "sprite/interface/popup.img";
   uStack_14e4 = 0x6c2d08;
-  local_11e8 = FUN_005855f0();
+  local_11e8 = npk_img_lookup_and_decode();
   for (local_11c4 = 0; local_11c4 < 0x10; local_11c4 = local_11c4 + 1) {
     pcStack_14e0 = *(char **)(*(int *)(local_11e8 + 0x40) + 0x1690);
     uStack_14e4 = *(undefined4 *)(*(int *)(local_11e8 + 0x40) + 0x16a4);
@@ -19254,7 +19254,7 @@ undefined4 * d3d9_create_texture_006bd790(undefined4 *param_1,int param_2)
   }
   pcStack_14e0 = (char *)local_11e8;
   uStack_14e4 = 0x6c2dab;
-  FUN_005856e0();
+  npk_img_free_decoded_frames();
   pcStack_14e0 = (char *)0x0;
   uStack_14e4 = *(undefined4 *)(local_105c + 0xc0);
   iStack_14e8 = 0x6c2dcd;
@@ -20380,7 +20380,7 @@ LAB_006c39ee:
   local_1154 = (**(code **)(**(int **)(local_1058 + 0xc0) + 0x4c))();
   pcStack_136c = "sprite/interface/popup.img";
   uStack_1370 = 0x6c5c23;
-  local_116c = FUN_005855f0();
+  local_116c = npk_img_lookup_and_decode();
   for (local_1150 = 0; local_1150 < 0x10; local_1150 = local_1150 + 1) {
     pcStack_136c = *(char **)(*(int *)(local_116c + 0x40) + 0x1690);
     uStack_1370 = *(undefined4 *)(*(int *)(local_116c + 0x40) + 0x16a4);
@@ -20391,7 +20391,7 @@ LAB_006c39ee:
   }
   pcStack_136c = (char *)local_116c;
   uStack_1370 = 0x6c5cc6;
-  FUN_005856e0();
+  npk_img_free_decoded_frames();
   pcStack_136c = (char *)0x0;
   uStack_1370 = *(undefined4 *)(local_1058 + 0xc0);
   iStack_1374 = 0x6c5ce8;
@@ -21060,7 +21060,7 @@ LAB_006c663c:
   local_1108 = (**(code **)(**(int **)(local_106c + 0xc0) + 0x4c))();
   pcStack_1254 = "sprite/interface/popup.img";
   uStack_1258 = 0x6c7828;
-  local_1110 = FUN_005855f0();
+  local_1110 = npk_img_lookup_and_decode();
   for (local_1104 = 0; local_1104 < 0x10; local_1104 = local_1104 + 1) {
     pcStack_1254 = *(char **)(*(int *)(local_1110 + 0x40) + 0x1690);
     uStack_1258 = *(undefined4 *)(*(int *)(local_1110 + 0x40) + 0x16a4);
@@ -21071,7 +21071,7 @@ LAB_006c663c:
   }
   pcStack_1254 = (char *)local_1110;
   uStack_1258 = 0x6c78cb;
-  FUN_005856e0();
+  npk_img_free_decoded_frames();
   pcStack_1254 = (char *)0x0;
   uStack_1258 = *(undefined4 *)(local_106c + 0xc0);
   iStack_125c = 0x6c78ed;

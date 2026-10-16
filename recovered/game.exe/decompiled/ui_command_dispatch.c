@@ -1956,20 +1956,20 @@ if (command_id < 0x529) {
           break;
         case 0x32:
           ExceptionList = &local_10;
-          FUN_006a3f10();
-          FUN_004f2720();
+          net_packet_send_helper_63f10();
+          net_wait_until_opcode();
           ppvVar1 = ExceptionList;
           break;
         case 0x3c:
           ExceptionList = &local_10;
-          FUN_006a3f10();
-          FUN_004f2720();
+          net_packet_send_helper_63f10();
+          net_wait_until_opcode();
           ppvVar1 = ExceptionList;
           break;
         case 0x46:
           ExceptionList = &local_10;
-          FUN_006a3f10();
-          FUN_004f2720();
+          net_packet_send_helper_63f10();
+          net_wait_until_opcode();
           ppvVar1 = ExceptionList;
           break;
         case 0x50:
@@ -2031,9 +2031,9 @@ if (command_id < 0x529) {
             FUN_00401a70();
             FUN_00454ef0();
             FUN_00401a70();
-            FUN_006a54f0();
+            net_packet_send_helper_654f0();
             do {
-              iVar14 = FUN_004f27a0();
+              iVar14 = game_frame_pump_packets();
             } while (iVar14 != 0x38);
             FUN_00454ef0();
             piVar5 = (int *)FUN_00401a70();
@@ -2339,10 +2339,10 @@ if (command_id < 0x529) {
               iStack_1a14 = iVar14 + iStack_1a14;
               iVar14 = FUN_006a34a0();
               iStack_1a14 = iVar14 + iStack_1a14;
-              uStack_26a4 = FUN_006a31b0();
+              uStack_26a4 = net_socket_send_all();
               FUN_006f1902();
               do {
-                iStack_1c8c = FUN_004f27a0();
+                iStack_1c8c = game_frame_pump_packets();
                 if ((iStack_1c8c == 0x32) || (iStack_1c8c == 0x33)) break;
               } while (iStack_1c8c != 0x35);
             }
@@ -2362,8 +2362,8 @@ if (command_id < 0x529) {
           break;
         case 0x1ea:
           ExceptionList = &local_10;
-          FUN_006a3f10();
-          FUN_004f2720();
+          net_packet_send_helper_63f10();
+          net_wait_until_opcode();
           ppvVar1 = ExceptionList;
           break;
         case 500:
@@ -2634,7 +2634,7 @@ if (command_id < 0x529) {
           puStack_2b98 = (undefined4 *)0x697041;
           FUN_0067f8c0();
           FUN_00454ea0();
-          FUN_006a3c30();
+          net_packet_send_opcode_onlyish();
           FUN_00454ea0();
           FUN_00454ea0();
           FUN_00457890();
@@ -2963,7 +2963,7 @@ if (command_id < 0x529) {
           uStack_1b44 = uStack_1b44 + 1;
         }
         FUN_00454ea0();
-        FUN_006a50c0();
+        net_packet_send_helper_650c0();
         ppvVar1 = ExceptionList;
         break;
       case 0x39b:
@@ -3055,7 +3055,7 @@ if (command_id < 0x529) {
           iVar14 = FUN_00454ea0();
           if (*(char *)(iVar14 + 0xdb8) == '\0') {
             FUN_00454ea0();
-            FUN_006a3c30();
+            net_packet_send_opcode_onlyish();
             puStack_2b98 = (undefined4 *)0xa;
             puStack_2788 = (undefined1 *)apfStack_2bb0;
             puStack_2bb4 = (undefined4 *)&DAT_007760d4;
@@ -3069,7 +3069,7 @@ if (command_id < 0x529) {
             iVar14 = FUN_00454ea0();
             if (*(char *)(iVar14 + 0xdb9) == '\0') {
               FUN_00454ea0();
-              FUN_006a3c30();
+              net_packet_send_opcode_onlyish();
               puStack_2b98 = (undefined4 *)0xa;
               puStack_2784 = (undefined1 *)apfStack_2bb0;
               puStack_2bb4 = (undefined4 *)&DAT_0077602c;
@@ -3083,7 +3083,7 @@ if (command_id < 0x529) {
               iVar14 = FUN_00454ea0();
               if (*(int *)(iVar14 + 0xdc4) < 4) {
                 FUN_00454ea0();
-                FUN_006a3c30();
+                net_packet_send_opcode_onlyish();
                 puStack_2b98 = (undefined4 *)0xa;
                 puStack_2780 = (undefined1 *)apfStack_2bb0;
                 puStack_2bb4 = (undefined4 *)&DAT_0077603c;
@@ -3125,7 +3125,7 @@ if (command_id < 0x529) {
         iStack_20ac = ui_ctx;
         ExceptionList = &local_10;
         FUN_00454ea0();
-        FUN_006a3c30();
+        net_packet_send_opcode_onlyish();
         uStack_20b0 = 0x38;
         uStack_20b4 = 0x38;
         FUN_004051c0();
@@ -3137,7 +3137,7 @@ if (command_id < 0x529) {
       case 0x46a:
         iStack_20b8 = ui_ctx;
         ExceptionList = &local_10;
-        FUN_006a3f10();
+        net_packet_send_helper_63f10();
         uStack_20bc = 0x38;
         uStack_20c0 = 0x38;
         FUN_004051c0();
@@ -3164,7 +3164,7 @@ if (command_id < 0x529) {
           if (*(char *)(iVar14 + 0xdb8) == '\0') {
             if (*(int *)(DAT_007ca1dc + 0xdc4) < 4) {
               FUN_00454ea0();
-              FUN_006a3c30();
+              net_packet_send_opcode_onlyish();
               puStack_2b98 = (undefined4 *)0xa;
               puStack_2794 = (undefined1 *)apfStack_2bb0;
               puStack_2bb4 = (undefined4 *)&DAT_00776084;
@@ -3214,7 +3214,7 @@ if (command_id < 0x529) {
         iStack_20c4 = ui_ctx;
         ExceptionList = &local_10;
         FUN_00454ea0();
-        FUN_006a3c30();
+        net_packet_send_opcode_onlyish();
         uStack_20c8 = 0x38;
         uStack_20cc = 0x38;
         FUN_004051c0();
@@ -3226,7 +3226,7 @@ if (command_id < 0x529) {
       case 0x488:
         iStack_20d0 = ui_ctx;
         ExceptionList = &local_10;
-        FUN_006a3f10();
+        net_packet_send_helper_63f10();
         uStack_20d4 = 0x38;
         uStack_20d8 = 0x38;
         FUN_004051c0();
@@ -3336,7 +3336,7 @@ if (command_id < 0x529) {
               if (*(char *)(*piVar5 + 0x9d4) == '\0') {
                 FUN_00454ea0();
                 FUN_00454ea0();
-                FUN_006a3c30();
+                net_packet_send_opcode_onlyish();
                 ppvVar1 = ExceptionList;
               }
               else {
@@ -3344,7 +3344,7 @@ if (command_id < 0x529) {
                 ppvVar1 = ExceptionList;
                 if (*(char *)(iVar14 + 0xdb9) != '\0') {
                   FUN_00454ea0();
-                  FUN_006a3f10();
+                  net_packet_send_helper_63f10();
                   ppvVar1 = ExceptionList;
                 }
               }
@@ -3498,8 +3498,8 @@ if (command_id < 0x529) {
           }
           else if (command_id == 0x637) {
             ExceptionList = &local_10;
-            FUN_006a3f10();
-            FUN_004f2720();
+            net_packet_send_helper_63f10();
+            net_wait_until_opcode();
             ppvVar1 = ExceptionList;
           }
           else if (((command_id == 0xaf0) && (local_1a80 = ui_ctx, *(int *)(ui_ctx + 0x5c) != 0)) &&
@@ -4206,11 +4206,11 @@ if (command_id < 0x529) {
             *(int *)(local_19e4 + 0x6ec) = *(int *)(local_19e4 + 0x9a0);
           }
           FUN_00454ea0();
-          FUN_004f0610();
+          net_packet_send_session_sync_12000();
           puStack_2b98 = (undefined4 *)0x7;
           pfStack_2b9c = (function<void___cdecl(void)> *)0x2904;
           pfStack_2ba0 = (function<void___cdecl(void)> *)0x6932b2;
-          FUN_006a38b0();
+          net_packet_send_fixed_0x28();
           local_8 = 0xffffffff;
           std::function<void___cdecl(void)>::~function<void___cdecl(void)>(local_834);
           ppvVar1 = ExceptionList;
@@ -4248,7 +4248,7 @@ if (command_id < 0x529) {
                (iVar14 = FUN_00454ea0(), ppvVar1 = ExceptionList, *(char *)(iVar14 + 0xdb9) != '\0')
                ) {
               FUN_00454ea0();
-              FUN_006a3f10();
+              net_packet_send_helper_63f10();
               ppvVar1 = ExceptionList;
             }
           }
@@ -4286,7 +4286,7 @@ if (command_id < 0x529) {
                 (iVar14 = FUN_00454ea0(), ppvVar1 = ExceptionList, *(char *)(iVar14 + 0xdb9) != '\0'
                 )))) {
               FUN_00454ea0();
-              FUN_006a3f10();
+              net_packet_send_helper_63f10();
               ppvVar1 = ExceptionList;
             }
           }
@@ -4303,7 +4303,7 @@ if (command_id < 0x529) {
         iVar14 = FUN_00454ea0();
         if (*(char *)(iVar14 + 0xdb8) == '\0') {
           FUN_00454ea0();
-          FUN_006a3f10();
+          net_packet_send_helper_63f10();
           ppvVar1 = ExceptionList;
         }
         else {
@@ -4341,7 +4341,7 @@ if (command_id < 0x529) {
             iVar14 = FUN_00454ea0();
             if (*(int *)(iVar14 + 0xdc4) == local_1c3c) {
               FUN_00454ea0();
-              FUN_006a3f10();
+              net_packet_send_helper_63f10();
               ppvVar1 = ExceptionList;
             }
             else {
@@ -4368,7 +4368,7 @@ if (command_id < 0x529) {
         iVar14 = FUN_00454ea0();
         if (*(char *)(iVar14 + 0xdb8) == '\0') {
           FUN_00454ea0();
-          FUN_006a3f10();
+          net_packet_send_helper_63f10();
         }
         else {
           iVar14 = FUN_00454ea0();
@@ -4404,7 +4404,7 @@ if (command_id < 0x529) {
             iVar14 = FUN_00454ea0();
             if (*(int *)(iVar14 + 0xdc4) == local_1c44) {
               FUN_00454ea0();
-              FUN_006a3f10();
+              net_packet_send_helper_63f10();
             }
             else {
               puStack_2b98 = (undefined4 *)0xa;
@@ -4419,7 +4419,7 @@ if (command_id < 0x529) {
         }
         FUN_00454ea0();
         FUN_004d1520();
-        FUN_006a3c30();
+        net_packet_send_opcode_onlyish();
         ppvVar1 = ExceptionList;
       }
       goto LAB_0069e6d6;
@@ -4855,7 +4855,7 @@ LAB_0068f8ea:
       if (command_id == 0x184c0) {
         local_2414 = *(undefined4 *)(ui_ctx + 0x9a0);
         ExceptionList = &local_10;
-        FUN_006a3f10();
+        net_packet_send_helper_63f10();
         puStack_2b98 = (undefined4 *)0xa;
         local_2928 = (undefined1 *)apfStack_2bb0;
         puStack_2bb4 = (undefined4 *)&DAT_007744c4;
@@ -5009,7 +5009,7 @@ LAB_006903c8:
                 }
               }
               FUN_00454ea0();
-              FUN_006a3c30();
+              net_packet_send_opcode_onlyish();
               puStack_2b98 = (undefined4 *)0xa;
               local_265c = (undefined1 *)apfStack_2bb0;
               puStack_2bb4 = (undefined4 *)&DAT_0077440c;
@@ -5086,8 +5086,8 @@ LAB_006903c8:
             }
           }
           FUN_00454ea0();
-          FUN_006a3c30();
-          FUN_004f2720();
+          net_packet_send_opcode_onlyish();
+          net_wait_until_opcode();
         }
         else {
           puStack_2b98 = (undefined4 *)0xa;
@@ -5130,8 +5130,8 @@ LAB_0068f21e:
   }
   if (command_id == 0x636) {
     ExceptionList = &local_10;
-    FUN_006a3f10();
-    FUN_004f2720();
+    net_packet_send_helper_63f10();
+    net_wait_until_opcode();
     ppvVar1 = ExceptionList;
     goto LAB_0069e6d6;
   }
@@ -6495,7 +6495,7 @@ LAB_0069a776:
         puStack_2b98 = (undefined4 *)0x69bd3c;
         FUN_004cdfe0();
         puStack_2b98 = (undefined4 *)0x69bd57;
-        FUN_006a3b20();
+        net_packet_send_fixed_0x20();
         FUN_00454ea0();
         FUN_00454ea0();
         puStack_2b98 = (undefined4 *)0x69bd7d;
@@ -6566,7 +6566,7 @@ LAB_0069a776:
         FUN_00454ea0();
         puStack_2b98 = (undefined4 *)0x10cc;
         pfStack_2b9c = (function<void___cdecl(void)> *)0x69c06a;
-        FUN_006a4370();
+        net_packet_send_helper_64370();
       }
       else {
         puStack_2b98 = (undefined4 *)0xa;
@@ -6901,7 +6901,7 @@ LAB_0069c68c:
                             FUN_00454ea0();
                             puStack_2b98 = (undefined4 *)0x10cc;
                             pfStack_2b9c = (function<void___cdecl(void)> *)0x69d37e;
-                            FUN_006a4370();
+                            net_packet_send_helper_64370();
                             local_8 = 0xffffffff;
                             FUN_004039a0();
                           }
@@ -6945,7 +6945,7 @@ LAB_0069c68c:
                             FUN_00454ea0();
                             puStack_2b98 = (undefined4 *)0x10cc;
                             pfStack_2b9c = (function<void___cdecl(void)> *)0x69d546;
-                            FUN_006a4370();
+                            net_packet_send_helper_64370();
                             cStack_1a0e = '\x01';
                             local_8 = 0xffffffff;
                             FUN_004039a0();
@@ -7673,7 +7673,7 @@ LAB_0069e124:
     }
     FUN_00454ea0();
     FUN_00454ea0();
-    FUN_006a3c30();
+    net_packet_send_opcode_onlyish();
     uStack_1f30 = 0x40;
     puStack_2684 = (undefined1 *)&pfStack_2b9c;
     pfStack_2ba0 = (function<void___cdecl(void)> *)&DAT_00774c24;
@@ -7704,7 +7704,7 @@ LAB_0069e124:
       *(undefined4 *)(*piVar5 + 0x170) = *(undefined4 *)(iVar14 + 0xdd0);
       FUN_00454ea0();
       FUN_00454ea0();
-      FUN_006a3c30();
+      net_packet_send_opcode_onlyish();
       ppvVar1 = ExceptionList;
     }
     break;
@@ -7715,27 +7715,27 @@ LAB_0069e124:
     if (*(int *)(iVar14 + 0xdd0) < 3) {
       FUN_00454ea0();
       FUN_00454ea0();
-      FUN_006a3c30();
+      net_packet_send_opcode_onlyish();
       ppvVar1 = ExceptionList;
     }
     break;
   case 0x5d2:
     ExceptionList = &local_10;
     FUN_00454ea0();
-    FUN_006a3f10();
-    FUN_004f2720();
+    net_packet_send_helper_63f10();
+    net_wait_until_opcode();
     ppvVar1 = ExceptionList;
     break;
   case 0x5d7:
     ExceptionList = &local_10;
     FUN_00454ea0();
-    FUN_006a51c0();
+    net_packet_send_helper_651c0();
     ppvVar1 = ExceptionList;
     break;
   case 0x5d9:
     ExceptionList = &local_10;
     FUN_00454ea0();
-    FUN_006a51c0();
+    net_packet_send_helper_651c0();
     ppvVar1 = ExceptionList;
     break;
   case 0x5f0:
@@ -7748,7 +7748,7 @@ LAB_0069e124:
         (iVar14 = FUN_00454ea0(), *(int *)(iVar14 + 0xdcc) != 0x5dd)))) {
       FUN_00454ea0();
       FUN_004d1520();
-      FUN_006a3c30();
+      net_packet_send_opcode_onlyish();
       ppvVar1 = ExceptionList;
     }
     else {
@@ -7784,7 +7784,7 @@ LAB_0069e124:
       puVar3 = (undefined4 *)FUN_00454e90();
       *puVar3 = *(undefined4 *)(iVar14 + 0x1e8);
       FUN_00454e90();
-      FUN_006a3f10();
+      net_packet_send_helper_63f10();
       FUN_00454ef0();
       puVar3 = (undefined4 *)FUN_00401a70();
       FUN_00454e90();
@@ -7871,8 +7871,8 @@ LAB_0069e124:
       for (; iStack_1c0c != iStack_1f24; iStack_1c0c = iStack_1c0c + 0x20) {
         iStack_1bb8 = iStack_1c0c;
         if (*(int *)(iStack_1c0c + 0x18) == 0x10) {
-          FUN_006a52a0();
-          FUN_004f2720();
+          net_packet_send_helper_652a0();
+          net_wait_until_opcode();
           _memset(afStack_234,0,0x100);
           FUN_004a1d50();
           FUN_0040d7f0();
@@ -7892,7 +7892,7 @@ LAB_0069e124:
         }
       }
       FUN_00454ea0();
-      FUN_006a3c30();
+      net_packet_send_opcode_onlyish();
       puStack_266c = (undefined1 *)&pfStack_2b9c;
       pfStack_2ba0 = (function<void___cdecl(void)> *)&DAT_00774b30;
       pcStack_2ba4 = (char *)0x6940c1;

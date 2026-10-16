@@ -17681,7 +17681,7 @@ void Unwind_0071d051(void)
 void Unwind_0071d080(void)
 
 {
-  FUN_00584a80();
+  npk_img_entry_dtor();
   return;
 }
 
