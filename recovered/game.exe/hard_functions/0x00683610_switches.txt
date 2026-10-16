@@ -1,0 +1,45 @@
+# Computed jumps / switch tables in FUN_00683610 @ 0x00683610
+
+## 006836c6  JMP dword ptr [EAX*0x4 + 0x68dab8]
+   00683697  JZ 0x00683736
+   0068369d  MOV ECX,dword ptr [EBP + 0xfffff024]
+   006836a3  SUB ECX,0xf
+   006836a6  MOV dword ptr [EBP + 0xfffff024],ECX
+   006836ac  CMP dword ptr [EBP + 0xfffff024],0x6f
+   006836b3  JA 0x0068da66
+   006836b9  MOV EDX,dword ptr [EBP + 0xfffff024]
+   006836bf  MOVZX EAX,byte ptr [EDX + 0x68dacc]
+
+## 006836f9  JMP dword ptr [EAX*0x4 + 0x68db3c]
+   006836c6  JMP dword ptr [EAX*0x4 + 0x68dab8]
+   006836cd  MOV ECX,dword ptr [EBP + 0xfffff024]
+   006836d3  SUB ECX,0x101
+   006836d9  MOV dword ptr [EBP + 0xfffff024],ECX
+   006836df  CMP dword ptr [EBP + 0xfffff024],0xe
+   006836e6  JA 0x0068da66
+   006836ec  MOV EDX,dword ptr [EBP + 0xfffff024]
+   006836f2  MOVZX EAX,byte ptr [EDX + 0x68db50]
+
+## 0068372f  JMP dword ptr [EAX*0x4 + 0x68db60]
+   006836f9  JMP dword ptr [EAX*0x4 + 0x68db3c]
+   00683700  MOV ECX,dword ptr [EBP + 0xfffff024]
+   00683706  SUB ECX,0x201
+   0068370c  MOV dword ptr [EBP + 0xfffff024],ECX
+   00683712  CMP dword ptr [EBP + 0xfffff024],0x81
+   0068371c  JA 0x0068da66
+   00683722  MOV EDX,dword ptr [EBP + 0xfffff024]
+   00683728  MOVZX EAX,byte ptr [EDX + 0x68db84]
+
+## 006847af  JMP dword ptr [ECX*0x4 + 0x68dc08]
+   00684780  MOV dword ptr [EBP + 0xffffef98],ECX
+   00684786  MOV EDX,dword ptr [EBP + 0xffffef98]
+   0068478c  SUB EDX,0x10
+   0068478f  MOV dword ptr [EBP + 0xffffef98],EDX
+   00684795  CMP dword ptr [EBP + 0xffffef98],0x66
+   0068479c  JA 0x006867cb
+   006847a2  MOV EAX,dword ptr [EBP + 0xffffef98]
+   006847a8  MOVZX ECX,byte ptr [EAX + 0x68dca8]
+   -> 00684c01  LAB_00684c01
+   -> 00684bbe  LAB_00684bbe
+   -> 006852d6  LAB_006852d6
+   -> 00684c44  LAB_00684c44

@@ -740,7 +740,7 @@ LAB_00511059:
                     puStack_700 = (undefined4 *)game_timing_or_delay_helper();
                     local_8._0_1_ = 4;
                     puStack_704 = (undefined4 *)0x511420;
-                    local_424 = FUN_006ce000();
+                    local_424 = ui_find_widget_by_key();
                     local_2c3 = local_424 != 0;
                     local_368 = (uint)(byte)local_2c3;
                     local_8 = CONCAT31(local_8._1_3_,3);
@@ -763,7 +763,7 @@ LAB_00511059:
                       local_8._0_1_ = 8;
                       uVar6 = game_timing_or_delay_helper(&local_438);
                       local_8._0_1_ = 7;
-                      local_43c = FUN_006ce000(uVar6);
+                      local_43c = ui_find_widget_by_key(uVar6);
                       local_440 = FUN_00427200();
                       local_2c5 = FUN_00427c60();
                       local_8 = CONCAT31(local_8._1_3_,6);
@@ -799,7 +799,7 @@ LAB_00511059:
                           local_8._0_1_ = 0x10;
                           uVar6 = game_timing_or_delay_helper(&local_4b4);
                           local_8._0_1_ = 0xf;
-                          local_4b8 = FUN_006ce000(uVar6);
+                          local_4b8 = ui_find_widget_by_key(uVar6);
                           local_4bc = FUN_00427200();
                           FUN_004053e0();
                           local_8._0_1_ = 0xe;
@@ -839,7 +839,7 @@ LAB_00511059:
                           puStack_700 = (undefined4 *)game_timing_or_delay_helper();
                           local_8._0_1_ = 0x12;
                           puStack_704 = (undefined4 *)0x5121b0;
-                          local_4f4 = FUN_006ce000();
+                          local_4f4 = ui_find_widget_by_key();
                           local_4e4 = (undefined4 *)FUN_004054a0();
                           local_8._0_1_ = 0x14;
                           local_4dc = local_4e4;
@@ -853,7 +853,7 @@ LAB_00511059:
                           puStack_704 = &local_4ec;
                           puStack_704 = (undefined4 *)game_timing_or_delay_helper();
                           local_8._0_1_ = 0x15;
-                          local_4f0 = FUN_006ce000();
+                          local_4f0 = ui_find_widget_by_key();
                           local_4fc = FUN_00427200();
                           *(int *)(local_4fc + 4) = (*(int *)(local_4f4 + 0x5c) - local_4f8) / 2;
                           local_8._0_1_ = 0x14;
@@ -882,7 +882,7 @@ LAB_00511059:
                           puStack_704 = &local_510;
                           puStack_704 = (undefined4 *)game_timing_or_delay_helper();
                           local_8._0_1_ = 0x18;
-                          local_514 = FUN_006ce000();
+                          local_514 = ui_find_widget_by_key();
                           local_518 = (CDocObjectServer *)FUN_00427200();
                           CDocObjectServer::ReleaseDocSite(local_518);
                           local_8 = CONCAT31(local_8._1_3_,0x17);
@@ -933,7 +933,7 @@ LAB_00511059:
                           puStack_700 = (undefined4 *)game_timing_or_delay_helper();
                           local_8._0_1_ = 0xb;
                           puStack_704 = (undefined4 *)0x5117e1;
-                          local_468 = FUN_006ce000();
+                          local_468 = ui_find_widget_by_key();
                           local_8._0_1_ = 10;
                           local_2bc = local_468;
                           std::function<void___cdecl(void)>::~function<void___cdecl(void)>(local_a8)
@@ -1144,7 +1144,7 @@ LAB_00511059:
                         puStack_700 = (undefined4 *)game_timing_or_delay_helper();
                         local_8._0_1_ = 0x1b;
                         puStack_704 = (undefined4 *)0x512487;
-                        local_530 = FUN_006ce000();
+                        local_530 = ui_find_widget_by_key();
                         *(undefined4 *)(local_530 + 0x984) = 0x32b;
                         local_8 = CONCAT31(local_8._1_3_,0x1a);
                         std::function<void___cdecl(void)>::~function<void___cdecl(void)>(local_1e0);
@@ -1167,7 +1167,7 @@ LAB_00511059:
                         puStack_700 = (undefined4 *)game_timing_or_delay_helper();
                         local_8._0_1_ = 0x1e;
                         puStack_704 = (undefined4 *)0x512571;
-                        local_548 = FUN_006ce000();
+                        local_548 = ui_find_widget_by_key();
                         *(undefined1 *)(local_548 + 0x6e0) = 1;
                         local_8 = CONCAT31(local_8._1_3_,0x1d);
                         std::function<void___cdecl(void)>::~function<void___cdecl(void)>(local_1b0);
@@ -1195,7 +1195,7 @@ LAB_00511059:
                   puStack_700 = (undefined4 *)game_timing_or_delay_helper();
                   local_8._0_1_ = 1;
                   puStack_704 = (undefined4 *)0x5112ca;
-                  local_40c = FUN_006ce000();
+                  local_40c = ui_find_widget_by_key();
                   local_2c2 = local_40c == 0;
                   local_36c = (uint)(byte)local_2c2;
                   local_8 = (uint)local_8._1_3_ << 8;
@@ -1244,7 +1244,7 @@ LAB_00511059:
               }
               local_564 = 0x1518;
               game_timing_or_delay_helper();
-              FUN_0065e0b0();
+              ui_close_matching_widgets();
             }
             iVar3 = game_get_player_or_session_blob();
             if (*(int *)(iVar3 + 0xdd8) == 5) {
@@ -1575,7 +1575,7 @@ LAB_00512a1e:
             FUN_004e84c0(uVar6);
           }
           FUN_005147a0(local_364);
-          pcVar7 = (char *)FUN_006426b0();
+          pcVar7 = (char *)game_get_modal_block_flag();
           if (*pcVar7 != '\0') {
             FUN_004b5650(0);
             FUN_004b5370(0x3e4ccccd,0x3e4ccccd);
@@ -3062,7 +3062,7 @@ void game_init_before_main_loop(void)
             FUN_0048c970(local_35c,&local_348);
             cVar1 = FUN_0040d970(uVar3);
             if (cVar1 != '\0') {
-              piVar4 = (int *)FUN_0069eec0(&local_348);
+              piVar4 = (int *)input_remap_vk_lookup(&local_348);
               *piVar4 = local_354;
             }
           }

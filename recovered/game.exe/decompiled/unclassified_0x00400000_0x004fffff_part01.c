@@ -2644,7 +2644,7 @@ void FUN_00403a70(int param_1)
     FUN_004d1bb0(puVar3);
     uVar2 = game_timing_or_delay_helper(puVar3);
     local_8 = 0xffffffff;
-    local_28 = FUN_006ce000(uVar2);
+    local_28 = ui_find_widget_by_key(uVar2);
     if (*(char *)(local_28 + 0x51) != '\0') {
       *(undefined4 *)(local_28 + 0x30c) = 0;
       iStack_40 = 0x403b26;
@@ -7356,7 +7356,7 @@ void FUN_0040c970(undefined4 param_1)
           puStack_140 = (undefined4 *)0x40cab7;
           puStack_13c = (undefined4 *)game_timing_or_delay_helper();
           puStack_140 = (undefined4 *)0x40cabd;
-          FUN_0065e0b0();
+          ui_close_matching_widgets();
         }
         else {
           local_d4 = 0x35c;
@@ -7367,7 +7367,7 @@ void FUN_0040c970(undefined4 param_1)
           puStack_154 = &local_d4;
           puStack_154 = (undefined4 *)game_timing_or_delay_helper();
           local_8 = 0xffffffff;
-          local_d8 = FUN_006ce000();
+          local_d8 = ui_find_widget_by_key();
           local_b4 = *(int *)(local_d8 + 0x9d0);
           puStack_13c = *(undefined4 **)(local_b4 + 0xa10);
           puStack_140 = (undefined4 *)(local_b4 + 0x98c);
@@ -7406,7 +7406,7 @@ void FUN_0040c970(undefined4 param_1)
             puStack_154 = &local_e4;
             puStack_154 = (undefined4 *)game_timing_or_delay_helper();
             local_8._0_1_ = 1;
-            local_e8 = FUN_006ce000();
+            local_e8 = ui_find_widget_by_key();
             local_b0 = *(int *)(*(int *)(local_e8 + 0x9d0) + 0x9d0);
             *(undefined4 *)(local_b0 + 0x10) = local_bc;
             puStack_13c = (undefined4 *)0x40cc87;
@@ -7429,7 +7429,7 @@ void FUN_0040c970(undefined4 param_1)
             local_8._0_1_ = 3;
             uVar4 = game_timing_or_delay_helper(&local_ec);
             local_8._0_1_ = 1;
-            local_100 = FUN_006ce000(uVar4);
+            local_100 = ui_find_widget_by_key(uVar4);
             puStack_140 = *(undefined4 **)(local_100 + 0x9d0);
             puStack_144 = (undefined4 *)0x40cd2a;
             puStack_144 = (undefined4 *)game_get_player_or_session_blob();
@@ -7443,7 +7443,7 @@ void FUN_0040c970(undefined4 param_1)
             puStack_154 = &local_f0;
             puStack_154 = (undefined4 *)game_timing_or_delay_helper();
             local_8 = CONCAT31(local_8._1_3_,1);
-            local_f4 = FUN_006ce000();
+            local_f4 = ui_find_widget_by_key();
             local_b8 = *(int *)(local_f4 + 0x9d0);
             puStack_13c = *(undefined4 **)(local_b8 + 0xa10);
             puStack_140 = (undefined4 *)(local_b8 + 0x98c);
@@ -7495,7 +7495,7 @@ void FUN_0040c970(undefined4 param_1)
             puStack_140 = (undefined4 *)0x40cbaf;
             puStack_13c = (undefined4 *)game_timing_or_delay_helper();
             puStack_140 = (undefined4 *)0x40cbb5;
-            FUN_0065e0b0();
+            ui_close_matching_widgets();
           }
         }
       }
@@ -11639,9 +11639,9 @@ void FUN_00412880(int param_1)
   }
   else if (param_1 == 0x287) {
     game_timing_or_delay_helper();
-    FUN_0065de20();
+    ui_register_or_show_widget();
     game_timing_or_delay_helper();
-    FUN_0065dee0();
+    ui_activate_widget_pair();
     FUN_0040d330();
     iVar3 = FUN_00405270();
     if (*(int *)(iVar3 + 4) != 0) {
@@ -11649,7 +11649,7 @@ void FUN_00412880(int param_1)
       local_8 = 0;
       game_timing_or_delay_helper();
       local_8 = 0xffffffff;
-      iVar3 = FUN_006ce000();
+      iVar3 = ui_find_widget_by_key();
       iVar3 = *(int *)(iVar3 + 0x9d0);
       FUN_00642750();
       FUN_0040d5c0();
@@ -11731,9 +11731,9 @@ void FUN_00412880(int param_1)
   }
   else if (param_1 == 0x288) {
     game_timing_or_delay_helper();
-    FUN_0065e0b0();
+    ui_close_matching_widgets();
     game_timing_or_delay_helper();
-    FUN_0065e0b0();
+    ui_close_matching_widgets();
     FUN_0040d330();
     FUN_0040d540();
   }
@@ -11853,7 +11853,7 @@ void FUN_00414340(undefined4 param_1,float param_2)
           FUN_0040d540();
           local_e4 = 0x366;
           game_timing_or_delay_helper();
-          FUN_0065e0b0();
+          ui_close_matching_widgets();
         }
         else {
           local_e8 = 0x366;
@@ -11861,7 +11861,7 @@ void FUN_00414340(undefined4 param_1,float param_2)
           local_8 = 0;
           game_timing_or_delay_helper();
           local_8 = 0xffffffff;
-          local_ec = FUN_006ce000();
+          local_ec = ui_find_widget_by_key();
           local_b4 = *(int *)(local_ec + 0x9d0);
           FUN_00642750();
           FUN_0040d5c0();
@@ -11871,7 +11871,7 @@ void FUN_00414340(undefined4 param_1,float param_2)
             FUN_0040d540();
             local_f0 = 0x366;
             game_timing_or_delay_helper();
-            FUN_0065e0b0();
+            ui_close_matching_widgets();
           }
           FUN_0040a9f0();
           local_8 = 1;
@@ -11882,7 +11882,7 @@ void FUN_00414340(undefined4 param_1,float param_2)
           local_8._0_1_ = 2;
           game_timing_or_delay_helper();
           local_8._0_1_ = 1;
-          local_f8 = FUN_006ce000();
+          local_f8 = ui_find_widget_by_key();
           local_b0 = *(int *)(*(int *)(local_f8 + 0x9d0) + 0x9d0);
           *(undefined4 *)(local_b0 + 0x14) = 0;
           *(int *)(local_b0 + 0x28) = *(int *)(local_b0 + 0x28) + 1;
@@ -11894,13 +11894,13 @@ void FUN_00414340(undefined4 param_1,float param_2)
           local_8._0_1_ = 3;
           uVar8 = game_timing_or_delay_helper(&local_fc);
           local_8 = CONCAT31(local_8._1_3_,1);
-          FUN_006ce000(uVar8);
+          ui_find_widget_by_key(uVar8);
           game_get_player_or_session_blob();
           FUN_006cdee0();
           FUN_0040d330();
           FUN_0040d540();
           game_timing_or_delay_helper();
-          FUN_0065e0b0();
+          ui_close_matching_widgets();
           FUN_004054a0();
           FUN_0049d780();
           local_8 = 0xffffffff;
@@ -12303,7 +12303,7 @@ void FUN_00415690(int param_1)
   ExceptionList = &local_10;
   local_1b0 = 0x45;
   game_timing_or_delay_helper();
-  FUN_0065e0b0();
+  ui_close_matching_widgets();
   local_1a4 = 0x14;
   local_1ac = 0x12;
   apuStack_264[0] = &DAT_007402fc;
@@ -37935,7 +37935,7 @@ void FUN_00454d70(int param_1)
        ) {
       *(undefined4 *)(in_ECX + 0x20) = 0;
       *(undefined4 *)(in_ECX + 0x214) = 0;
-      window_input_ui_dispatch_68eb20(3000,0);
+      ui_command_dispatch(3000,0);
     }
   }
   return;

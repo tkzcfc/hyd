@@ -16,6 +16,8 @@ recovered/
     functions.csv          ← 地址, 名称, 大小, 所在文件, 是否经分析重命名
     renames.md             ← 重命名清单及证据/置信度
     imports.txt / exports.txt / strings.txt
+    hard_functions/        ← 两个超大函数（主 WndProc 0x683610、UI 命令分发 0x68eb20）的专项反编译结果、
+                              带注释反汇编、跳转表与 message_map.md（消息/按键/命令 ID 映射）
     README.md
   dep1.dll/                ← 第三方库（FMOD Core API）：仅 imports/exports 与用法说明，不含反编译代码
   dep2.dll/                ← 第三方库（Microsoft D3DX9，game.exe 以 d3dx9_43.dll 名导入）：同上

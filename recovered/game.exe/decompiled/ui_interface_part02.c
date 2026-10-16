@@ -524,7 +524,7 @@ void FUN_0064cd40(int param_1)
   pfStack_830 = (function<void___cdecl(void)> *)game_timing_or_delay_helper();
   local_8 = 0xffffffff;
   apcStack_83c[2] = (char *)0x64ce1e;
-  local_4b8 = FUN_006ce000();
+  local_4b8 = ui_find_widget_by_key();
   if (local_4b8 == 0) {
     ExceptionList = local_10;
     return;
@@ -1286,7 +1286,7 @@ LAB_0064e2a8:
       pfStack_830 = (function<void___cdecl(void)> *)game_timing_or_delay_helper();
       local_8 = 0xffffffff;
       apcStack_83c[2] = (char *)0x64e31a;
-      local_4d8 = FUN_006ce000();
+      local_4d8 = ui_find_widget_by_key();
       local_154 = local_4d8;
       if (DAT_007ca84c < DAT_007c6564) {
         DAT_007ca84c = DAT_007ca84c + param_1;
@@ -1901,7 +1901,7 @@ LAB_0064e2a8:
         pfStack_830 = (function<void___cdecl(void)> *)game_timing_or_delay_helper();
         local_8 = 0xffffffff;
         apcStack_83c[2] = (char *)0x64f2fa;
-        local_260 = FUN_006ce000();
+        local_260 = ui_find_widget_by_key();
         local_264 = ((float)DAT_007ca890 * 6.28) / 500.0;
         pcStack_818 = (code *)0x0;
         pfStack_81c = (function<void___cdecl(void)> *)0x64f342;
@@ -1938,7 +1938,7 @@ LAB_0064e2a8:
           pfStack_830 = (function<void___cdecl(void)> *)game_timing_or_delay_helper();
           local_8 = 0xffffffff;
           apcStack_83c[2] = (char *)0x64f4a0;
-          local_270 = FUN_006ce000();
+          local_270 = ui_find_widget_by_key();
           if (local_270 != 0) {
             *(int *)(local_270 + 0x14) = (int)(local_17c * 255.0);
           }
@@ -1955,7 +1955,7 @@ LAB_0064e2a8:
           pfStack_830 = (function<void___cdecl(void)> *)game_timing_or_delay_helper();
           local_8 = 0xffffffff;
           apcStack_83c[2] = (char *)0x64f54e;
-          local_278 = FUN_006ce000();
+          local_278 = ui_find_widget_by_key();
           local_158 = local_278;
           if (local_278 != 0) {
             *(int *)(local_278 + 0x54) = (int)((float)local_180 + (float)-local_180 * local_17c);
@@ -1990,7 +1990,7 @@ LAB_0064e2a8:
           pfStack_830 = (function<void___cdecl(void)> *)game_timing_or_delay_helper();
           local_8 = 0xffffffff;
           apcStack_83c[2] = (char *)0x64f661;
-          local_280 = FUN_006ce000();
+          local_280 = ui_find_widget_by_key();
           local_158 = local_280;
           if (local_280 != 0) {
             *(int *)(local_280 + 0x54) =
@@ -2026,7 +2026,7 @@ LAB_0064e2a8:
           pfStack_830 = (function<void___cdecl(void)> *)game_timing_or_delay_helper();
           local_8 = 0xffffffff;
           apcStack_83c[2] = (char *)0x64f777;
-          local_288 = FUN_006ce000();
+          local_288 = ui_find_widget_by_key();
           local_158 = local_288;
           if (local_288 != 0) {
             *(int *)(local_288 + 0x54) =
@@ -2062,7 +2062,7 @@ LAB_0064e2a8:
           pfStack_830 = (function<void___cdecl(void)> *)game_timing_or_delay_helper();
           local_8 = 0xffffffff;
           apcStack_83c[2] = (char *)0x64f88d;
-          local_290 = FUN_006ce000();
+          local_290 = ui_find_widget_by_key();
           local_158 = local_290;
           if (local_290 != 0) {
             *(int *)(local_290 + 0x54) =
@@ -2116,7 +2116,7 @@ LAB_0064e2a8:
           pfStack_830 = (function<void___cdecl(void)> *)game_timing_or_delay_helper();
           local_8 = 0xffffffff;
           apcStack_83c[2] = (char *)0x64fa1f;
-          local_29c = FUN_006ce000();
+          local_29c = ui_find_widget_by_key();
           *(undefined4 *)(local_29c + 0x14) = 0xff;
           local_2a0 = 0xe;
           local_5b8 = (undefined1 *)&iStack_82c;
@@ -2130,7 +2130,7 @@ LAB_0064e2a8:
           pfStack_830 = (function<void___cdecl(void)> *)game_timing_or_delay_helper();
           local_8 = 0xffffffff;
           apcStack_83c[2] = (char *)0x64fa8b;
-          local_2a4 = FUN_006ce000();
+          local_2a4 = ui_find_widget_by_key();
           *(undefined4 *)(local_2a4 + 0x4c) = 1;
           *(undefined4 *)(local_2a4 + 0x5c) = 0x99;
           *(undefined4 *)(local_2a4 + 0x60) = 0x61;
@@ -2186,7 +2186,7 @@ LAB_0064e2a8:
           pfStack_830 = (function<void___cdecl(void)> *)game_timing_or_delay_helper();
           local_8 = 0xffffffff;
           apcStack_83c[2] = (char *)0x64fc0f;
-          local_2b0 = FUN_006ce000();
+          local_2b0 = ui_find_widget_by_key();
           *(undefined4 *)(local_2b0 + 0x4c) = 1;
           *(undefined4 *)(local_2b0 + 0x5c) = 0x99;
           *(undefined4 *)(local_2b0 + 0x60) = 0x61;
@@ -2242,7 +2242,7 @@ LAB_0064e2a8:
           pfStack_830 = (function<void___cdecl(void)> *)game_timing_or_delay_helper();
           local_8 = 0xffffffff;
           apcStack_83c[2] = (char *)0x64fd93;
-          local_2bc = FUN_006ce000();
+          local_2bc = ui_find_widget_by_key();
           *(undefined4 *)(local_2bc + 0x4c) = 1;
           *(undefined4 *)(local_2bc + 0x5c) = 0x99;
           *(undefined4 *)(local_2bc + 0x60) = 0x61;
@@ -2298,7 +2298,7 @@ LAB_0064e2a8:
           pfStack_830 = (function<void___cdecl(void)> *)game_timing_or_delay_helper();
           local_8 = 0xffffffff;
           apcStack_83c[2] = (char *)0x64ff17;
-          local_2c8 = FUN_006ce000();
+          local_2c8 = ui_find_widget_by_key();
           *(undefined4 *)(local_2c8 + 0x4c) = 1;
           *(undefined4 *)(local_2c8 + 0x5c) = 0x99;
           *(undefined4 *)(local_2c8 + 0x60) = 0x61;
@@ -2471,7 +2471,7 @@ LAB_0064e2a8:
     pfStack_830 = (function<void___cdecl(void)> *)game_timing_or_delay_helper();
     local_8 = 0xffffffff;
     apcStack_83c[2] = (char *)0x650343;
-    local_2ec = FUN_006ce000();
+    local_2ec = ui_find_widget_by_key();
     if (local_2ec != 0) {
       if (DAT_007c655c / 3 <= DAT_007ca880) {
         local_2f0 = 0xe;
@@ -2486,7 +2486,7 @@ LAB_0064e2a8:
         apcStack_83c[2] = (char *)game_timing_or_delay_helper();
         local_8 = 0xffffffff;
         apcStack_83c[1] = (char *)0x6503ba;
-        local_2f4 = FUN_006ce000();
+        local_2f4 = ui_find_widget_by_key();
         pfStack_81c = (function<void___cdecl(void)> *)0x6503d4;
         local_2f8 = FUN_0040d680();
         *(undefined1 *)(local_2f8 + 0x20) = 0x40;
@@ -2504,7 +2504,7 @@ LAB_0064e2a8:
         apcStack_83c[2] = (char *)game_timing_or_delay_helper();
         local_8 = 0xffffffff;
         apcStack_83c[1] = (char *)0x650447;
-        local_300 = FUN_006ce000();
+        local_300 = ui_find_widget_by_key();
         pfStack_81c = (function<void___cdecl(void)> *)0x650461;
         local_304 = FUN_0040d680();
         *(undefined1 *)(local_304 + 0x20) = 0x3f;
@@ -2525,7 +2525,7 @@ LAB_0064e2a8:
     pfStack_830 = (function<void___cdecl(void)> *)game_timing_or_delay_helper();
     local_8._0_1_ = 0x22;
     apcStack_83c[2] = (char *)0x6504c9;
-    local_30c = FUN_006ce000();
+    local_30c = ui_find_widget_by_key();
     if (local_30c != 0) {
       local_310 = 0xe;
       local_658 = (undefined1 *)&iStack_82c;
@@ -2538,7 +2538,7 @@ LAB_0064e2a8:
       pfStack_830 = (function<void___cdecl(void)> *)game_timing_or_delay_helper();
       local_8._0_1_ = 0x22;
       apcStack_83c[2] = (char *)0x65051f;
-      local_314 = FUN_006ce000();
+      local_314 = ui_find_widget_by_key();
       if (*(char *)(local_314 + 0x9a8) != '\0') {
         pcStack_818 = (code *)&DAT_0076d5a4;
         pfStack_81c = (function<void___cdecl(void)> *)0x650546;
@@ -2556,7 +2556,7 @@ LAB_0064e2a8:
     pfStack_830 = (function<void___cdecl(void)> *)game_timing_or_delay_helper();
     local_8._0_1_ = 0x22;
     apcStack_83c[2] = (char *)0x65058b;
-    local_31c = FUN_006ce000();
+    local_31c = ui_find_widget_by_key();
     if (local_31c != 0) {
       local_320 = 0xe;
       local_668 = (undefined1 *)&iStack_82c;
@@ -2569,7 +2569,7 @@ LAB_0064e2a8:
       pfStack_830 = (function<void___cdecl(void)> *)game_timing_or_delay_helper();
       local_8._0_1_ = 0x22;
       apcStack_83c[2] = (char *)0x6505e1;
-      local_324 = FUN_006ce000();
+      local_324 = ui_find_widget_by_key();
       if (*(char *)(local_324 + 0x9a8) != '\0') {
         pcStack_818 = (code *)&DAT_0076d58c;
         pfStack_81c = (function<void___cdecl(void)> *)0x650608;
@@ -2587,7 +2587,7 @@ LAB_0064e2a8:
     pfStack_830 = (function<void___cdecl(void)> *)game_timing_or_delay_helper();
     local_8._0_1_ = 0x22;
     apcStack_83c[2] = (char *)0x65064d;
-    local_32c = FUN_006ce000();
+    local_32c = ui_find_widget_by_key();
     if (local_32c != 0) {
       local_330 = 0xe;
       local_678 = (undefined1 *)&iStack_82c;
@@ -2600,7 +2600,7 @@ LAB_0064e2a8:
       pfStack_830 = (function<void___cdecl(void)> *)game_timing_or_delay_helper();
       local_8._0_1_ = 0x22;
       apcStack_83c[2] = (char *)0x6506a3;
-      local_334 = FUN_006ce000();
+      local_334 = ui_find_widget_by_key();
       if (*(char *)(local_334 + 0x9a8) != '\0') {
         pcStack_818 = (code *)&DAT_0076d5b4;
         pfStack_81c = (function<void___cdecl(void)> *)0x6506ca;
@@ -2618,7 +2618,7 @@ LAB_0064e2a8:
     pfStack_830 = (function<void___cdecl(void)> *)game_timing_or_delay_helper();
     local_8._0_1_ = 0x22;
     apcStack_83c[2] = (char *)0x65070f;
-    local_33c = FUN_006ce000();
+    local_33c = ui_find_widget_by_key();
     if (local_33c != 0) {
       local_340 = 0xe;
       local_688 = (undefined1 *)&iStack_82c;
@@ -2631,7 +2631,7 @@ LAB_0064e2a8:
       pfStack_830 = (function<void___cdecl(void)> *)game_timing_or_delay_helper();
       local_8._0_1_ = 0x22;
       apcStack_83c[2] = (char *)0x650765;
-      local_344 = FUN_006ce000();
+      local_344 = ui_find_widget_by_key();
       if (*(char *)(local_344 + 0x9a8) != '\0') {
         pcStack_818 = (code *)&DAT_0076d5f4;
         pfStack_81c = (function<void___cdecl(void)> *)0x65078c;
@@ -2687,7 +2687,7 @@ LAB_0064e2a8:
           pfStack_830 = (function<void___cdecl(void)> *)game_timing_or_delay_helper();
           local_8._0_1_ = 0x22;
           apcStack_83c[2] = (char *)0x651a81;
-          local_3ec = FUN_006ce000();
+          local_3ec = ui_find_widget_by_key();
           if (local_3ec != 0) {
             DAT_007ca86c = '\x01';
             local_72c = (undefined1 *)&iStack_82c;
@@ -2707,7 +2707,7 @@ LAB_0064e2a8:
             pfStack_830 = (function<void___cdecl(void)> *)game_timing_or_delay_helper();
             local_8._0_1_ = 0x22;
             apcStack_83c[2] = (char *)0x651aff;
-            local_3f4 = FUN_006ce000();
+            local_3f4 = ui_find_widget_by_key();
             *(undefined1 *)(local_3f4 + 0x9a8) = 1;
             *(undefined4 *)(local_3f4 + 0x4c) = 0;
             *(undefined4 *)(local_3f4 + 0x8dc) = 0;
@@ -2781,7 +2781,7 @@ LAB_0064e2a8:
             pfStack_830 = (function<void___cdecl(void)> *)game_timing_or_delay_helper();
             local_8 = CONCAT31(local_8._1_3_,0x22);
             apcStack_83c[2] = (char *)0x652818;
-            local_444 = FUN_006ce000();
+            local_444 = ui_find_widget_by_key();
             local_15c = local_444;
             if (local_444 != 0) {
               fVar11 = (float)DAT_007ca898 - DAT_007c6544;
@@ -2869,7 +2869,7 @@ LAB_0064e2a8:
           pfStack_830 = (function<void___cdecl(void)> *)game_timing_or_delay_helper();
           local_8 = CONCAT31(local_8._1_3_,0x22);
           apcStack_83c[2] = (char *)0x651ce0;
-          local_40c = FUN_006ce000();
+          local_40c = ui_find_widget_by_key();
           local_15c = local_40c;
           if (local_40c != 0) {
             if (DAT_007c6544 / 2.0 <= (float)DAT_007ca898) {
@@ -3303,7 +3303,7 @@ LAB_0064e2a8:
           pfStack_830 = (function<void___cdecl(void)> *)game_timing_or_delay_helper();
           local_8._0_1_ = 0x22;
           apcStack_83c[2] = (char *)0x65134e;
-          local_384 = FUN_006ce000();
+          local_384 = ui_find_widget_by_key();
           local_160 = local_384;
           if (local_384 != 0) {
             fVar11 = (float)DAT_007ca8a4 - DAT_007c6558;
@@ -3356,7 +3356,7 @@ LAB_0064e2a8:
         pfStack_830 = (function<void___cdecl(void)> *)game_timing_or_delay_helper();
         local_8._0_1_ = 0x22;
         apcStack_83c[2] = (char *)0x65081e;
-        local_34c = FUN_006ce000();
+        local_34c = ui_find_widget_by_key();
         local_160 = local_34c;
         if (DAT_007c6558 / 2.0 <= (float)DAT_007ca8a4) {
           if (DAT_007c6558 / 2.0 <= (float)DAT_007ca8a4) {
@@ -3813,7 +3813,7 @@ LAB_0064e2a8:
         pfStack_830 = (function<void___cdecl(void)> *)game_timing_or_delay_helper();
         local_8._0_1_ = 0x22;
         apcStack_83c[2] = (char *)0x6515ad;
-        local_394 = FUN_006ce000();
+        local_394 = ui_find_widget_by_key();
         if (local_394 != 0) {
           local_398 = 0xe;
           local_6b8 = (undefined1 *)&iStack_82c;
@@ -3826,7 +3826,7 @@ LAB_0064e2a8:
           pfStack_830 = (function<void___cdecl(void)> *)game_timing_or_delay_helper();
           local_8._0_1_ = 0x22;
           apcStack_83c[2] = (char *)0x651607;
-          local_39c = FUN_006ce000();
+          local_39c = ui_find_widget_by_key();
           if (*(char *)(local_39c + 0x9a8) == '\0') {
             local_3a0 = 0xe;
             local_6c0 = (undefined1 *)&iStack_82c;
@@ -3853,7 +3853,7 @@ LAB_0064e2a8:
         pfStack_830 = (function<void___cdecl(void)> *)game_timing_or_delay_helper();
         local_8._0_1_ = 0x22;
         apcStack_83c[2] = (char *)0x6516ac;
-        local_3a8 = FUN_006ce000();
+        local_3a8 = ui_find_widget_by_key();
         if (local_3a8 != 0) {
           local_3ac = 0xe;
           local_6d0 = (undefined1 *)&iStack_82c;
@@ -3866,7 +3866,7 @@ LAB_0064e2a8:
           pfStack_830 = (function<void___cdecl(void)> *)game_timing_or_delay_helper();
           local_8._0_1_ = 0x22;
           apcStack_83c[2] = (char *)0x651706;
-          local_3b0 = FUN_006ce000();
+          local_3b0 = ui_find_widget_by_key();
           if (*(char *)(local_3b0 + 0x9a8) == '\0') {
             local_3b4 = 0xe;
             local_6d8 = (undefined1 *)&iStack_82c;
@@ -3893,7 +3893,7 @@ LAB_0064e2a8:
         pfStack_830 = (function<void___cdecl(void)> *)game_timing_or_delay_helper();
         local_8._0_1_ = 0x22;
         apcStack_83c[2] = (char *)0x6517ab;
-        local_3bc = FUN_006ce000();
+        local_3bc = ui_find_widget_by_key();
         if (local_3bc != 0) {
           local_3c0 = 0xe;
           local_6e8 = (undefined1 *)&iStack_82c;
@@ -3906,7 +3906,7 @@ LAB_0064e2a8:
           pfStack_830 = (function<void___cdecl(void)> *)game_timing_or_delay_helper();
           local_8._0_1_ = 0x22;
           apcStack_83c[2] = (char *)0x651805;
-          local_3c4 = FUN_006ce000();
+          local_3c4 = ui_find_widget_by_key();
           if (*(char *)(local_3c4 + 0x9a8) == '\0') {
             local_3c8 = 0xe;
             local_6f0 = (undefined1 *)&iStack_82c;
@@ -3933,7 +3933,7 @@ LAB_0064e2a8:
         pfStack_830 = (function<void___cdecl(void)> *)game_timing_or_delay_helper();
         local_8._0_1_ = 0x22;
         apcStack_83c[2] = (char *)0x6518aa;
-        local_3d0 = FUN_006ce000();
+        local_3d0 = ui_find_widget_by_key();
         if (local_3d0 != 0) {
           local_3d4 = 0xe;
           local_700 = (undefined1 *)&iStack_82c;
@@ -3946,7 +3946,7 @@ LAB_0064e2a8:
           pfStack_830 = (function<void___cdecl(void)> *)game_timing_or_delay_helper();
           local_8._0_1_ = 0x22;
           apcStack_83c[2] = (char *)0x651904;
-          local_3d8 = FUN_006ce000();
+          local_3d8 = ui_find_widget_by_key();
           if (*(char *)(local_3d8 + 0x9a8) == '\0') {
             local_3dc = 0xe;
             local_708 = (undefined1 *)&iStack_82c;
@@ -4014,13 +4014,13 @@ LAB_0064e2a8:
       pfStack_81c = (function<void___cdecl(void)> *)0x652c3e;
       pcStack_818 = (code *)game_timing_or_delay_helper();
       pfStack_81c = (function<void___cdecl(void)> *)0x652c44;
-      FUN_0065e0b0();
+      ui_close_matching_widgets();
       local_464 = 0xe;
       pcStack_818 = (code *)&local_464;
       pfStack_81c = (function<void___cdecl(void)> *)0x652c62;
       pcStack_818 = (code *)game_timing_or_delay_helper();
       pfStack_81c = (function<void___cdecl(void)> *)0x652c68;
-      FUN_0065e0b0();
+      ui_close_matching_widgets();
       pcStack_818 = (code *)0x652c70;
       piVar3 = (int *)game_get_state_ptr_d1520();
       *(undefined4 *)(*piVar3 + 0xc4) = 0xffffffff;
@@ -7175,7 +7175,7 @@ void FUN_00662c50(void)
   puStack_c50 = (undefined *)0x662c9f;
   game_timing_or_delay_helper();
   puStack_c50 = (undefined *)0x662ca5;
-  FUN_0065e0b0();
+  ui_close_matching_widgets();
   local_b6c = 0xe;
   FUN_006ac8e0();
   local_8._0_1_ = 1;
@@ -7543,7 +7543,7 @@ void FUN_006634f0(void)
   puStack_c50 = (undefined *)0x66353f;
   game_timing_or_delay_helper();
   puStack_c50 = (undefined *)0x663545;
-  FUN_0065e0b0();
+  ui_close_matching_widgets();
   local_b70 = 0xe;
   FUN_006ac8e0();
   local_8._0_1_ = 1;
@@ -7884,7 +7884,7 @@ void FUN_00663ec0(void)
   puStack_90 = (undefined1 *)0x663efc;
   pcStack_8c = (code *)game_timing_or_delay_helper();
   puStack_90 = (undefined1 *)0x663f02;
-  FUN_0065e0b0();
+  ui_close_matching_widgets();
   local_1c = 0x3b;
   pcStack_8c = (code *)&local_1c;
   puStack_90 = (undefined1 *)0x663f1a;
@@ -8117,7 +8117,7 @@ void FUN_00664250(int param_1)
   local_14 = uStack_118;
   pcStack_11c = (code *)game_timing_or_delay_helper();
   pfStack_120 = (function<void___cdecl(void)> *)0x664298;
-  FUN_0065e0b0();
+  ui_close_matching_widgets();
   local_38 = 0x3a;
   pcStack_11c = (code *)&local_38;
   pfStack_120 = (function<void___cdecl(void)> *)0x6642b0;
@@ -8500,7 +8500,7 @@ void FUN_006648f0(int *param_1)
   local_14 = uStack_390;
   pfStack_394 = (function<void___cdecl(void)> *)game_timing_or_delay_helper();
   pfStack_398 = (function<void___cdecl(void)> *)0x66493e;
-  FUN_0065e0b0();
+  ui_close_matching_widgets();
   if (*param_1 == 0x16) {
     local_31c = (undefined1 *)(apcStack_3b8 + 4);
     apcStack_3b8[3] = "SAFE_OPEN";
@@ -8511,13 +8511,13 @@ void FUN_006648f0(int *param_1)
     pfStack_394 = (function<void___cdecl(void)> *)0x0;
     pfStack_398 = (function<void___cdecl(void)> *)0x5dc;
     apcStack_3b8[7] = (char *)0x664972;
-    window_input_ui_dispatch_68eb20();
+    ui_command_dispatch();
   }
   else if (*param_1 == 0x20) {
     pfStack_394 = (function<void___cdecl(void)> *)0x0;
     pfStack_398 = (function<void___cdecl(void)> *)0xbe;
     apcStack_3b8[7] = (char *)0x664990;
-    window_input_ui_dispatch_68eb20();
+    ui_command_dispatch();
   }
   else {
     apcStack_3b8[3] = "COMMAND_SHOW";
@@ -9189,7 +9189,7 @@ void FUN_00666390(undefined4 param_1)
   local_14 = uStack_268;
   puStack_26c = (undefined4 *)game_timing_or_delay_helper();
   pcStack_270 = (code *)0x6663e5;
-  FUN_0065e0b0();
+  ui_close_matching_widgets();
   puStack_26c = (undefined4 *)param_1;
   pcStack_270 = (code *)0x6663f7;
   local_1f8 = FUN_005aa430();
@@ -10876,7 +10876,7 @@ void FUN_0066a7f0(void)
 }
 
 
-/* ==== 00671f40  FUN_00671f40  size=34940 ==== */
+/* ==== 00671f40  ui_handle_lbutton_up  size=34940 ==== */
 
 /* WARNING: Function: __alloca_probe replaced with injection: alloca_probe */
 /* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
@@ -10896,7 +10896,7 @@ void FUN_0066a7f0(void)
 /* WARNING: Removing unreachable block (ram,0x00674d0b) */
 /* WARNING: Type propagation algorithm not settling */
 
-void FUN_00671f40(void)
+void ui_handle_lbutton_up(void)
 
 {
   char cVar1;
@@ -11665,7 +11665,7 @@ void FUN_00671f40(void)
       apcStack_2128[2] = (char *)game_timing_or_delay_helper();
       local_8 = 0xffffffff;
       apcStack_2128[1] = (char *)0x6724ac;
-      local_1ccc = FUN_006ce000();
+      local_1ccc = ui_find_widget_by_key();
       pfStack_2108 = (function<void___cdecl(void)> *)0x6724c6;
       local_1cd0 = FUN_00427200();
       pfStack_2104 = (function<void___cdecl(void)> *)0x6724da;
@@ -11682,7 +11682,7 @@ void FUN_00671f40(void)
       apcStack_2128[3] = (char *)game_timing_or_delay_helper();
       local_8 = 0xffffffff;
       apcStack_2128[2] = (char *)0x672527;
-      local_1cd8 = FUN_006ce000();
+      local_1cd8 = ui_find_widget_by_key();
       pfStack_2104 = (function<void___cdecl(void)> *)0x672541;
       local_1cdc = (CDocObjectServer *)FUN_00427200();
       pfStack_2100 = (function<void___cdecl(void)> *)0x672552;
@@ -11785,7 +11785,7 @@ void FUN_00671f40(void)
       pfStack_2118 = (function<void___cdecl(void)> *)game_timing_or_delay_helper();
       local_8 = 0xffffffff;
       apcStack_2128[3] = (char *)0x6727b5;
-      local_1cf0 = FUN_006ce000();
+      local_1cf0 = ui_find_widget_by_key();
       if (*(int *)(local_1cf0 + 0x828) != 0) {
         local_1cf4 = 0xaf;
         local_1f08 = (undefined1 *)&pfStack_2114;
@@ -11798,7 +11798,7 @@ void FUN_00671f40(void)
         pfStack_2118 = (function<void___cdecl(void)> *)game_timing_or_delay_helper();
         local_8 = 0xffffffff;
         apcStack_2128[3] = (char *)0x67281b;
-        local_1cf8 = FUN_006ce000();
+        local_1cf8 = ui_find_widget_by_key();
         *(undefined1 *)(local_1cf8 + 0xad0) = 0;
         local_1cfc = 0xaf;
         local_1f10 = (undefined1 *)&pfStack_2114;
@@ -11811,7 +11811,7 @@ void FUN_00671f40(void)
         pfStack_2118 = (function<void___cdecl(void)> *)game_timing_or_delay_helper();
         local_8 = 0xffffffff;
         apcStack_2128[3] = (char *)0x67287b;
-        local_1d00 = FUN_006ce000();
+        local_1d00 = ui_find_widget_by_key();
         *(undefined1 *)(*(int *)(local_1d00 + 0x828) + 4) = 0;
         if ((((DAT_007ca1e8 == *local_1944) && (*(int *)(*local_1944 + 0x54) <= DAT_007ca71c)) &&
             (DAT_007ca71c <= *(int *)(*local_1944 + 0x54) + *(int *)(*local_1944 + 0x5c))) &&
@@ -11828,7 +11828,7 @@ void FUN_00671f40(void)
           pfStack_2118 = (function<void___cdecl(void)> *)game_timing_or_delay_helper();
           local_8 = 0xffffffff;
           apcStack_2128[3] = (char *)0x672962;
-          local_1d08 = FUN_006ce000();
+          local_1d08 = ui_find_widget_by_key();
           *(undefined1 *)(local_1d08 + 0xad0) = 1;
           local_1d0c = 0xaf;
           local_1f1c = (undefined1 *)&pfStack_2114;
@@ -11841,7 +11841,7 @@ void FUN_00671f40(void)
           pfStack_2118 = (function<void___cdecl(void)> *)game_timing_or_delay_helper();
           local_8 = 0xffffffff;
           apcStack_2128[3] = (char *)0x6729c2;
-          local_1d10 = FUN_006ce000();
+          local_1d10 = ui_find_widget_by_key();
           *(undefined1 *)(*(int *)(local_1d10 + 0x828) + 4) = 1;
         }
       }
@@ -12334,7 +12334,7 @@ LAB_00672ad4:
       apcStack_2128[3] = (char *)game_timing_or_delay_helper();
       local_8 = 0xffffffff;
       apcStack_2128[2] = (char *)0x6738a1;
-      pfStack_2104 = (function<void___cdecl(void)> *)FUN_006ce000();
+      pfStack_2104 = (function<void___cdecl(void)> *)ui_find_widget_by_key();
       ppcVar10 = apcStack_2128;
       puVar4 = &DAT_007ca70c;
       local_1a78 = pfStack_2104;
@@ -12400,7 +12400,7 @@ LAB_00672ad4:
       pfStack_2100 = (function<void___cdecl(void)> *)DAT_007ca1e8;
       pfStack_2104 = *(function<void___cdecl(void)> **)(DAT_007ca1e8 + 0x984);
       pfStack_2108 = (function<void___cdecl(void)> *)0x673e45;
-      window_input_ui_dispatch_68eb20();
+      ui_command_dispatch();
       ExceptionList = local_10;
       return;
     }
@@ -12652,7 +12652,7 @@ LAB_00672ad4:
           apcStack_2128[2] = (char *)game_timing_or_delay_helper();
           local_8 = CONCAT31(local_8._1_3_,9);
           apcStack_2128[1] = (char *)0x6740e4;
-          pfStack_2108 = (function<void___cdecl(void)> *)FUN_006ce000();
+          pfStack_2108 = (function<void___cdecl(void)> *)ui_find_widget_by_key();
           puVar4 = &DAT_007ca70c;
           ppcVar10 = apcStack_2128;
           local_1a9c = pfStack_2108;
@@ -12712,7 +12712,7 @@ LAB_00672ad4:
               apcStack_2128[3] = (char *)game_timing_or_delay_helper();
               local_8 = CONCAT31(local_8._1_3_,9);
               apcStack_2128[2] = (char *)0x674253;
-              pfStack_2104 = (function<void___cdecl(void)> *)FUN_006ce000();
+              pfStack_2104 = (function<void___cdecl(void)> *)ui_find_widget_by_key();
               ppcVar10 = apcStack_2128;
               puVar4 = &DAT_007ca70c;
               local_1aa4 = pfStack_2104;
@@ -12834,7 +12834,7 @@ LAB_00672ad4:
                 apcStack_2128[3] = (char *)game_timing_or_delay_helper();
                 local_8 = CONCAT31(local_8._1_3_,9);
                 apcStack_2128[2] = (char *)0x674521;
-                pfStack_2104 = (function<void___cdecl(void)> *)FUN_006ce000();
+                pfStack_2104 = (function<void___cdecl(void)> *)ui_find_widget_by_key();
                 ppcVar10 = apcStack_2128;
                 puVar4 = &DAT_007ca70c;
                 local_1ab4 = pfStack_2104;
@@ -12874,7 +12874,7 @@ LAB_00672ad4:
               apcStack_2128[2] = (char *)game_timing_or_delay_helper();
               local_8 = CONCAT31(local_8._1_3_,9);
               apcStack_2128[1] = (char *)0x6745f6;
-              pfStack_2108 = (function<void___cdecl(void)> *)FUN_006ce000();
+              pfStack_2108 = (function<void___cdecl(void)> *)ui_find_widget_by_key();
               puVar4 = &DAT_007ca70c;
               ppcVar10 = apcStack_2128;
               local_1abc = pfStack_2108;
@@ -12915,7 +12915,7 @@ LAB_0067464f:
     pfStack_2100 = (function<void___cdecl(void)> *)DAT_007ca1e8;
     pfStack_2104 = *(function<void___cdecl(void)> **)(DAT_007ca1e8 + 0x984);
     pfStack_2108 = (function<void___cdecl(void)> *)0x6746ac;
-    window_input_ui_dispatch_68eb20();
+    ui_command_dispatch();
     ExceptionList = local_10;
     return;
   }
@@ -12935,7 +12935,7 @@ LAB_0067464f:
     pfStack_2100 = (function<void___cdecl(void)> *)DAT_007ca1e8;
     pfStack_2104 = *(function<void___cdecl(void)> **)(DAT_007ca1e8 + 0x984);
     pfStack_2108 = (function<void___cdecl(void)> *)0x6746f8;
-    window_input_ui_dispatch_68eb20();
+    ui_command_dispatch();
     ExceptionList = local_10;
     return;
   }
@@ -13008,7 +13008,7 @@ LAB_0067464f:
       pfStack_2100 = (function<void___cdecl(void)> *)DAT_007ca1e8;
       pfStack_2104 = *(function<void___cdecl(void)> **)(DAT_007ca1e8 + 0x984);
       pfStack_2108 = (function<void___cdecl(void)> *)0x674997;
-      window_input_ui_dispatch_68eb20();
+      ui_command_dispatch();
       ExceptionList = local_10;
       return;
     }
@@ -13093,7 +13093,7 @@ LAB_0067464f:
       pfStack_2100 = (function<void___cdecl(void)> *)DAT_007ca1e8;
       pfStack_2104 = *(function<void___cdecl(void)> **)(DAT_007ca1e8 + 0x984);
       pfStack_2108 = (function<void___cdecl(void)> *)0x674af8;
-      window_input_ui_dispatch_68eb20();
+      ui_command_dispatch();
       ExceptionList = local_10;
       return;
     }
@@ -13166,7 +13166,7 @@ LAB_0067464f:
     pfStack_2100 = (function<void___cdecl(void)> *)DAT_007ca1e8;
     pfStack_2104 = *(function<void___cdecl(void)> **)(DAT_007ca1e8 + 0x984);
     pfStack_2108 = (function<void___cdecl(void)> *)0x674b45;
-    window_input_ui_dispatch_68eb20();
+    ui_command_dispatch();
     ExceptionList = local_10;
     return;
   }
@@ -13187,7 +13187,7 @@ LAB_0067464f:
     pfStack_2100 = (function<void___cdecl(void)> *)DAT_007ca1e8;
     pfStack_2104 = *(function<void___cdecl(void)> **)(DAT_007ca1e8 + 0x984);
     pfStack_2108 = (function<void___cdecl(void)> *)0x674bbb;
-    window_input_ui_dispatch_68eb20();
+    ui_command_dispatch();
     ExceptionList = local_10;
     return;
   }
@@ -13205,12 +13205,12 @@ LAB_0067464f:
       return;
     }
     pfStack_2100 = (function<void___cdecl(void)> *)0x67a858;
-    FUN_00671360();
+    ui_clear_modal_input_state();
     ExceptionList = local_10;
     return;
   }
   pfStack_2100 = (function<void___cdecl(void)> *)0x674be2;
-  FUN_00671360();
+  ui_clear_modal_input_state();
   if ((*(int *)(DAT_007ca1ec + 0xa0c) == 1) && (*(int *)(DAT_007ca1e8 + 0xa0c) == 1)) {
     if (DAT_007ca1e8 == DAT_007ca1ec) {
       ExceptionList = local_10;
@@ -14160,7 +14160,7 @@ LAB_0067620b:
       iVar2 = FUN_00405270();
       if (*(int *)(iVar2 + 4) != 0) {
         pfStack_2100 = (function<void___cdecl(void)> *)0x675bb6;
-        FUN_00671360();
+        ui_clear_modal_input_state();
         ExceptionList = local_10;
         return;
       }
@@ -14691,7 +14691,7 @@ LAB_0067620b:
     pfStack_2104 = (function<void___cdecl(void)> *)0x67589d;
     pfStack_2100 = (function<void___cdecl(void)> *)game_timing_or_delay_helper();
     pfStack_2104 = (function<void___cdecl(void)> *)0x6758a3;
-    FUN_0065e0b0();
+    ui_close_matching_widgets();
 LAB_006758a6:
     local_1b38 = 0x20;
     pfStack_2100 = (function<void___cdecl(void)> *)0x0;
@@ -15951,7 +15951,7 @@ LAB_0067832e:
           pfStack_2118 = (function<void___cdecl(void)> *)game_timing_or_delay_helper();
           local_8 = 0xffffffff;
           apcStack_2128[3] = (char *)0x679e5f;
-          local_1c60 = FUN_006ce000();
+          local_1c60 = ui_find_widget_by_key();
           if (*(char *)(local_1c60 + 0x9a8) == '\0') {
             pfStack_2100 = (function<void___cdecl(void)> *)0x0;
             pfStack_2104 = (function<void___cdecl(void)> *)DAT_007ca1ec;
@@ -16029,7 +16029,7 @@ LAB_0067832e:
           pfStack_2118 = (function<void___cdecl(void)> *)game_timing_or_delay_helper();
           local_8 = 0xffffffff;
           apcStack_2128[3] = (char *)0x679fee;
-          local_1c68 = FUN_006ce000();
+          local_1c68 = ui_find_widget_by_key();
           if (*(char *)(local_1c68 + 0x9a8) == '\0') {
             pfStack_2100 = *(function<void___cdecl(void)> **)(DAT_007ca1ec + 0xa10);
             pfStack_2104 = (function<void___cdecl(void)> *)(DAT_007ca1ec + 0x98c);
@@ -16136,7 +16136,7 @@ LAB_0067832e:
             pfStack_2118 = (function<void___cdecl(void)> *)game_timing_or_delay_helper();
             local_8 = 0xffffffff;
             apcStack_2128[3] = (char *)0x67a250;
-            iVar2 = FUN_006ce000();
+            iVar2 = ui_find_widget_by_key();
             *(int *)(iVar2 + 0x9d0) = DAT_007ca1ec;
             ExceptionList = local_10;
             return;
@@ -16275,7 +16275,7 @@ LAB_0067832e:
             pfStack_2118 = (function<void___cdecl(void)> *)game_timing_or_delay_helper();
             local_8 = 0xffffffff;
             apcStack_2128[3] = (char *)0x67a4cc;
-            iVar2 = FUN_006ce000();
+            iVar2 = ui_find_widget_by_key();
             *(int *)(iVar2 + 0x9d0) = DAT_007ca1ec;
             ExceptionList = local_10;
             return;
@@ -16300,7 +16300,7 @@ LAB_0067832e:
           pfStack_2100 = (function<void___cdecl(void)> *)DAT_007ca1e8;
           pfStack_2108 = (function<void___cdecl(void)> *)0x67a574;
           local_19ec = (int *)pfStack_2104;
-          window_input_ui_dispatch_68eb20();
+          ui_command_dispatch();
           if (local_19ec == (int *)0x1869e) {
             ExceptionList = local_10;
             return;
@@ -16317,7 +16317,7 @@ LAB_0067832e:
         pfStack_2118 = (function<void___cdecl(void)> *)game_timing_or_delay_helper();
         local_8 = 0xffffffff;
         apcStack_2128[3] = (char *)0x67a5d2;
-        local_1c90 = FUN_006ce000();
+        local_1c90 = ui_find_widget_by_key();
         if (local_1c90 != 0) {
           local_1c94 = 0x532;
           local_1eb4 = (undefined1 *)&pfStack_2114;
@@ -16330,7 +16330,7 @@ LAB_0067832e:
           pfStack_2118 = (function<void___cdecl(void)> *)game_timing_or_delay_helper();
           local_8 = 0xffffffff;
           apcStack_2128[3] = (char *)0x67a632;
-          local_1c98 = FUN_006ce000();
+          local_1c98 = ui_find_widget_by_key();
           local_1918 = local_1c98;
           if (((((*(char *)(local_1c98 + 0x51) != '\0') &&
                 (*(int *)(local_1c98 + 0x54) <= DAT_007ca71c)) &&
@@ -16341,7 +16341,7 @@ LAB_0067832e:
             pfStack_2104 = *(function<void___cdecl(void)> **)(local_1c98 + 0x984);
             pfStack_2108 = (function<void___cdecl(void)> *)0x67a6d7;
             pfStack_2100 = (function<void___cdecl(void)> *)local_1c98;
-            window_input_ui_dispatch_68eb20();
+            ui_command_dispatch();
           }
         }
         local_1c9c = 0x546;
@@ -16355,7 +16355,7 @@ LAB_0067832e:
         pfStack_2118 = (function<void___cdecl(void)> *)game_timing_or_delay_helper();
         local_8 = 0xffffffff;
         apcStack_2128[3] = (char *)0x67a724;
-        local_1ca0 = FUN_006ce000();
+        local_1ca0 = ui_find_widget_by_key();
         if (local_1ca0 == 0) {
           ExceptionList = local_10;
           return;
@@ -16371,7 +16371,7 @@ LAB_0067832e:
         pfStack_2118 = (function<void___cdecl(void)> *)game_timing_or_delay_helper();
         local_8 = 0xffffffff;
         apcStack_2128[3] = (char *)0x67a784;
-        pfStack_2100 = (function<void___cdecl(void)> *)FUN_006ce000();
+        pfStack_2100 = (function<void___cdecl(void)> *)ui_find_widget_by_key();
         if (*(char *)((int)pfStack_2100 + 0x51) == '\0') {
           ExceptionList = local_10;
           return;
@@ -16402,7 +16402,7 @@ LAB_0067832e:
         pfStack_2108 = (function<void___cdecl(void)> *)0x67a828;
         local_1ca8 = (int)pfStack_2100;
         local_191c = (int)pfStack_2100;
-        window_input_ui_dispatch_68eb20();
+        ui_command_dispatch();
         ExceptionList = local_10;
         return;
       }
@@ -17354,7 +17354,7 @@ LAB_00677a75:
       apcStack_2128[2] = (char *)game_timing_or_delay_helper();
       local_8._0_1_ = 0x27;
       apcStack_2128[1] = (char *)0x677de4;
-      local_1bb4 = FUN_006ce000();
+      local_1bb4 = ui_find_widget_by_key();
       pfStack_2108 = (function<void___cdecl(void)> *)0x677dfe;
       local_1bb8 = FUN_00427200();
       pfStack_2104 = (function<void___cdecl(void)> *)0x677e12;
@@ -17380,7 +17380,7 @@ LAB_00677a75:
       apcStack_2128[3] = (char *)game_timing_or_delay_helper();
       local_8 = CONCAT31(local_8._1_3_,0x24);
       apcStack_2128[2] = (char *)0x677e86;
-      local_1bc0 = FUN_006ce000();
+      local_1bc0 = ui_find_widget_by_key();
       pfStack_2104 = (function<void___cdecl(void)> *)0x677ea0;
       local_1bc4 = (CDocObjectServer *)FUN_00427200();
       pfStack_2100 = (function<void___cdecl(void)> *)0x677eb1;
@@ -17448,7 +17448,7 @@ LAB_00677a75:
       apcStack_2128[2] = (char *)game_timing_or_delay_helper();
       local_8._0_1_ = 0x2c;
       apcStack_2128[1] = (char *)0x678013;
-      local_1be4 = FUN_006ce000();
+      local_1be4 = ui_find_widget_by_key();
       pfStack_2108 = (function<void___cdecl(void)> *)0x67802d;
       local_1be8 = FUN_00427200();
       pfStack_2104 = (function<void___cdecl(void)> *)0x678041;
@@ -17474,7 +17474,7 @@ LAB_00677a75:
       apcStack_2128[3] = (char *)game_timing_or_delay_helper();
       local_8._0_1_ = 0x24;
       apcStack_2128[2] = (char *)0x6780b5;
-      local_1bf0 = FUN_006ce000();
+      local_1bf0 = ui_find_widget_by_key();
       pfStack_2104 = (function<void___cdecl(void)> *)0x6780cf;
       local_1bf4 = (CDocObjectServer *)FUN_00427200();
       pfStack_2100 = (function<void___cdecl(void)> *)0x6780e0;
@@ -17641,7 +17641,7 @@ void FUN_006a56d0(int param_1,int param_2,undefined4 param_3)
     pcStack_2e8 = (code *)0x0;
     apcStack_30c[8] = (char *)0x122;
     apcStack_30c[7] = (char *)0x6a57ab;
-    window_input_ui_dispatch_68eb20();
+    ui_command_dispatch();
   }
   else if (param_1 == 0x276) {
     local_2ac = (undefined1 *)(apcStack_30c + 4);
@@ -17655,7 +17655,7 @@ void FUN_006a56d0(int param_1,int param_2,undefined4 param_3)
     apcStack_30c[8] = (char *)0x6a57eb;
     pcStack_2e8 = (code *)game_timing_or_delay_helper();
     apcStack_30c[8] = (char *)0x6a57f1;
-    FUN_0065e0b0();
+    ui_close_matching_widgets();
   }
   else if (param_1 == 0x280) {
     local_1b4 = param_2;
@@ -17689,7 +17689,7 @@ void FUN_006a56d0(int param_1,int param_2,undefined4 param_3)
             apcStack_30c[3] = (char *)game_timing_or_delay_helper();
             local_8 = 0xffffffff;
             apcStack_30c[2] = (char *)0x6a5bf9;
-            local_1e0 = FUN_006ce000();
+            local_1e0 = ui_find_widget_by_key();
             if (*(char *)(local_1e0 + 0x9a8) == '\0') {
               local_240 = (undefined1 *)(apcStack_30c + 4);
               apcStack_30c[3] = "EQUIP_STRENGTHEN";
@@ -17709,7 +17709,7 @@ void FUN_006a56d0(int param_1,int param_2,undefined4 param_3)
               apcStack_30c[3] = (char *)game_timing_or_delay_helper();
               local_8 = 0xffffffff;
               apcStack_30c[2] = (char *)0x6a5c91;
-              local_224 = FUN_006ce000();
+              local_224 = ui_find_widget_by_key();
               *(int *)(local_224 + 0x9d0) = local_1b0;
               local_220 = 0x334;
               local_24c = (undefined1 *)(apcStack_30c + 4);
@@ -17722,7 +17722,7 @@ void FUN_006a56d0(int param_1,int param_2,undefined4 param_3)
               apcStack_30c[3] = (char *)game_timing_or_delay_helper();
               local_8 = 0xffffffff;
               apcStack_30c[2] = (char *)0x6a5cf6;
-              local_228 = FUN_006ce000();
+              local_228 = ui_find_widget_by_key();
               *(undefined1 *)(local_228 + 0x9a8) = 1;
               pcStack_2e8 = (code *)0x6a5d14;
               FUN_0040aa90();
@@ -18082,7 +18082,7 @@ void FUN_006a56d0(int param_1,int param_2,undefined4 param_3)
               apcStack_30c[8] = (char *)0x6a6777;
               pcStack_2e8 = (code *)game_timing_or_delay_helper();
               apcStack_30c[8] = (char *)0x6a677d;
-              FUN_0065e0b0();
+              ui_close_matching_widgets();
               local_218 = 0x334;
               local_21c = 0x334;
               pcStack_2e8 = FUN_006574e0;
@@ -18127,7 +18127,7 @@ void FUN_006a56d0(int param_1,int param_2,undefined4 param_3)
           iVar3 = FUN_006c79e0();
           if (iVar3 != 0) {
             pcStack_2e8 = (code *)0x6a589b;
-            FUN_00671360();
+            ui_clear_modal_input_state();
             pcStack_2e8 = *(code **)(local_1b4 + 0x9a0);
             apcStack_30c[8] = (char *)0x6a58ad;
             apcStack_30c[8] = (char *)game_get_player_or_session_blob();
@@ -18366,10 +18366,10 @@ void FUN_006a7420(void)
   ExceptionList = &local_10;
   local_98 = 0x32a;
   game_timing_or_delay_helper();
-  FUN_0065e0b0();
+  ui_close_matching_widgets();
   local_9c = 0x334;
   game_timing_or_delay_helper();
-  FUN_0065e0b0();
+  ui_close_matching_widgets();
   local_a0 = 0x334;
   game_timing_or_delay_helper();
   puStack_1c0 = (undefined1 *)0x0;
@@ -19135,7 +19135,7 @@ void FUN_006a8110(int param_1,undefined1 *param_2,undefined1 *param_3)
   local_14 = uStack_1248;
   local_124c = (code *)game_timing_or_delay_helper();
   local_1250 = (function<void___cdecl(void)> *)0x6a8169;
-  FUN_0065e0b0();
+  ui_close_matching_widgets();
   if (in_stack_0000002c == 0) {
     local_124c = (code *)local_10f4;
     local_1250 = (function<void___cdecl(void)> *)0x6a818b;

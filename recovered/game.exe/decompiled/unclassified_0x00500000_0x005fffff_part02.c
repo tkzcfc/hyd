@@ -24493,10 +24493,10 @@ void FUN_00586540(int param_1,int param_2,int param_3)
           *(undefined1 *)(param_3 + 0xe08) = 1;
           uStack_bac = 0x3a;
           game_timing_or_delay_helper();
-          FUN_0065e0b0();
+          ui_close_matching_widgets();
           uStack_bb0 = 0x3b;
           game_timing_or_delay_helper();
-          FUN_0065e0b0();
+          ui_close_matching_widgets();
           uStack_bb4 = 0x1450;
           uStack_b40 = game_timing_or_delay_helper();
           piStack_b14 = (int *)game_loop_helper_018d0();
@@ -24606,7 +24606,7 @@ void FUN_00586540(int param_1,int param_2,int param_3)
             apppuStack_1244[1] = (undefined4 ***)game_timing_or_delay_helper();
             local_8._0_1_ = 0x50;
             apppuStack_1244[0] = (undefined4 ***)0x588eec;
-            uStack_dd0 = FUN_006ce000();
+            uStack_dd0 = ui_find_widget_by_key();
             uStack_dd4 = FUN_00427200();
             FUN_004053a0();
             local_8 = CONCAT31(local_8._1_3_,0x4f);
@@ -24641,7 +24641,7 @@ void FUN_00586540(int param_1,int param_2,int param_3)
             apppuStack_1244[3] = (undefined4 ***)game_timing_or_delay_helper();
             local_8._0_1_ = 0x53;
             apppuStack_1244[2] = (undefined4 ***)0x58904c;
-            iStack_e0c = FUN_006ce000();
+            iStack_e0c = ui_find_widget_by_key();
             uStack_dfc = FUN_004054a0();
             local_8._0_1_ = 0x55;
             uStack_df4 = uStack_dfc;
@@ -24661,7 +24661,7 @@ void FUN_00586540(int param_1,int param_2,int param_3)
             apppuStack_1244[2] = (undefined4 ***)game_timing_or_delay_helper();
             local_8._0_1_ = 0x56;
             apppuStack_1244[1] = (undefined4 ***)0x5890f5;
-            uStack_e08 = FUN_006ce000();
+            uStack_e08 = ui_find_widget_by_key();
             iStack_e14 = FUN_00427200();
             *(int *)(iStack_e14 + 4) = (*(int *)(iStack_e0c + 0x5c) - iStack_e10) / 2;
             local_8._0_1_ = 0x55;
@@ -24692,7 +24692,7 @@ void FUN_00586540(int param_1,int param_2,int param_3)
             apppuStack_1244[2] = (undefined4 ***)game_timing_or_delay_helper();
             local_8._0_1_ = 0x59;
             apppuStack_1244[1] = (undefined4 ***)0x58921f;
-            uStack_e2c = FUN_006ce000();
+            uStack_e2c = ui_find_widget_by_key();
             pCStack_e30 = (CDocObjectServer *)FUN_00427200();
             CDocObjectServer::ReleaseDocSite(pCStack_e30);
             local_8 = CONCAT31(local_8._1_3_,0x58);
@@ -24750,7 +24750,7 @@ void FUN_00586540(int param_1,int param_2,int param_3)
               apppuStack_1244[0] = (undefined4 ***)game_timing_or_delay_helper();
               local_8._0_1_ = 0x29;
               pppuStack_1248 = (undefined4 ***)0x5880bd;
-              uStack_d6c = FUN_006ce000();
+              uStack_d6c = ui_find_widget_by_key();
               pfStack_122c = (function<void___cdecl(void)> *)0x5880d7;
               iStack_d70 = FUN_00427200();
               std::basic_string<char,std::char_traits<char>,std::allocator<char>_>::resize
@@ -24782,7 +24782,7 @@ void FUN_00586540(int param_1,int param_2,int param_3)
                 apppuStack_1244[1] = (undefined4 ***)game_timing_or_delay_helper();
                 local_8._0_1_ = 0x2c;
                 apppuStack_1244[0] = (undefined4 ***)0x5881e3;
-                uStack_1078 = FUN_006ce000();
+                uStack_1078 = ui_find_widget_by_key();
                 iStack_1074 = FUN_00427200();
                 pcStack_1070 = std::basic_string<char,std::char_traits<char>,std::allocator<char>_>
                                ::operator[]((basic_string<char,std::char_traits<char>,std::allocator<char>_>
@@ -24814,7 +24814,7 @@ void FUN_00586540(int param_1,int param_2,int param_3)
               apppuStack_1244[3] = (undefined4 ***)game_timing_or_delay_helper();
               local_8._0_1_ = 0x2f;
               apppuStack_1244[2] = (undefined4 ***)0x58830e;
-              iStack_1040 = FUN_006ce000();
+              iStack_1040 = ui_find_widget_by_key();
               uStack_1058 = FUN_004054a0();
               local_8._0_1_ = 0x31;
               uStack_1050 = uStack_1058;
@@ -24834,7 +24834,7 @@ void FUN_00586540(int param_1,int param_2,int param_3)
               apppuStack_1244[2] = (undefined4 ***)game_timing_or_delay_helper();
               local_8._0_1_ = 0x32;
               apppuStack_1244[1] = (undefined4 ***)0x5883b7;
-              uStack_1044 = FUN_006ce000();
+              uStack_1044 = ui_find_widget_by_key();
               iStack_103c = FUN_00427200();
               *(int *)(iStack_103c + 4) = (*(int *)(iStack_1040 + 0x5c) - iStack_b28) / 2;
               local_8._0_1_ = 0x31;
@@ -24865,7 +24865,7 @@ void FUN_00586540(int param_1,int param_2,int param_3)
               apppuStack_1244[2] = (undefined4 ***)game_timing_or_delay_helper();
               local_8._0_1_ = 0x35;
               apppuStack_1244[1] = (undefined4 ***)0x5884db;
-              uStack_1024 = FUN_006ce000();
+              uStack_1024 = ui_find_widget_by_key();
               iStack_1020 = FUN_00427200();
               *(undefined4 *)(iStack_1020 + 8) = 7;
               local_8._0_1_ = 0x34;
@@ -24892,7 +24892,7 @@ void FUN_00586540(int param_1,int param_2,int param_3)
               apppuStack_1244[2] = (undefined4 ***)game_timing_or_delay_helper();
               local_8._0_1_ = 0x38;
               apppuStack_1244[1] = (undefined4 ***)0x5885d1;
-              uStack_1008 = FUN_006ce000();
+              uStack_1008 = ui_find_widget_by_key();
               pCStack_1004 = (CDocObjectServer *)FUN_00427200();
               CDocObjectServer::ReleaseDocSite(pCStack_1004);
               local_8._0_1_ = 0x37;
@@ -24931,7 +24931,7 @@ void FUN_00586540(int param_1,int param_2,int param_3)
               apppuStack_1244[0] = (undefined4 ***)game_timing_or_delay_helper();
               local_8._0_1_ = 0x3b;
               pppuStack_1248 = (undefined4 ***)0x58871f;
-              uStack_fe4 = FUN_006ce000();
+              uStack_fe4 = ui_find_widget_by_key();
               pfStack_122c = (function<void___cdecl(void)> *)0x588739;
               iStack_fe0 = FUN_00427200();
               std::basic_string<char,std::char_traits<char>,std::allocator<char>_>::resize
@@ -24973,7 +24973,7 @@ void FUN_00586540(int param_1,int param_2,int param_3)
                 apppuStack_1244[1] = (undefined4 ***)game_timing_or_delay_helper();
                 local_8._0_1_ = 0x3e;
                 apppuStack_1244[0] = (undefined4 ***)0x58889b;
-                uStack_fc0 = FUN_006ce000();
+                uStack_fc0 = ui_find_widget_by_key();
                 iStack_f54 = FUN_00427200();
                 pcStack_fbc = std::basic_string<char,std::char_traits<char>,std::allocator<char>_>::
                               operator[]((basic_string<char,std::char_traits<char>,std::allocator<char>_>
@@ -25013,7 +25013,7 @@ void FUN_00586540(int param_1,int param_2,int param_3)
               apppuStack_1244[3] = (undefined4 ***)game_timing_or_delay_helper();
               local_8._0_1_ = 0x41;
               apppuStack_1244[2] = (undefined4 ***)0x588a1c;
-              iStack_f84 = FUN_006ce000();
+              iStack_f84 = ui_find_widget_by_key();
               uStack_f9c = FUN_004054a0();
               local_8._0_1_ = 0x43;
               uStack_f94 = uStack_f9c;
@@ -25033,7 +25033,7 @@ void FUN_00586540(int param_1,int param_2,int param_3)
               apppuStack_1244[2] = (undefined4 ***)game_timing_or_delay_helper();
               local_8._0_1_ = 0x44;
               apppuStack_1244[1] = (undefined4 ***)0x588ac5;
-              uStack_f88 = FUN_006ce000();
+              uStack_f88 = ui_find_widget_by_key();
               iStack_f80 = FUN_00427200();
               *(int *)(iStack_f80 + 4) = (*(int *)(iStack_f84 + 0x5c) - iStack_b28) / 2;
               local_8._0_1_ = 0x43;
@@ -25064,7 +25064,7 @@ void FUN_00586540(int param_1,int param_2,int param_3)
               apppuStack_1244[2] = (undefined4 ***)game_timing_or_delay_helper();
               local_8._0_1_ = 0x47;
               apppuStack_1244[1] = (undefined4 ***)0x588be9;
-              uStack_d7c = FUN_006ce000();
+              uStack_d7c = ui_find_widget_by_key();
               pCStack_d80 = (CDocObjectServer *)FUN_00427200();
               CDocObjectServer::ReleaseDocSite(pCStack_d80);
               local_8._0_1_ = 0x46;
@@ -25091,7 +25091,7 @@ void FUN_00586540(int param_1,int param_2,int param_3)
               apppuStack_1244[2] = (undefined4 ***)game_timing_or_delay_helper();
               local_8._0_1_ = 0x4a;
               apppuStack_1244[1] = (undefined4 ***)0x588cdd;
-              uStack_d98 = FUN_006ce000();
+              uStack_d98 = ui_find_widget_by_key();
               iStack_d9c = FUN_00427200();
               *(undefined4 *)(iStack_d9c + 8) = 0x2d;
               local_8._0_1_ = 0x49;
@@ -25118,7 +25118,7 @@ void FUN_00586540(int param_1,int param_2,int param_3)
               apppuStack_1244[2] = (undefined4 ***)game_timing_or_delay_helper();
               local_8._0_1_ = 0x4d;
               apppuStack_1244[1] = (undefined4 ***)0x588dd3;
-              uStack_db4 = FUN_006ce000();
+              uStack_db4 = ui_find_widget_by_key();
               pCStack_db8 = (CDocObjectServer *)FUN_00427200();
               CDocObjectServer::ReleaseDocSite(pCStack_db8);
               local_8._0_1_ = 0x4c;
@@ -25152,7 +25152,7 @@ void FUN_00586540(int param_1,int param_2,int param_3)
               apppuStack_1244[0] = (undefined4 ***)game_timing_or_delay_helper();
               local_8._0_1_ = 2;
               pppuStack_1248 = (undefined4 ***)0x5872aa;
-              uStack_be8 = FUN_006ce000();
+              uStack_be8 = ui_find_widget_by_key();
               pfStack_122c = (function<void___cdecl(void)> *)0x5872c4;
               iStack_bec = FUN_00427200();
               std::basic_string<char,std::char_traits<char>,std::allocator<char>_>::resize
@@ -25185,7 +25185,7 @@ void FUN_00586540(int param_1,int param_2,int param_3)
                 apppuStack_1244[1] = (undefined4 ***)game_timing_or_delay_helper();
                 local_8._0_1_ = 5;
                 apppuStack_1244[0] = (undefined4 ***)0x5873d0;
-                uStack_c04 = FUN_006ce000();
+                uStack_c04 = ui_find_widget_by_key();
                 iStack_c08 = FUN_00427200();
                 pcStack_c0c = std::basic_string<char,std::char_traits<char>,std::allocator<char>_>::
                               operator[]((basic_string<char,std::char_traits<char>,std::allocator<char>_>
@@ -25217,7 +25217,7 @@ void FUN_00586540(int param_1,int param_2,int param_3)
               apppuStack_1244[3] = (undefined4 ***)game_timing_or_delay_helper();
               local_8._0_1_ = 8;
               apppuStack_1244[2] = (undefined4 ***)0x5874fb;
-              iStack_c3c = FUN_006ce000();
+              iStack_c3c = ui_find_widget_by_key();
               uStack_c2c = FUN_004054a0();
               local_8._0_1_ = 10;
               uStack_c24 = uStack_c2c;
@@ -25237,7 +25237,7 @@ void FUN_00586540(int param_1,int param_2,int param_3)
               apppuStack_1244[2] = (undefined4 ***)game_timing_or_delay_helper();
               local_8._0_1_ = 0xb;
               apppuStack_1244[1] = (undefined4 ***)0x5875a4;
-              uStack_c38 = FUN_006ce000();
+              uStack_c38 = ui_find_widget_by_key();
               iStack_c40 = FUN_00427200();
               *(int *)(iStack_c40 + 4) = (*(int *)(iStack_c3c + 0x5c) - iStack_b2c) / 2;
               local_8._0_1_ = 10;
@@ -25268,7 +25268,7 @@ void FUN_00586540(int param_1,int param_2,int param_3)
               apppuStack_1244[2] = (undefined4 ***)game_timing_or_delay_helper();
               local_8._0_1_ = 0xe;
               apppuStack_1244[1] = (undefined4 ***)0x5876c8;
-              uStack_c58 = FUN_006ce000();
+              uStack_c58 = ui_find_widget_by_key();
               iStack_c5c = FUN_00427200();
               *(undefined4 *)(iStack_c5c + 8) = 7;
               local_8._0_1_ = 0xd;
@@ -25295,7 +25295,7 @@ void FUN_00586540(int param_1,int param_2,int param_3)
               apppuStack_1244[2] = (undefined4 ***)game_timing_or_delay_helper();
               local_8._0_1_ = 0x11;
               apppuStack_1244[1] = (undefined4 ***)0x5877be;
-              uStack_c74 = FUN_006ce000();
+              uStack_c74 = ui_find_widget_by_key();
               pCStack_c78 = (CDocObjectServer *)FUN_00427200();
               CDocObjectServer::ReleaseDocSite(pCStack_c78);
               local_8._0_1_ = 0x10;
@@ -25334,7 +25334,7 @@ void FUN_00586540(int param_1,int param_2,int param_3)
               apppuStack_1244[0] = (undefined4 ***)game_timing_or_delay_helper();
               local_8._0_1_ = 0x14;
               pppuStack_1248 = (undefined4 ***)0x58790c;
-              uStack_c98 = FUN_006ce000();
+              uStack_c98 = ui_find_widget_by_key();
               pfStack_122c = (function<void___cdecl(void)> *)0x587926;
               iStack_c9c = FUN_00427200();
               std::basic_string<char,std::char_traits<char>,std::allocator<char>_>::resize
@@ -25376,7 +25376,7 @@ void FUN_00586540(int param_1,int param_2,int param_3)
                 apppuStack_1244[1] = (undefined4 ***)game_timing_or_delay_helper();
                 local_8._0_1_ = 0x17;
                 apppuStack_1244[0] = (undefined4 ***)0x587a88;
-                uStack_cbc = FUN_006ce000();
+                uStack_cbc = ui_find_widget_by_key();
                 iStack_cc0 = FUN_00427200();
                 pcStack_cc4 = std::basic_string<char,std::char_traits<char>,std::allocator<char>_>::
                               operator[]((basic_string<char,std::char_traits<char>,std::allocator<char>_>
@@ -25416,7 +25416,7 @@ void FUN_00586540(int param_1,int param_2,int param_3)
               apppuStack_1244[3] = (undefined4 ***)game_timing_or_delay_helper();
               local_8._0_1_ = 0x1a;
               apppuStack_1244[2] = (undefined4 ***)0x587c09;
-              iStack_cfc = FUN_006ce000();
+              iStack_cfc = ui_find_widget_by_key();
               uStack_cec = FUN_004054a0();
               local_8._0_1_ = 0x1c;
               uStack_ce4 = uStack_cec;
@@ -25436,7 +25436,7 @@ void FUN_00586540(int param_1,int param_2,int param_3)
               apppuStack_1244[2] = (undefined4 ***)game_timing_or_delay_helper();
               local_8._0_1_ = 0x1d;
               apppuStack_1244[1] = (undefined4 ***)0x587cb2;
-              uStack_cf8 = FUN_006ce000();
+              uStack_cf8 = ui_find_widget_by_key();
               iStack_d00 = FUN_00427200();
               *(int *)(iStack_d00 + 4) = (*(int *)(iStack_cfc + 0x5c) - iStack_b2c) / 2;
               local_8._0_1_ = 0x1c;
@@ -25467,7 +25467,7 @@ void FUN_00586540(int param_1,int param_2,int param_3)
               apppuStack_1244[2] = (undefined4 ***)game_timing_or_delay_helper();
               local_8._0_1_ = 0x20;
               apppuStack_1244[1] = (undefined4 ***)0x587dd6;
-              uStack_d18 = FUN_006ce000();
+              uStack_d18 = ui_find_widget_by_key();
               pCStack_d1c = (CDocObjectServer *)FUN_00427200();
               CDocObjectServer::ReleaseDocSite(pCStack_d1c);
               local_8._0_1_ = 0x1f;
@@ -25494,7 +25494,7 @@ void FUN_00586540(int param_1,int param_2,int param_3)
               apppuStack_1244[2] = (undefined4 ***)game_timing_or_delay_helper();
               local_8._0_1_ = 0x23;
               apppuStack_1244[1] = (undefined4 ***)0x587eca;
-              uStack_d34 = FUN_006ce000();
+              uStack_d34 = ui_find_widget_by_key();
               iStack_d38 = FUN_00427200();
               *(undefined4 *)(iStack_d38 + 8) = 0x2d;
               local_8._0_1_ = 0x22;
@@ -25521,7 +25521,7 @@ void FUN_00586540(int param_1,int param_2,int param_3)
               apppuStack_1244[2] = (undefined4 ***)game_timing_or_delay_helper();
               local_8._0_1_ = 0x26;
               apppuStack_1244[1] = (undefined4 ***)0x587fc0;
-              uStack_d50 = FUN_006ce000();
+              uStack_d50 = ui_find_widget_by_key();
               pCStack_d54 = (CDocObjectServer *)FUN_00427200();
               CDocObjectServer::ReleaseDocSite(pCStack_d54);
               local_8._0_1_ = 0x25;
@@ -25552,7 +25552,7 @@ void FUN_00586540(int param_1,int param_2,int param_3)
           apppuStack_1244[3] = (undefined4 ***)game_timing_or_delay_helper();
           local_8._0_1_ = 0x5c;
           apppuStack_1244[2] = (undefined4 ***)0x589317;
-          iStack_e48 = FUN_006ce000();
+          iStack_e48 = ui_find_widget_by_key();
           *(undefined4 *)(iStack_e48 + 0x984) = 0x32b;
           local_8 = CONCAT31(local_8._1_3_,0x5b);
           std::function<void___cdecl(void)>::~function<void___cdecl(void)>(afStack_304);
@@ -25577,7 +25577,7 @@ void FUN_00586540(int param_1,int param_2,int param_3)
           apppuStack_1244[3] = (undefined4 ***)game_timing_or_delay_helper();
           local_8._0_1_ = 0x5f;
           apppuStack_1244[2] = (undefined4 ***)0x5893fd;
-          iStack_e60 = FUN_006ce000();
+          iStack_e60 = ui_find_widget_by_key();
           *(undefined1 *)(iStack_e60 + 0x6e0) = 1;
           local_8 = CONCAT31(local_8._1_3_,0x5e);
           std::function<void___cdecl(void)>::~function<void___cdecl(void)>(afStack_2d4);
@@ -25650,16 +25650,16 @@ void FUN_00586540(int param_1,int param_2,int param_3)
         *(undefined1 *)(param_3 + 0xe08) = 0;
         uStack_ea4 = 0x3a;
         game_timing_or_delay_helper();
-        FUN_0065e0b0();
+        ui_close_matching_widgets();
         uStack_ea8 = 0x3b;
         game_timing_or_delay_helper();
-        FUN_0065e0b0();
+        ui_close_matching_widgets();
         uStack_eac = 0x14b4;
         game_timing_or_delay_helper();
-        FUN_0065e0b0();
+        ui_close_matching_widgets();
         uStack_eb0 = 0x1450;
         game_timing_or_delay_helper();
-        FUN_0065e0b0();
+        ui_close_matching_widgets();
         uStack_ec4 = 0x1518;
         uStack_ebc = FUN_004054a0();
         local_8 = 99;
@@ -25782,9 +25782,9 @@ void FUN_00586540(int param_1,int param_2,int param_3)
       local_f04 = 0x38;
       local_f08 = 0x38;
       game_timing_or_delay_helper();
-      FUN_0065de20();
+      ui_register_or_show_widget();
       game_timing_or_delay_helper();
-      FUN_0065dee0();
+      ui_activate_widget_pair();
     }
     else if (param_1 < 0x1069) {
       if (param_1 == 0x1068) {
@@ -25798,9 +25798,9 @@ void FUN_00586540(int param_1,int param_2,int param_3)
         local_edc = 0x38;
         local_ee0 = 0x38;
         game_timing_or_delay_helper();
-        FUN_0065de20();
+        ui_register_or_show_widget();
         game_timing_or_delay_helper();
-        FUN_0065dee0();
+        ui_activate_widget_pair();
       }
       else if (param_1 == 4000) {
         if (param_2 != 0) {
@@ -25838,7 +25838,7 @@ void FUN_00586540(int param_1,int param_2,int param_3)
                 FUN_006634f0();
                 local_ecc = 0x1644;
                 game_timing_or_delay_helper();
-                FUN_0065e0b0();
+                ui_close_matching_widgets();
               }
             }
             else {
@@ -25886,9 +25886,9 @@ void FUN_00586540(int param_1,int param_2,int param_3)
         local_ed0 = 0x38;
         local_ed4 = 0x38;
         game_timing_or_delay_helper();
-        FUN_0065de20();
+        ui_register_or_show_widget();
         game_timing_or_delay_helper();
-        FUN_0065dee0();
+        ui_activate_widget_pair();
       }
     }
     else if (param_1 == 0x1194) {
@@ -25991,13 +25991,13 @@ void FUN_00586540(int param_1,int param_2,int param_3)
       }
       local_f40 = 0x42e;
       game_timing_or_delay_helper();
-      FUN_0065e0b0();
+      ui_close_matching_widgets();
       local_f44 = 0x41a;
       game_timing_or_delay_helper();
-      FUN_0065e0b0();
+      ui_close_matching_widgets();
       local_f48 = 0x424;
       game_timing_or_delay_helper();
-      FUN_0065e0b0();
+      ui_close_matching_widgets();
       local_f4c = 0x38;
       apppuStack_1244[3] = (undefined4 ***)&DAT_0075acb0;
       apppuStack_1244[2] = (undefined4 ***)0x58ae5a;
@@ -26025,9 +26025,9 @@ void FUN_00586540(int param_1,int param_2,int param_3)
       local_f10 = 0x38;
       local_f14 = 0x38;
       game_timing_or_delay_helper();
-      FUN_0065de20();
+      ui_register_or_show_widget();
       game_timing_or_delay_helper();
-      FUN_0065dee0();
+      ui_activate_widget_pair();
     }
     else if (param_1 == 0x12c0) {
       local_f18 = *(undefined4 *)(param_2 + 0x9a0);
@@ -26082,9 +26082,9 @@ void FUN_00586540(int param_1,int param_2,int param_3)
       local_f2c = 0x38;
       local_f30 = 0x38;
       game_timing_or_delay_helper();
-      FUN_0065de20();
+      ui_register_or_show_widget();
       game_timing_or_delay_helper();
-      FUN_0065dee0();
+      ui_activate_widget_pair();
     }
   }
   else if (param_1 == 0x1450) {
@@ -26153,9 +26153,9 @@ void FUN_00586540(int param_1,int param_2,int param_3)
           local_e80 = 0x38;
           local_e84 = 0x38;
           game_timing_or_delay_helper();
-          FUN_0065de20();
+          ui_register_or_show_widget();
           game_timing_or_delay_helper();
-          FUN_0065dee0();
+          ui_activate_widget_pair();
           pfStack_122c = (function<void___cdecl(void)> *)0x0;
           pfStack_1230 = (function<void___cdecl(void)> *)0xa;
           FUN_004054a0(&DAT_0075aa38);
@@ -26179,7 +26179,7 @@ void FUN_00586540(int param_1,int param_2,int param_3)
             apppuStack_1244[0] = (undefined4 ***)game_timing_or_delay_helper();
             local_8 = CONCAT31(local_8._1_3_,0x61);
             pppuStack_1248 = (undefined4 ***)0x589d2f;
-            local_e98 = FUN_006ce000();
+            local_e98 = ui_find_widget_by_key();
             pfStack_122c = *(function<void___cdecl(void)> **)(local_e98 + 0x9a0);
             pfStack_1230 = (function<void___cdecl(void)> *)0x1450;
             uStack_1234 = 0x589d4f;
@@ -26187,9 +26187,9 @@ void FUN_00586540(int param_1,int param_2,int param_3)
             local_e9c = 0x38;
             local_ea0 = 0x38;
             game_timing_or_delay_helper();
-            FUN_0065de20();
+            ui_register_or_show_widget();
             game_timing_or_delay_helper();
-            FUN_0065dee0();
+            ui_activate_widget_pair();
             local_8 = 0xffffffff;
             FUN_004039a0();
           }
@@ -26197,9 +26197,9 @@ void FUN_00586540(int param_1,int param_2,int param_3)
             local_e8c = 0x38;
             local_e90 = 0x38;
             game_timing_or_delay_helper();
-            FUN_0065de20();
+            ui_register_or_show_widget();
             game_timing_or_delay_helper();
-            FUN_0065dee0();
+            ui_activate_widget_pair();
             pfStack_122c = (function<void___cdecl(void)> *)0x0;
             pfStack_1230 = (function<void___cdecl(void)> *)0xa;
             FUN_0067f440(&pppuStack_1248,param_3,local_908);

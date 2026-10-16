@@ -7,7 +7,7 @@
 - 无 PDB（`F:\DNF1126\Release\DNF.pdb` 不可用）时，绝大多数函数名/类型/注释已丢失
 - MSVC 优化导致内联与控制流变形；Ghidra 伪代码中的类型名常误标
 - **模块分桶**：具名模块仅收录有字符串/导入/调用链证据的函数；其余按映像地址落入 `unclassified_0x........_0x........*.c`（**不是**“游戏循环/UI/角色”的真实分析结果）
-- 个别超大函数反编译超时（如主 WndProc、部分 UI 分发器），仅留桩或依赖静态指令扫描说明
+- 两处超大函数（主 WndProc、UI 命令分发器）曾在批量反编译中超时；后经**专用 headless 工程**成功恢复，正文已并入 `decompiled/`（见下）
 
 ---
 
@@ -51,16 +51,24 @@ DLL **未**做全量反编译。
 
 ### 主窗口过程 `window_wndproc_main` @ `0x00683610`
 
-Bulk 反编译超时。对函数体的立即数扫描可见消息常量：
+**已恢复全文**（约 4760 行伪代码 → `game.exe/decompiled/window_message.c`）。
 
-| 常量 | 含义 |
+专用反编译参数：Ghidra DecompileOptions **timeout 3600s**、max payload **1024MB**、JVM **6G**；工程保存在 `work_ghidra/projects/hard_proj`；简化风格 `decompile`，耗时约 **133s**。旁路产物在 `game.exe/hard_functions/`（`*_decompile.c` / `*_disasm.asm` / `*_switches.txt` / `*_callees.txt`），消息与按键表见 **`hard_functions/message_map.md`**。
+
+处理概要：
+
+| 类别 | 内容 |
 |------|------|
-| `0x100` / `0x101` | `WM_KEYDOWN` / `WM_KEYUP` |
-| `0x200` / `0x201` | `WM_MOUSEMOVE` / `WM_LBUTTONDOWN` |
-| `0x02` / `0x05` / `0x0F` / `0x20` | `WM_DESTROY` / `WM_SIZE` / `WM_PAINT` / `WM_SETCURSOR` |
-| `0x285` | `WM_IME_SELECT`（IME 相关） |
+| 窗口 | `WM_PAINT` / `WM_CLOSE`（Destroy+PostQuit）/ `WM_QUIT` / `WM_DISPLAYCHANGE` 重建 D3D |
+| 键盘 | `WM_KEYDOWN`/`KEYUP`/`CHAR`；WASD 与方向键移动标志；`Esc` 批量关闭 UI 命令；`F1`–`F7`、数字键快捷栏等 |
+| 鼠标 | 移动更新坐标；左键 down/up 进 `ui_handle_lbutton_*`；双击分发聚焦控件；右键模式/物品 |
+| IME | `WM_IME_COMPOSITION` / `WM_IME_NOTIFY` + `ImmGetContext` / `ImmGetCompositionStringA` / `ImmGetCandidateListA` |
 
-WndProc 高频调用 `window_input_ui_dispatch_68eb20` @ `0x0068eb20`（体积极大，亦曾超时）。`IMM32`（`ImmGetContext` 等）在 IAT 中存在，典型用于中文输入；直接 IAT 指针未嵌在 WndProc 机器码字面量中，更可能经分发器/间接调用。WndProc 专项反编译（加大超时单独重跑）因时间与内存限制未完成，`window_message.c` 中该函数仍为失败桩；上面的消息处理说明来自静态指令/常量扫描。
+### UI 命令分发器 `ui_command_dispatch` @ `0x0068eb20`
+
+原名 `window_input_ui_dispatch_68eb20`（批量反编译曾超时）。专用跑通耗时约 **545s**，正文在 **`decompiled/ui_command_dispatch.c`**（`unclassified_*_part02.c` 仅留指针注释）。
+
+**角色（高置信）**：按整数 **UI 命令 / 控件类型 ID** 分发（`command_id` + 可选 `ui_ctx`），**不是**网络包 ID 或音效 ID。分段 switch 基址 `0xA` / `0x1A4` / `0x398` / `0x532`；调用点立即数含 `0x2FA`/`0x2FC`/`0x2FE`、`3000` 等；聚焦控件路径为 `*(focus+0x988)`。详见 `message_map.md`。
 
 ### Direct3D / D3DX
 
@@ -96,7 +104,7 @@ WndProc 高频调用 `window_input_ui_dispatch_68eb20` @ `0x0068eb20`（体积�
 
 ### 输入 / 声音 / 网络
 
-- 输入：WndProc + 消息泵；IMM32 导入；无 DirectInput
+- 输入：完整 WndProc + 消息泵；IMM32 在 WndProc 内直接调用；无 DirectInput；UI 命令经 `ui_command_dispatch`
 - 声音：`sound_dsound_create`（`DirectSoundCreate`）；`sound_load_audio_xml`；**不用 FMOD**
 - 网络：`[server]` / `etc/channel_info.etc`；`DnfLogin.txt`；硬编码 `47.99.69.51:2026`；Winsock `socket/connect/recv` 线程
 
@@ -110,6 +118,7 @@ WndProc 高频调用 `window_input_ui_dispatch_68eb20` @ `0x0068eb20`（体积�
 | `0x006e5359` | `crt_scrt_common_main` |
 | `0x0068e490` | `WinMain` |
 | `0x00683610` | `window_wndproc_main` |
+| `0x0068eb20` | `ui_command_dispatch` |
 | `0x00510800` | `game_main_loop` |
 | `0x004b6120` | `d3d9_create_device_bootstrap` |
 | `0x00584490` | `npk_scan_imagepacks2` |
@@ -119,24 +128,27 @@ WndProc 高频调用 `window_input_ui_dispatch_68eb20` @ `0x0068eb20`（体积�
 | `0x005e7940` | `parse_server_config_section` |
 | `0x006a55d0` | `net_create_socket_or_fail` |
 
-完整 **130+** 条见 `game.exe/renames.md`。
+完整重命名表见 `game.exe/renames.md`（含 hard-function 批次）。
 
 ---
 
 ## 目录说明
 
 ```
-recovered/game.exe/decompiled/
-  winmain_entry.c, window_message.c, game_main_loop.c,
-  render_d3d9.c, npk_img_resource.c, sound_dsound.c, network_login.c,
-  input_imm.c, ui_interface_part*.c, gameplay_character.c,
-  zlib_embedded.c, crt_library.c,
-  unclassified_0x00400000_0x004fffff_part*.c  ← 无强证据，仅按地址带
-  unclassified_0x00500000_… / 0x006… / 0x007…
+recovered/game.exe/
+  hard_functions/          ← 专用超时加大后的两函数产物 + message_map.md
+  decompiled/
+    window_message.c         ← 含完整 window_wndproc_main
+    ui_command_dispatch.c    ← 完整 UI 命令分发器（自 unclassified 迁出）
+    winmain_entry.c, game_main_loop.c,
+    render_d3d9.c, npk_img_resource.c, sound_dsound.c, network_login.c,
+    input_imm.c, ui_interface_part*.c, gameplay_character.c,
+    zlib_embedded.c, crt_library.c,
+    unclassified_0x00400000_…  ← 无强证据，仅按地址带
 ```
 
 单文件超过约 4 万行会拆成 `_partNN.c`。
 
 ## 限制
 
-无壳常规 MSVC PE；无 PDB；WndProc/超大分发器可能仍失败；地址带分类**故意不**再伪装成 gameplay/ui/game_loop。
+无壳常规 MSVC PE；无 PDB。主 WndProc 与 UI 命令分发器已在专用工程中恢复；批量默认超时下仍可能对**其它**超大函数失败。地址带分类**故意不**再伪装成 gameplay/ui/game_loop。REA/Ghidra 对 5KB+/20KB 级函数的整函数 dossier 可能超时，细节以已落盘伪代码与指令扫描为准。

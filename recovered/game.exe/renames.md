@@ -135,4 +135,25 @@
 | `006e5359` | `crt_scrt_common_main` | PE entry CRT -> WinMain | high |
 | `006e54d5` | `entry` | PE entry point | high |
 | `00709d5f` | `util_memmem_or_bytes_find` | searches NeoplePack_Bill in buffer | medium |
-| `0068eb20` | `window_input_ui_dispatch_68eb20` | WndProc 内高频调用 (~19x)；体积极大(20428)，疑似输入/UI 分发 | medium |
+| `0068eb20` | `ui_command_dispatch` | 整数 UI 命令/控件类型 ID 分发（范围 0xa/0x1a4/0x398/0x532…；调用点 push 0x2fa/0x2fc/0x2fe/3000 等；聚焦控件 `*(+0x988)`） | high |
+
+## Hard-function recovery (WndProc + ui_command_dispatch)
+Dedicated Ghidra headless (timeout 3600s, payload 1024MB, JVM 6G) recovered both bodies.
+
+| Address | New name | Evidence | Confidence |
+|---------|----------|----------|------------|
+| `0068eb20` | `ui_command_dispatch` | param_1=command/widget ID ranges 0xa/0x1a4/0x398/0x532…; call sites push IDs e.g. 0x2fa/0x2fc/0x2fe/3000; focused widget path uses *(obj+0x988); ESC closes many UI IDs; not net/sound | high |
+| `0067a880` | `ui_dispatch_focused_widget` | WM_LBUTTONDBLCLK path: if DAT_007ca1e8+0x988 set, calls ui_command_dispatch(id, focused) | high |
+| `006713a0` | `ui_handle_lbutton_down` | WndProc WM_LBUTTONDOWN (0x201) only callee when input enabled | high |
+| `00671f40` | `ui_handle_lbutton_up` | WndProc WM_LBUTTONUP (0x202) only callee when input enabled; huge UI click handler | high |
+| `0067a8c0` | `ui_reset_rmb_mode_state` | WndProc WM_RBUTTONDOWN (0x204): clears DAT_007ca1f8 mode enum + DAT_007ca65c | high |
+| `0067a940` | `ui_handle_rbutton_up` | WndProc WM_RBUTTONUP (0x205): operates on focused widget +0x9d0 item/slot | high |
+| `0065e0b0` | `ui_close_matching_widgets` | Walks UI list; clears DAT_007ca1e8/1ec focus; used after selecting UI IDs in dispatcher/ESC | high |
+| `006ce000` | `ui_find_widget_by_key` | Linear search of UI list with destroy<>/key match; WndProc modal checks + dispatcher | high |
+| `00671360` | `ui_clear_modal_input_state` | Clears DAT_007ca1ec+0xa38, DAT_007ca1f8/1e0/65c; called from ESC cleanup | high |
+| `006426b0` | `game_get_modal_block_flag` | Returns &DAT_007ca1d3; ESC sets *flag=0 before closing UI commands | high |
+| `006426d0` | `game_get_f2_toggle_flag` | Returns &DAT_007c6438; WM_KEYDOWN VK_F2 (0x71) toggles and calls FUN_0049d780 | medium |
+| `0065de20` | `ui_register_or_show_widget` | Dispatcher case 10 pairs with ui_activate_widget_pair after game_timing_or_delay_helper(ID) | medium |
+| `0065dee0` | `ui_activate_widget_pair` | Paired with ui_register_or_show_widget for UI type IDs at ctx+0x98c | medium |
+| `0065dd40` | `ui_clear_flag_bits_on_list` | ESC path: clears byte +0x51 on each game_get_flag_object_01a70 entry | medium |
+| `0069eec0` | `input_remap_vk_lookup` | WM_KEYDOWN/UP: remaps wParam via FUN_006a0400 table when FUN_0040d2d0 says remapped | medium |

@@ -7599,7 +7599,7 @@ void FUN_005158e0(int param_1,int param_2)
       pcStack_1f8 = (char *)0x0;
       uStack_1fc = 0x5dc;
       uStack_200 = 0x51695a;
-      window_input_ui_dispatch_68eb20();
+      ui_command_dispatch();
     }
   }
   ExceptionList = local_10;
@@ -8512,7 +8512,7 @@ void FUN_00549580(void)
       piStack_3fc = (int *)game_timing_or_delay_helper();
       local_8 = 0xffffffff;
       piStack_400 = (int *)0x549e32;
-      local_29c = FUN_006ce000();
+      local_29c = ui_find_widget_by_key();
       if (local_29c == 0) {
         puStack_3e4 = (uint *)0x549e4d;
         piVar3 = (int *)game_get_state_ptr_d1520();
@@ -11943,7 +11943,7 @@ void FUN_0058af40(int param_1)
     local_8._0_1_ = 2;
     game_timing_or_delay_helper();
     local_8._0_1_ = 1;
-    iVar1 = FUN_006ce000();
+    iVar1 = ui_find_widget_by_key();
     local_8 = (uint)local_8._1_3_ << 8;
     std::function<void___cdecl(void)>::~function<void___cdecl(void)>(local_44);
     local_8 = 0xffffffff;
@@ -11972,7 +11972,7 @@ void FUN_0058af40(int param_1)
       local_8._0_1_ = 5;
       game_timing_or_delay_helper();
       local_8._0_1_ = 4;
-      iVar4 = FUN_006ce000();
+      iVar4 = ui_find_widget_by_key();
       *(int *)(iVar4 + 0x54) = (*(int *)(param_1 + 0x224) - DAT_007ca764) - iVar2 / 2;
       local_8 = CONCAT31(local_8._1_3_,3);
       std::function<void___cdecl(void)>::~function<void___cdecl(void)>(local_74);
@@ -11986,7 +11986,7 @@ void FUN_0058af40(int param_1)
       local_8._0_1_ = 8;
       game_timing_or_delay_helper();
       local_8._0_1_ = 7;
-      iVar2 = FUN_006ce000();
+      iVar2 = ui_find_widget_by_key();
       *(int *)(iVar2 + 0x58) =
            ((((*(int *)(param_1 + 0x228) - DAT_007ca768) - *(int *)(param_1 + 0x22c)) - iVar1) +
            -0x14) - iVar3;
@@ -12826,7 +12826,7 @@ void FUN_006659c0(int param_1)
   local_14 = uStack_2e0;
   pcStack_2e4 = (char *)game_timing_or_delay_helper();
   iStack_2e8 = 0x665a0e;
-  FUN_0065e0b0();
+  ui_close_matching_widgets();
   local_1ac = 0;
   local_1b8 = 0x1644;
   pcStack_2e4 = (char *)&local_1b8;
