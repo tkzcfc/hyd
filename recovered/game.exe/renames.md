@@ -1,0 +1,138 @@
+# Renamed functions — game.exe
+
+证据来自：字符串交叉引用、导入调用、WinMain/主循环调用关系。地址范围为未分类桶，不作为命名证据。
+
+| Address | New name | Evidence | Confidence |
+|---------|----------|----------|------------|
+| `004018b0` | `game_loop_helper_018b0` | main loop helper | low |
+| `004018d0` | `game_loop_helper_018d0` | main loop helper | low |
+| `00401a70` | `game_get_flag_object_01a70` | main loop gate before render path | low |
+| `00403be0` | `img_path_loader_01` | string literal *.img path | medium |
+| `00404050` | `img_path_loader_02` | string literal *.img path | medium |
+| `004051c0` | `game_timing_or_delay_helper` | main loop passes constants like 0x96 / frame pacing | medium |
+| `0040b1d0` | `img_path_loader_03` | string literal *.img path | medium |
+| `0040b520` | `img_path_loader_04` | string literal *.img path | medium |
+| `0040ce80` | `img_path_loader_05` | string literal *.img path | medium |
+| `0040d500` | `game_frame_should_continue` | main loop branch before render; returns char | medium |
+| `0040d7f0` | `npk_get_relative_res_path` | provides relative path appended under ImagePacks2\ | medium |
+| `0040e1f0` | `game_loop_helper_0e1f0` | main loop repeated helper | low |
+| `00412e30` | `img_path_loader_06` | string literal *.img path | medium |
+| `004149e0` | `img_path_loader_07` | string literal *.img path | medium |
+| `004165a0` | `img_path_loader_08` | string literal *.img path | medium |
+| `004182f0` | `img_path_loader_09` | string literal *.img path | medium |
+| `0041a080` | `img_path_loader_10` | string literal *.img path | medium |
+| `0041d440` | `d3d9_create_texture` | D3DXCreateTexture | medium |
+| `0042ea60` | `img_path_loader_11` | string literal *.img path | medium |
+| `00432050` | `img_path_loader_12` | string literal *.img path | medium |
+| `0043d840` | `img_path_loader_13` | string literal *.img path | medium |
+| `0043f590` | `img_path_loader_14` | string literal *.img path | medium |
+| `00441ef0` | `img_path_loader_15` | string literal *.img path | medium |
+| `004444d0` | `img_path_loader_16` | string literal *.img path | medium |
+| `00446b00` | `img_frame_dispatch_compress_5_6` | else-if local_18==5 / ==6 compression dispatch | medium |
+| `00446d70` | `img_frame_dispatch_compress_5_6_b` | else-if local_70==5 / ==6 compression dispatch | medium |
+| `00454ea0` | `game_get_player_or_session_blob` | main loop reads fields at +0xdeb.. from returned ptr | low |
+| `00455170` | `img_path_loader_17` | string literal *.img path | medium |
+| `004586c0` | `img_path_loader_18` | string literal *.img path | medium |
+| `00459220` | `img_path_loader_19` | string literal *.img path | medium |
+| `0045bde0` | `img_path_loader_20` | string literal *.img path | medium |
+| `00467b10` | `img_path_loader_21` | string literal *.img path | medium |
+| `0047ce20` | `img_path_loader_22` | string literal *.img path | medium |
+| `0047d0c0` | `img_path_loader_23` | string literal *.img path | medium |
+| `0049bb60` | `img_path_loader_24` | string literal *.img path | medium |
+| `0049c4c0` | `img_path_loader_25` | string literal *.img path | medium |
+| `004a1d60` | `game_startup_call_a1d60` | WinMain init sequence before main loop | low |
+| `004a1e10` | `game_startup_call_a1e10` | WinMain init sequence before main loop | low |
+| `004a3110` | `d3d9_create_texture_004a3110` | D3DXCreateTexture | medium |
+| `004acd90` | `npk_path_normalize_helper` | called at start of npk_img_open_path_under_imagepacks2 | low |
+| `004b1100` | `game_loop_helper_b1100` | main loop repeated helper | low |
+| `004b53a0` | `d3d9_matrix_multiply` | D3DXMatrixMultiply | medium |
+| `004b6010` | `d3d9_create_font_indirect` | D3DXCreateFontIndirectA | high |
+| `004b6120` | `d3d9_create_device_bootstrap` | Direct3DCreate9 + D3DXCreateSprite | high |
+| `004b68a0` | `npk_img_open_path_under_imagepacks2` | builds ImagePacks2\ path, CreateFileA, branches local_140==5/6 like IMG compress modes | high |
+| `004b7450` | `d3d9_create_texture_004b7450` | D3DXCreateTexture | medium |
+| `004b7f20` | `d3d9_create_texture_004b7f20` | D3DXCreateTexture | medium |
+| `004b8870` | `d3d9_create_texture_004b8870` | D3DXCreateTexture | medium |
+| `004b8a70` | `d3d9_create_texture_004b8a70` | D3DXCreateTexture | medium |
+| `004b8b90` | `d3d9_create_texture_004b8b90` | D3DXCreateTexture | medium |
+| `004b90c0` | `d3d9_create_texture_004b90c0` | D3DXCreateTexture | medium |
+| `004b9530` | `d3d9_matrix_transform_2d` | D3DXMatrixTransformation2D | high |
+| `004ba0e0` | `d3d9_create_texture_004ba0e0` | D3DXCreateTexture | medium |
+| `004ba420` | `d3d9_matrix_transform_2d_004ba420` | D3DXMatrixTransformation2D | high |
+| `004ba6a0` | `d3d9_matrix_transform_2d_004ba6a0` | D3DXMatrixTransformation2D | high |
+| `004bd360` | `config_find_section_marker` | finds [server]/[/server] markers | high |
+| `004bd6c0` | `npk_buffer8_error` | m_pBuffer8 error | high |
+| `004bdca0` | `npk_scan_soundpacks` | SoundPacks\*.npk | high |
+| `004be060` | `sound_dsound_create` | DSOUND Ordinal_11 DirectSoundCreate | high |
+| `004be5c0` | `sound_load_audio_xml` | audio.xml | high |
+| `004c2ed0` | `sound_createsoundbuffer_myerror_path` | CreateSoundBuffer MyError MessageBox | high |
+| `004c73c0` | `config_section_span_helper` | between [server] markers | medium |
+| `004d1520` | `game_get_state_ptr_d1520` | main loop cooperative-level / state checks | low |
+| `004d1af0` | `game_get_state_ptr_d1af0` | main loop state checks before Clear/BeginScene | low |
+| `004d1b40` | `game_startup_call_d1b40` | WinMain init sequence before main loop | low |
+| `004e4ee0` | `d3d9_create_texture_004e4ee0` | D3DXCreateTexture | medium |
+| `004e50d0` | `game_loop_helper_e50d0` | called from main loop path | low |
+| `004f0610` | `game_sync_session_blob_f0610` | main loop after copying session fields | low |
+| `004f2480` | `game_get_global_ptr_f2480` | WinMain sets *ptr=0 before timeGetTime | low |
+| `004f2490` | `net_socket_recv_thread_proc` | CreateThread start routine for socket | high |
+| `004f2720` | `game_missing_asset_fallback_2` | WinMain alternate missing-asset path | medium |
+| `004f27a0` | `game_frame_update_or_draw_prep` | called in main loop after BeginScene/viewport setup | medium |
+| `00510620` | `util_time_get_time_2` | timeGetTime wrapper | low |
+| `005106c0` | `d3d9_texture_from_memory` | D3DXCreateTextureFromFileInMemory | high |
+| `00510800` | `game_main_loop` | WinMain calls this; PeekMessage loop; device+0xa4 BeginScene, +0xac Clear, +0xa8 EndScene, +0x44 Present | high |
+| `005385f0` | `util_time_get_time_1` | timeGetTime wrapper | low |
+| `00584450` | `npk_or_resource_subsystem_init` | WinMain allocates then calls before npk_scan_imagepacks2 | medium |
+| `00584490` | `npk_scan_imagepacks2` | ImagePacks2\*.npk | high |
+| `00584ac0` | `npk_img_decode_frames_from_entry` | ReadFile NPK entry; frame count at +0x1c; 0x28-byte frame records; type@+0 (0xE/F/10/11); compress@+4 (5 raw / 6 zlib via inflate) | high |
+| `00585780` | `img_convert_pixels_fmt_0f` | post-inflate convert when frame type==0xF | high |
+| `005858b0` | `img_convert_pixels_fmt_0e` | post-inflate convert when frame type==0xE | high |
+| `0059ae60` | `etc_file_open_helper` | parse_server opens channel_info path | medium |
+| `0059af00` | `etc_file_get_size_or_data` | after opening channel_info.etc | medium |
+| `0059b0b0` | `game_subsystem_init_59b0b0` | WinMain after adapters info | low |
+| `005cc840` | `game_loop_helper_cc840` | main loop branch helper | low |
+| `005cd070` | `game_loop_helper_cd070` | main loop branch helper | low |
+| `005cd6d0` | `game_loop_helper_cd6d0` | main loop branch helper | low |
+| `005e7940` | `parse_server_config_section` | [server] section | high |
+| `005e7c40` | `parse_server_config_cleanup` | cleanup at end of parse_server_config_section | medium |
+| `005e7c70` | `parse_server_config_getline` | parse_server_config_section line reader | high |
+| `005e8480` | `parse_channel_info_load_buffer` | called while loading channel_info.etc | medium |
+| `005e9240` | `game_loop_helper_e9240` | repeated in main loop branches | low |
+| `005ea950` | `parse_server_entry_finalize` | end of each [server] entry parse loop | medium |
+| `0062f7e0` | `game_post_d3d_init` | WinMain after d3d9_create_device_bootstrap + ShowWindow | medium |
+| `00642740` | `game_loop_get_context_642740` | near end of main loop message path | low |
+| `00657640` | `ui_or_render_draw_helper_657640` | main loop draw helper after timing | low |
+| `00661a00` | `window_update_or_related` | UpdateWindow | low |
+| `0066d9b0` | `d3d9_create_texture_0066d9b0` | D3DXCreateTexture | medium |
+| `006814b0` | `game_load_string_resource_helper` | WinMain repeated FUN_006814b0 after string setup | low |
+| `00682a00` | `util_time_get_time` | timeGetTime wrapper | low |
+| `006833d0` | `game_init_before_main_loop` | WinMain calls immediately before game_main_loop | medium |
+| `00683610` | `window_wndproc_main` | WNDCLASSA.lpfnWndProc | high |
+| `0068dde0` | `game_subsystem_init_68dde0` | WinMain inits 0x4c object before NPK/D3D | low |
+| `0068de00` | `read_dnf_login_txt` | DnfLogin.txt | high |
+| `0068dfc0` | `net_login_connect_and_spawn_thread` | socket connect + CreateThread recv | high |
+| `0068e170` | `net_get_adapters_info` | GetAdaptersInfo | high |
+| `0068e490` | `WinMain` | CRT calls as WinMain; CreateWindowExA class DNF | high |
+| `006a3140` | `net_wsa_startup` | WSAStartup 0x202 | high |
+| `006a31a0` | `net_wsa_cleanup_wrapper` | cleanup after failed login / after main loop | medium |
+| `006a34a0` | `net_packet_write_field` | login thread packs fields into send buffer | medium |
+| `006a34d0` | `net_packet_write_bytes` | copies DnfLogin account bytes into packet | high |
+| `006a3f10` | `game_missing_asset_fallback` | WinMain when required NPK/bin missing | medium |
+| `006a55d0` | `net_create_socket_or_fail` | Failed to create socket + connect 47.99.69.51 | high |
+| `006aec80` | `img_or_resource_compress_5_6_d` | branches local_13c==5/6 | low |
+| `006af1c0` | `img_or_resource_compress_5_6_c` | branches local_138==5/6 | low |
+| `006af740` | `d3d9_create_texture_006af740` | D3DXCreateTexture | medium |
+| `006aff40` | `d3d9_create_texture_006aff40` | D3DXCreateTexture | medium |
+| `006b1770` | `d3d9_create_texture_006b1770` | D3DXCreateTexture | medium |
+| `006b4360` | `d3d9_create_texture_006b4360` | D3DXCreateTexture | medium |
+| `006bb6b0` | `d3d9_create_texture_006bb6b0` | D3DXCreateTexture | medium |
+| `006bd790` | `d3d9_create_texture_006bd790` | D3DXCreateTexture | medium |
+| `006c2e70` | `d3d9_create_texture_006c2e70` | D3DXCreateTexture | medium |
+| `006c5d20` | `d3d9_create_texture_006c5d20` | D3DXCreateTexture | medium |
+| `006caba0` | `game_loop_helper_caba0` | main loop condition helper | low |
+| `006ce760` | `zlib_uncompress_buffer` | called for IMG frame compress==6 before pixel convert; feeds inflate | high |
+| `006ce7b0` | `zlib_inflate` | zlib inflate error strings (invalid literal/lengths, incorrect header check, ...) | high |
+| `006d0e60` | `zlib_inflate_fast_or_codes` | zlib invalid literal/length / distance code strings | high |
+| `006e4b5e` | `crt_or_heap_alloc_helper` | WinMain allocation helper (repeated) | low |
+| `006e5359` | `crt_scrt_common_main` | PE entry CRT -> WinMain | high |
+| `006e54d5` | `entry` | PE entry point | high |
+| `00709d5f` | `util_memmem_or_bytes_find` | searches NeoplePack_Bill in buffer | medium |
+| `0068eb20` | `window_input_ui_dispatch_68eb20` | WndProc 内高频调用 (~19x)；体积极大(20428)，疑似输入/UI 分发 | medium |

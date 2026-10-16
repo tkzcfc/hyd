@@ -1,6 +1,9 @@
 # 二进制与中间产物不入库
 *.exe
 *.dll
+# 允许 recovered/ 下以 .exe/.dll 命名的说明目录
+!recovered/*.exe/
+!recovered/*.dll/
 *.pdb
 *.zip
 *.gpr
